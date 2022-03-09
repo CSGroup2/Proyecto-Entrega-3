@@ -1,4 +1,4 @@
-# Proyecto-Entrega-2
+# Proyecto-Entrega-3
 En este repositorio se encuentran los siguientes archivos:
 * Documento de plan de pruebas del SGAR
 * Script de la BD
