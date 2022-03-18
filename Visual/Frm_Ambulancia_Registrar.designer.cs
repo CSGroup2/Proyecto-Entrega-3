@@ -210,9 +210,9 @@ namespace Visual {
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label5.Location = new System.Drawing.Point(38, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 18);
+            this.label5.Size = new System.Drawing.Size(54, 18);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Num. Placa:";
+            this.label5.Text = "Placa:";
             // 
             // btnCancelar
             // 

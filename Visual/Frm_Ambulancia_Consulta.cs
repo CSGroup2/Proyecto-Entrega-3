@@ -73,6 +73,25 @@ namespace Visual {
             admA.ListarAmbulancias(dgvAmbulancias);
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int posicion = dgvAmbulancias.CurrentRow.Index;
+            if (posicion >= 0)
+            {
+                Frm_Ambulancia_Editar frmE = new Frm_Ambulancia_Editar(dgvAmbulancias);
+                frmE.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una ambulancia");
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             int disponibilidad = 0, tipo = 0;

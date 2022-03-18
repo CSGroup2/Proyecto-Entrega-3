@@ -26,8 +26,8 @@ namespace Visual {
         private void InitializeComponent () {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnimprimir = new FontAwesome.Sharp.IconButton();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbModelo = new System.Windows.Forms.RadioButton();
@@ -56,8 +56,8 @@ namespace Visual {
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.btnimprimir);
-            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.btnImprimir);
+            this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.pncontenido);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 63);
@@ -65,43 +65,45 @@ namespace Visual {
             this.panel2.Size = new System.Drawing.Size(662, 419);
             this.panel2.TabIndex = 4;
             // 
-            // btnimprimir
+            // btnImprimir
             // 
-            this.btnimprimir.FlatAppearance.BorderSize = 0;
-            this.btnimprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnimprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnimprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnimprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnimprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnimprimir.Location = new System.Drawing.Point(357, 343);
-            this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnimprimir.Size = new System.Drawing.Size(183, 52);
-            this.btnimprimir.TabIndex = 16;
-            this.btnimprimir.Text = "Imprimir";
-            this.btnimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnimprimir.UseVisualStyleBackColor = true;
-            this.btnimprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
-            this.btnimprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(357, 343);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnImprimir.Size = new System.Drawing.Size(183, 52);
+            this.btnImprimir.TabIndex = 16;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
+            this.btnImprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
             // 
-            // btnguardar
+            // btnEditar
             // 
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.Location = new System.Drawing.Point(149, 343);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnguardar.Size = new System.Drawing.Size(183, 52);
-            this.btnguardar.TabIndex = 15;
-            this.btnguardar.Text = "Modificar";
-            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnguardar.UseVisualStyleBackColor = true;
-            this.btnguardar.MouseLeave += new System.EventHandler(this.btnguardar_MouseLeave);
-            this.btnguardar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnguardar_MouseMove);
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.Location = new System.Drawing.Point(149, 343);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditar.Size = new System.Drawing.Size(183, 52);
+            this.btnEditar.TabIndex = 15;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEditar.MouseLeave += new System.EventHandler(this.btnguardar_MouseLeave);
+            this.btnEditar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnguardar_MouseMove);
             // 
             // pncontenido
             // 
@@ -316,8 +318,8 @@ namespace Visual {
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton btnimprimir;
-        private FontAwesome.Sharp.IconButton btnguardar;
+        private FontAwesome.Sharp.IconButton btnImprimir;
+        private FontAwesome.Sharp.IconButton btnEditar;
         private System.Windows.Forms.Panel pncontenido;
         private FontAwesome.Sharp.IconButton btnMostrartodos;
         private FontAwesome.Sharp.IconButton btnConsultar;

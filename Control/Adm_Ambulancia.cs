@@ -163,10 +163,112 @@ namespace Control
         }
 
         // método para listar sólo las ambulancias disponibles para poder asignarle a un conductor (Adm_Asignacion)
-        internal void ListarAmbulanciasDisponibles(DataGridView dgvAmbulancia)
+        public void ListarAmbulanciasDisponibles(DataGridView dgvAmbulancia)
         {
             dgvAmbulancia.Refresh();
             dgvAmbulancia.DataSource = dAmbulancia.ListarAmbulanciasDisponibles();
+        }
+
+        //método para cargar los datos al combobox de Disponibilidad
+        public void LlenarComboDisponibilidad(ComboBox cmbDisp)
+        {
+            cmbDisp.Items.Clear();
+            cmbDisp.DataSource = dAmbulancia.ConsultarDisponibilidad();
+            cmbDisp.ValueMember = "ID_DISPONIBILIDAD";
+            cmbDisp.DisplayMember = "NOMBRE_DISPONIBILIDAD";
+
+        }
+
+        // método para cargar los datos de una fila seleccionada a los campos de la ventana Editar
+        public void LlenarCamposEditar(int posicion, string placa, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
+        {
+            if (posicion >= 0)
+            {
+                a = dAmbulancia.ConsultarAmbulanciasXplaca(placa);
+                cmbDisp.Items.Clear();
+                LlenarComboDisponibilidad(cmbDisp);
+                cmbDisp.SelectedValue = a.Disponibilidad;
+                txtModelo.Text = a.Modelo.ToString();
+                cmbTipo.Items.Clear();
+                LlenarComboTipoAmbulancia(cmbTipo);
+                cmbTipo.SelectedValue = a.Tipo_ambulancia;
+                txtCapacidad.Text = a.Capacidad.ToString();
+                txtObservacion.Text = a.Observacion.ToString();
+            }
+        }
+
+        //método para editar los datos de las ambulancias según la placa buscada
+        public bool BuscarPlaca(string placa, ComboBox cmbDisp, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion)
+        {
+            bool existePlaca = false;
+            var regexP = new Regex("[a-zA-Z]{3}[0-9]{3}|[a-zA-Z]{3}[0-9]{4}");
+            if (regexP.IsMatch(placa))
+            {
+                a = dAmbulancia.ConsultarAmbulanciasXplaca(placa);
+                if (a != null)
+                {
+                    cmbDisp.Items.Clear();
+                    LlenarComboDisponibilidad(cmbDisp);
+                    cmbDisp.SelectedValue = a.Disponibilidad;
+                    txtModelo.Text = a.Modelo.ToString();
+                    cmbTipo.Items.Clear();
+                    LlenarComboTipoAmbulancia(cmbTipo);
+                    cmbTipo.SelectedValue = a.Tipo_ambulancia;
+                    txtCapacidad.Text = a.Capacidad.ToString();
+                    txtObservacion.Text = a.Observacion.ToString();
+                }
+                existePlaca = true;
+            }
+            else
+            {
+                existePlaca = false;
+            }
+            return existePlaca;
+        }
+
+        public string ActualizarDatosAmbulancia(string placa, int disponibilidad, string modelo, int tipoA, int capacidad, string observacion)
+        {
+            string msj = "";
+            a.Placa = placa;
+            a.Disponibilidad = disponibilidad;
+            a.Modelo = modelo;
+            a.Tipo_ambulancia = tipoA;
+            a.Capacidad = capacidad;
+            a.Observacion = observacion;
+            msj = dAmbulancia.EditarAmbulancias(a);
+            return msj;
+        }
+
+        public void LimpiarCamposE(TextBox txtPlaca, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
+        {
+            txtPlaca.Text = "";
+            txtModelo.Text = "";
+            cmbTipo.SelectedIndex = 0;
+            txtCapacidad.Text = "";
+            txtObservacion.Text = "";
+            cmbDisp.SelectedIndex = 0;
+        }
+
+        public void BloquearCampos(TextBox txtPlaca, Button btnBuscar,TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
+        {
+            txtPlaca.Enabled = true;
+            btnBuscar.Enabled = true;
+            txtModelo.Enabled = false;
+            cmbTipo.Enabled = false;
+            txtCapacidad.Enabled = false;
+            txtObservacion.Enabled = false;
+            cmbDisp.Enabled = false;
+        }
+
+        public void DesbloquearCampos(TextBox txtPlaca, Button btnBuscar, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
+        {
+            txtPlaca.Enabled = false;
+            btnBuscar.Enabled = false;
+            txtModelo.Enabled = true;
+            cmbTipo.Enabled = true;
+            txtCapacidad.Enabled = true;
+            txtObservacion.Enabled = true;
+            cmbDisp.Enabled = true;
         }
     }
 }
