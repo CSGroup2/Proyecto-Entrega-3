@@ -278,15 +278,5 @@ namespace Control
             msj = dAmbulancia.EliminarAmbulancia(placa);
             return msj;
         }
-
-        public void EliminarCita(DataGridView dgvCitas, int posicion)
-        {
-
-            int indice = 0, id = Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
-            dgvCitas.Rows.RemoveAt(posicion);
-            dCita.EliminarCitas(id);
-            indice = citas.FindIndex(x => x.Id_cita == id);
-            citas.RemoveAt(indice);
-        }
     }
 }
