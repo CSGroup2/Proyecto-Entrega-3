@@ -1,4 +1,11 @@
 ﻿using Datos;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -278,5 +285,39 @@ namespace Control
             msj = dAmbulancia.EliminarAmbulancia(placa);
             return msj;
         }
+
+        /*public void CrearPdf (string cedula, DateTime fecha, string hora, int n, string file) {
+            PdfWriter pdfWriter = new PdfWriter (file);
+            PdfDocument pdf = new PdfDocument (pdfWriter);
+            Document documento = new Document (pdf, PageSize.LETTER);
+
+            documento.SetMargins (60, 20, 55, 20);
+            PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
+
+            string [] columnas = { "Nº", "Cédula", "Paciente", "Odontólogo", "Fecha", "Hora", "Consultorio" };
+            float [] tamanios = { 2, 4, 4, 4, 4, 3, 2 };
+
+            Table tabla = new Table (UnitValue.CreatePercentArray (tamanios));
+            tabla.SetWidth (UnitValue.CreatePercentValue (100));
+
+            foreach (string columna in columnas) {
+                tabla.AddHeaderCell (new Cell ().Add (new Paragraph (columna).SetFont (fontColumnas)));
+            }
+            citas = dCita.ConsultarCitas (cedula, fecha, hora, n);
+            int i = 1;
+            foreach (Cita c in citas) {
+                tabla.AddCell (new Cell ().Add (new Paragraph (i + "").SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Paciente.Cedula).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Paciente.Nombre).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Odontologo.Nombre).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Fecha.ToString ("yyyy-MM-dd")).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Hora.ToString ("HH:mm")).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (c.Odontologo.Consultorio + "").SetFont (fontContenido)));
+                i++;
+            }
+            documento.Add (tabla);
+            documento.Close ();
+        }*/
     }
 }
