@@ -332,5 +332,34 @@ namespace Datos
             }
             return msj;
         }
+
+
+        public string EliminarAmbulancia(string placa)
+        {
+            string msj = "";
+            SqlConnection c1 = con.abrir_conexion();
+            try
+            {
+                //comando
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = c1;
+                comando.CommandText = "sp_eliminar_ambulancia";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param_placa = new SqlParameter();
+                param_placa.ParameterName = "@placa";
+                param_placa.SqlDbType = SqlDbType.VarChar;
+                param_placa.Value = placa;
+                comando.Parameters.Add(param_placa);
+                comando.ExecuteNonQuery();
+                msj = "La ambulancia se eliminó exitosamente";
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(c1);
+                msj = "Error al borrar en la base de datos " + ex.Message;
+            }
+            return msj;
+        }
     }
 }

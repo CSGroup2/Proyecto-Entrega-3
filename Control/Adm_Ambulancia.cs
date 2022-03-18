@@ -197,7 +197,7 @@ namespace Control
             }
         }
 
-        //método para editar los datos de las ambulancias según la placa buscada
+        //método para llenar los campos de edición según la placa buscada
         public bool BuscarPlaca(string placa, ComboBox cmbDisp, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion)
         {
             bool existePlaca = false;
@@ -226,6 +226,7 @@ namespace Control
             return existePlaca;
         }
 
+        // método para actualizar los datos de la ambulancia 
         public string ActualizarDatosAmbulancia(string placa, int disponibilidad, string modelo, int tipoA, int capacidad, string observacion)
         {
             string msj = "";
@@ -269,6 +270,23 @@ namespace Control
             txtCapacidad.Enabled = true;
             txtObservacion.Enabled = true;
             cmbDisp.Enabled = true;
+        }
+
+        public string EliminarDatosAmbulancia(string placa)
+        {
+            string msj = "";
+            msj = dAmbulancia.EliminarAmbulancia(placa);
+            return msj;
+        }
+
+        public void EliminarCita(DataGridView dgvCitas, int posicion)
+        {
+
+            int indice = 0, id = Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
+            dgvCitas.Rows.RemoveAt(posicion);
+            dCita.EliminarCitas(id);
+            indice = citas.FindIndex(x => x.Id_cita == id);
+            citas.RemoveAt(indice);
         }
     }
 }

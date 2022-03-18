@@ -92,6 +92,23 @@ namespace Visual {
 
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string msj = "", placa = "";
+            int posicion = dgvAmbulancias.CurrentRow.Index;
+            if (posicion >= 0)
+            {
+                placa = dgvAmbulancias.Rows[posicion].Cells["placa"].Value.ToString();
+                dgvAmbulancias.Rows.RemoveAt(posicion);
+                msj = admA.EliminarDatosAmbulancia(placa);
+                MessageBox.Show(msj);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una ambulancia");
+            }
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             int disponibilidad = 0, tipo = 0;
