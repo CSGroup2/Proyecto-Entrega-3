@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +19,17 @@ namespace Visual {
         public int buscarOb, buscarOp;
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
 
+        Frm_Menu menu;
+
         public Frm_Ambulancia_Consultar () {
             InitializeComponent ();
         }
 
-
+        public Frm_Ambulancia_Consultar(Frm_Menu menuu)
+        {
+            InitializeComponent();
+            this.menu = menuu;
+        }
 
         private void FrmAmbulanciaConsul_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
@@ -78,8 +86,9 @@ namespace Visual {
             int posicion = dgvAmbulancias.CurrentRow.Index;
             if (posicion >= 0)
             {
-                Frm_Ambulancia_Editar frmE = new Frm_Ambulancia_Editar(dgvAmbulancias);
-                frmE.Visible = true;
+                menu.abrirhijoform(new Frm_Ambulancia_Editar(dgvAmbulancias));
+                //Frm_Ambulancia_Editar frmE = new Frm_Ambulancia_Editar(dgvAmbulancias, menu);
+                //frmE.Visible = true;
             }
             else
             {
@@ -123,13 +132,18 @@ namespace Visual {
 
                 saveFileDialog1.DefaultExt = "pdf";
                 saveFileDialog1.Filter = "Pdf File |*.pdf";
-                saveFileDialog1.FileName = "lista_ambulancia.pdf";
-                string file = saveFileDialog1.FileName;
+                //saveFileDialog1.FileName = "lista_ambulancia.pdf";
                 saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    string file = saveFileDialog1.FileName;
                     admA.CrearPdf(dato, tipo, disponibilidad, buscarOb, buscarOp, file);
+                    if (File.Exists(file))
+                    {
+                        Process.Start(file);
+                    }
                 }
+                
             }
             
             

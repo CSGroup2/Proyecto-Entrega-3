@@ -17,6 +17,9 @@ namespace Visual {
 
         public Frm_Ambulancia_Editar () {
             InitializeComponent ();
+            admA.LlenarComboTipoAmbulancia(cmbTipo);
+            admA.LlenarComboDisponibilidad(cmbDisp);
+            admA.BloquearCampos(txtPlaca, btnBuscar, txtModelo, cmbTipo, txtCapacidad, txtObservacion, cmbDisp);
         }
 
         public Frm_Ambulancia_Editar(DataGridView dgvAmbulancia)
@@ -30,9 +33,7 @@ namespace Visual {
 
         private void FrmAmbulanciaModifi_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
-            admA.LlenarComboTipoAmbulancia(cmbTipo);
-            admA.LlenarComboDisponibilidad(cmbDisp);
-            admA.BloquearCampos(txtPlaca, btnBuscar, txtModelo, cmbTipo, txtCapacidad, txtObservacion, cmbDisp);
+            
         }
 
         #region Efecto boton Guardar

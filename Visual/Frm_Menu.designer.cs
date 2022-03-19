@@ -751,7 +751,6 @@ namespace Visual {
         private FontAwesome.Sharp.IconButton btnconsulsecretaria;
         private FontAwesome.Sharp.IconButton btnregsecretaria;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnhijo;
         private FontAwesome.Sharp.IconButton btnambulancia;
         private System.Windows.Forms.Panel pnsubmcliente;
         private FontAwesome.Sharp.IconButton btnclientemodi;
@@ -780,5 +779,6 @@ namespace Visual {
         private System.Windows.Forms.Panel pnsubmenupeticion;
         private FontAwesome.Sharp.IconButton btnasignar;
         private FontAwesome.Sharp.IconButton btnregistrar;
+        public System.Windows.Forms.Panel pnhijo;
     }
 }

@@ -100,7 +100,7 @@ namespace Visual {
 
         private Form FormularioActivo = null;
 
-        private void abrirhijoform (Form FrmHijo) {
+        public void abrirhijoform (Form FrmHijo) {
             //Si existe formulairo abierto lo cerramos
             if (FormularioActivo != null) {
                 FormularioActivo.Close ();
@@ -202,7 +202,7 @@ namespace Visual {
         }
 
         private void btnconsulambulancia_Click (object sender, EventArgs e) {
-            abrirhijoform (new Frm_Ambulancia_Consultar ());
+            abrirhijoform (new Frm_Ambulancia_Consultar (this));
         }
 
         private void btnmodifiambulancia_Click (object sender, EventArgs e) {
