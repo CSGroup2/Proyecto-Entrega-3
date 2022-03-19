@@ -27,7 +27,7 @@ namespace Visual {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnimprimir = new FontAwesome.Sharp.IconButton();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
             this.btnmostrartodos = new FontAwesome.Sharp.IconButton();
@@ -38,7 +38,7 @@ namespace Visual {
             this.opcedula = new System.Windows.Forms.RadioButton();
             this.txtCriterio = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dgv_listarTodos = new System.Windows.Forms.DataGridView();
+            this.dgvConductor = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +49,11 @@ namespace Visual {
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fechcontra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConductor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +85,7 @@ namespace Visual {
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.btnimprimir);
+            this.panel2.Controls.Add(this.btnImprimir);
             this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Controls.Add(this.pncontenido);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,25 +94,26 @@ namespace Visual {
             this.panel2.Size = new System.Drawing.Size(690, 513);
             this.panel2.TabIndex = 2;
             // 
-            // btnimprimir
+            // btnImprimir
             // 
-            this.btnimprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnimprimir.FlatAppearance.BorderSize = 0;
-            this.btnimprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnimprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnimprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnimprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnimprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnimprimir.Location = new System.Drawing.Point(357, 421);
-            this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnimprimir.Size = new System.Drawing.Size(183, 52);
-            this.btnimprimir.TabIndex = 16;
-            this.btnimprimir.Text = "Imprimir";
-            this.btnimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnimprimir.UseVisualStyleBackColor = true;
-            this.btnimprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
-            this.btnimprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.Location = new System.Drawing.Point(357, 421);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnImprimir.Size = new System.Drawing.Size(183, 52);
+            this.btnImprimir.TabIndex = 16;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
+            this.btnImprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
             // 
             // btnguardar
             // 
@@ -147,7 +149,7 @@ namespace Visual {
             this.pncontenido.Controls.Add(this.opcedula);
             this.pncontenido.Controls.Add(this.txtCriterio);
             this.pncontenido.Controls.Add(this.label14);
-            this.pncontenido.Controls.Add(this.dgv_listarTodos);
+            this.pncontenido.Controls.Add(this.dgvConductor);
             this.pncontenido.Location = new System.Drawing.Point(20, 23);
             this.pncontenido.Name = "pncontenido";
             this.pncontenido.Size = new System.Drawing.Size(638, 370);
@@ -257,12 +259,12 @@ namespace Visual {
             this.label14.TabIndex = 49;
             this.label14.Text = "Dato: ";
             // 
-            // dgv_listarTodos
+            // dgvConductor
             // 
-            this.dgv_listarTodos.AllowUserToAddRows = false;
-            this.dgv_listarTodos.AllowUserToDeleteRows = false;
-            this.dgv_listarTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listarTodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConductor.AllowUserToAddRows = false;
+            this.dgvConductor.AllowUserToDeleteRows = false;
+            this.dgvConductor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConductor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.estado,
             this.Cedula,
@@ -273,12 +275,12 @@ namespace Visual {
             this.telefono,
             this.correo,
             this.Fechcontra});
-            this.dgv_listarTodos.Location = new System.Drawing.Point(32, 153);
-            this.dgv_listarTodos.Name = "dgv_listarTodos";
-            this.dgv_listarTodos.ReadOnly = true;
-            this.dgv_listarTodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listarTodos.Size = new System.Drawing.Size(559, 182);
-            this.dgv_listarTodos.TabIndex = 48;
+            this.dgvConductor.Location = new System.Drawing.Point(32, 153);
+            this.dgvConductor.Name = "dgvConductor";
+            this.dgvConductor.ReadOnly = true;
+            this.dgvConductor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConductor.Size = new System.Drawing.Size(559, 182);
+            this.dgvConductor.TabIndex = 48;
             // 
             // codigo
             // 
@@ -355,7 +357,7 @@ namespace Visual {
             this.panel2.ResumeLayout(false);
             this.pncontenido.ResumeLayout(false);
             this.pncontenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listarTodos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConductor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,10 +375,10 @@ namespace Visual {
         private System.Windows.Forms.RadioButton opcedula;
         private System.Windows.Forms.TextBox txtCriterio;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dgv_listarTodos;
+        private System.Windows.Forms.DataGridView dgvConductor;
         private FontAwesome.Sharp.IconButton btnconsultar;
         private FontAwesome.Sharp.IconButton btnmostrartodos;
-        private FontAwesome.Sharp.IconButton btnimprimir;
+        private FontAwesome.Sharp.IconButton btnImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
@@ -387,5 +389,6 @@ namespace Visual {
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fechcontra;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
