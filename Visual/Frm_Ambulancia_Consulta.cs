@@ -89,7 +89,50 @@ namespace Visual {
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            int disponibilidad = 0, tipo = 0;
+            if (admA.ValidarC(rdbPlaca, txtDato, chbTipo, cmbTipo, errorP))
+            {
+                if (rdbPlaca.Checked == true)
+                {
+                    buscarOb = 1;
+                }
+                else
+                {
+                    buscarOb = 2;
+                }
+                if (chbDisponibilidad.Checked == true && chbTipo.Checked == true)
+                {
+                    buscarOp = 3;
+                    disponibilidad = 1;
+                    tipo = Int32.Parse(cmbTipo.SelectedValue.ToString());
+                }
+                else if (chbTipo.Checked == true)
+                {
+                    buscarOp = 2;
+                    tipo = Int32.Parse(cmbTipo.SelectedValue.ToString());
+                }
+                else if (chbDisponibilidad.Checked == true)
+                {
+                    buscarOp = 1;
+                    disponibilidad = 1;
+                }
 
+                string dato = txtDato.Text;
+                dgvAmbulancias.Refresh();
+                dgvAmbulancias.DataSource = admA.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
+
+                saveFileDialog1.DefaultExt = "pdf";
+                saveFileDialog1.Filter = "Pdf File |*.pdf";
+                saveFileDialog1.FileName = "lista_ambulancia.pdf";
+                string file = saveFileDialog1.FileName;
+                saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    admA.CrearPdf(dato, tipo, disponibilidad, buscarOb, buscarOp, file);
+                }
+            }
+            
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -143,8 +186,6 @@ namespace Visual {
                 dgvAmbulancias.Refresh();
                 dgvAmbulancias.DataSource = admA.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
             }
-
-
         }
     }
 }

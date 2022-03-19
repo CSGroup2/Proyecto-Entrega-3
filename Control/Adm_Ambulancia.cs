@@ -44,7 +44,7 @@ namespace Control
         //método para cargar los datos al combobox de Tipo Ambulancia
         public void LlenarComboTipoAmbulancia(ComboBox cmbTipo)
         {
-            cmbTipo.Items.Clear();
+            //cmbTipo.Items.Clear();
             cmbTipo.DataSource = dAmbulancia.ConsultarTipo();
             cmbTipo.ValueMember = "ID_TIPO_AMBULANCIA";
             cmbTipo.DisplayMember = "NOMBRE_TIPO_AMBULANCIA";
@@ -179,7 +179,7 @@ namespace Control
         //método para cargar los datos al combobox de Disponibilidad
         public void LlenarComboDisponibilidad(ComboBox cmbDisp)
         {
-            cmbDisp.Items.Clear();
+            //cmbDisp.Items.Clear();
             cmbDisp.DataSource = dAmbulancia.ConsultarDisponibilidad();
             cmbDisp.ValueMember = "ID_DISPONIBILIDAD";
             cmbDisp.DisplayMember = "NOMBRE_DISPONIBILIDAD";
@@ -286,7 +286,7 @@ namespace Control
             return msj;
         }
 
-        /*public void CrearPdf (string cedula, DateTime fecha, string hora, int n, string file) {
+        public void CrearPdf (string dato, int tipo, int disponibilidad, int buscarOb, int buscarOp, string file) {
             PdfWriter pdfWriter = new PdfWriter (file);
             PdfDocument pdf = new PdfDocument (pdfWriter);
             Document documento = new Document (pdf, PageSize.LETTER);
@@ -295,8 +295,8 @@ namespace Control
             PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
 
-            string [] columnas = { "Nº", "Cédula", "Paciente", "Odontólogo", "Fecha", "Hora", "Consultorio" };
-            float [] tamanios = { 2, 4, 4, 4, 4, 3, 2 };
+            string [] columnas = { "Nº", "id", "placa", "modelo", "tipo", "capacidad", "observación", "disponibilidad" };
+            float [] tamanios = { 2, 2, 3, 4, 4, 2, 5, 3 };
 
             Table tabla = new Table (UnitValue.CreatePercentArray (tamanios));
             tabla.SetWidth (UnitValue.CreatePercentValue (100));
@@ -304,20 +304,25 @@ namespace Control
             foreach (string columna in columnas) {
                 tabla.AddHeaderCell (new Cell ().Add (new Paragraph (columna).SetFont (fontColumnas)));
             }
-            citas = dCita.ConsultarCitas (cedula, fecha, hora, n);
-            int i = 1;
-            foreach (Cita c in citas) {
-                tabla.AddCell (new Cell ().Add (new Paragraph (i + "").SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Paciente.Cedula).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Paciente.Nombre).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Odontologo.Nombre).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Fecha.ToString ("yyyy-MM-dd")).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Hora.ToString ("HH:mm")).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (c.Odontologo.Consultorio + "").SetFont (fontContenido)));
-                i++;
+
+            DataTable dtresult = new DataTable();
+            dtresult = dAmbulancia.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
+            int f = 1;
+            for (int i = 0; i < dtresult.Rows.Count; i++)
+            {
+            
+                tabla.AddCell (new Cell ().Add (new Paragraph (f + "").SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["id"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["placa"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["modelo"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["tipo_ambulancia"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["capacidad"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dtresult.Rows[i]["observacion"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell (new Cell().Add(new Paragraph(dtresult.Rows[i]["disponibilidad"].ToString()).SetFont(fontContenido)));
+                f++;
             }
             documento.Add (tabla);
             documento.Close ();
-        }*/
+        }
     }
 }
