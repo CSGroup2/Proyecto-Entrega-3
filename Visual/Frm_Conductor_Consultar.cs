@@ -62,8 +62,5 @@ namespace Visual {
 
         }
 
-        private void btnimprimir_Click (object sender, EventArgs e) {
-
-        }
     }
 }

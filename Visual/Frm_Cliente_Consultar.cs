@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,5 +61,31 @@ namespace Visual {
             cbtn.desactivaboton (sender);
         }
         #endregion
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            //CONVIERTE EL DATAGRIDVIEW EN DATATABLE
+            dt = (DataTable)dgvClientes.DataSource;
+            //DEFINE LA EXTENSION DEL ARCHIVO
+            saveFileDialog1.DefaultExt = "pdf";
+            //DEFINE EL FILTRO DEL EXPLORADOR DE ARCHIVOS
+            saveFileDialog1.Filter = "Pdf File |*.pdf";
+            //DEFINE UN TITULO AL SAVEFILEDIALOG
+            saveFileDialog1.Title = "SGAR: Clientes - Guardar";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // SE RECOGE LA RUTA DEL ARCHIVO
+                string file = saveFileDialog1.FileName;
+                // CREA EL PDF
+                admC.CrearPdf(dt, file);
+                
+                if (File.Exists(file))
+                {
+                    // ABRE EL PDF
+                    Process.Start(file);
+                }
+            }
+        }
     }
 }

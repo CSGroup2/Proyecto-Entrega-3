@@ -1,7 +1,15 @@
 ﻿using Datos;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -125,6 +133,48 @@ namespace Control
             txt_NombreUsuario.Clear();
             txt_Contrasenia1.Clear();
             txt_Contrasenia2.Clear();
+        }
+
+        //método para crear pdf con los datos del datagridview
+        public void CrearPdf(DataTable dt, string file)
+        {
+            PdfWriter pdfWriter = new PdfWriter(file);
+            PdfDocument pdf = new PdfDocument(pdfWriter);
+            Document documento = new Document(pdf, PageSize.LETTER);
+
+            documento.SetMargins(60, 20, 55, 20);
+            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+            /*EL SIGUIENTE ARRAY ES PARA DETALLAR LOS NOMBRES DE LAS COLUMNAS EN LA TABLA DEL PDF
+              MODIFICALO EN EL MISMO ORDEN QUE UBICASTE LAS COLUMNAS DE TU DATAGRIDVIEW*/
+            string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
+            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+
+            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+            tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+            foreach (string columna in columnas)
+            {
+                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
+            }
+
+            int fila = 1;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //RECORRE EL DATATABLE PARA AGREGAR ESOS DATOS A LA PDF - PON EL MISMO ORDEN DE LAS COLUMNAS QUE DECLARASTE ARRIBA
+                tabla.AddCell(new Cell().Add(new Paragraph(fila + "").SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["id"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["disponibilidad"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["placa"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["modelo"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["tipo_ambulancia"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["capacidad"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["observacion"].ToString()).SetFont(fontContenido)));
+                fila++;
+            }
+            documento.Add(tabla);
+            documento.Close();
         }
 
     }

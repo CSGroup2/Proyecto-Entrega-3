@@ -110,7 +110,6 @@ namespace Visual {
             this.btnimprimir.Text = "Imprimir";
             this.btnimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnimprimir.UseVisualStyleBackColor = true;
-            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             this.btnimprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
             this.btnimprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
             // 
