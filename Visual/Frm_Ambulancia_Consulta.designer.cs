@@ -152,7 +152,7 @@ namespace Visual {
             this.groupBox1.Controls.Add(this.rdbPlaca);
             this.groupBox1.Location = new System.Drawing.Point(237, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(180, 39);
+            this.groupBox1.Size = new System.Drawing.Size(166, 39);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             // 
@@ -161,7 +161,7 @@ namespace Visual {
             this.rdbModelo.AutoSize = true;
             this.rdbModelo.BackColor = System.Drawing.Color.Transparent;
             this.rdbModelo.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbModelo.Location = new System.Drawing.Point(100, 17);
+            this.rdbModelo.Location = new System.Drawing.Point(84, 17);
             this.rdbModelo.Name = "rdbModelo";
             this.rdbModelo.Size = new System.Drawing.Size(67, 19);
             this.rdbModelo.TabIndex = 52;
@@ -250,11 +250,11 @@ namespace Visual {
             this.chbDisponibilidad.AutoSize = true;
             this.chbDisponibilidad.BackColor = System.Drawing.Color.Transparent;
             this.chbDisponibilidad.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbDisponibilidad.Location = new System.Drawing.Point(453, 18);
+            this.chbDisponibilidad.Location = new System.Drawing.Point(420, 18);
             this.chbDisponibilidad.Name = "chbDisponibilidad";
-            this.chbDisponibilidad.Size = new System.Drawing.Size(124, 19);
+            this.chbDisponibilidad.Size = new System.Drawing.Size(103, 19);
             this.chbDisponibilidad.TabIndex = 55;
-            this.chbDisponibilidad.Text = "Disponibilidad";
+            this.chbDisponibilidad.Text = "Disponibles";
             this.chbDisponibilidad.UseVisualStyleBackColor = false;
             // 
             // txtDato

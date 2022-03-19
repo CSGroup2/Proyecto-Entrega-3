@@ -134,7 +134,7 @@ namespace Datos
         }
 
         // CONSULTA LAS AMBULANCIAS REGISTRADAS EN LA BD SEGÚN EL FILTRO SELECCIONADO POR EL USUARIO
-        public DataTable ConsultarAmbulancias(string dato, int tipo_ambulancia, int disponibilidad, int buscarOb, int buscarOp)
+        public DataTable ConsultarAmbulancias(string dato, int tipo_ambulancia, int buscarOb, int buscarOp)
         {
             DataTable dt = new DataTable();
             SqlConnection c1 = con.abrir_conexion();
@@ -147,7 +147,6 @@ namespace Datos
                     comando.Parameters.Add(new SqlParameter("@opcionB", buscarOp));
                     comando.Parameters.Add(new SqlParameter("@dato", dato));
                     comando.Parameters.Add(new SqlParameter("@tipo_ambulancia", tipo_ambulancia));
-                    comando.Parameters.Add(new SqlParameter("@disponibilidad", disponibilidad));
                     SqlDataAdapter da = new SqlDataAdapter(comando);
                     da.Fill(dt);
                 }

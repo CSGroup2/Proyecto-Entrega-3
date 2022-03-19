@@ -87,8 +87,6 @@ namespace Visual {
             if (posicion >= 0)
             {
                 menu.abrirhijoform(new Frm_Ambulancia_Editar(dgvAmbulancias));
-                //Frm_Ambulancia_Editar frmE = new Frm_Ambulancia_Editar(dgvAmbulancias, menu);
-                //frmE.Visible = true;
             }
             else
             {
@@ -98,55 +96,22 @@ namespace Visual {
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            int disponibilidad = 0, tipo = 0;
-            if (admA.ValidarC(rdbPlaca, txtDato, chbTipo, cmbTipo, errorP))
+            DataTable dt = new DataTable();
+            dt = (DataTable)dgvAmbulancias.DataSource;
+            saveFileDialog1.DefaultExt = "pdf";
+            saveFileDialog1.Filter = "Pdf File |*.pdf";
+            //saveFileDialog1.FileName = "lista_ambulancia.pdf";
+            saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (rdbPlaca.Checked == true)
+                string file = saveFileDialog1.FileName;
+                admA.CrearPdf(dt, file);
+                if (File.Exists(file))
                 {
-                    buscarOb = 1;
+                    Process.Start(file);
                 }
-                else
-                {
-                    buscarOb = 2;
-                }
-                if (chbDisponibilidad.Checked == true && chbTipo.Checked == true)
-                {
-                    buscarOp = 3;
-                    disponibilidad = 1;
-                    tipo = Int32.Parse(cmbTipo.SelectedValue.ToString());
-                }
-                else if (chbTipo.Checked == true)
-                {
-                    buscarOp = 2;
-                    tipo = Int32.Parse(cmbTipo.SelectedValue.ToString());
-                }
-                else if (chbDisponibilidad.Checked == true)
-                {
-                    buscarOp = 1;
-                    disponibilidad = 1;
-                }
-
-                string dato = txtDato.Text;
-                dgvAmbulancias.Refresh();
-                dgvAmbulancias.DataSource = admA.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
-
-                saveFileDialog1.DefaultExt = "pdf";
-                saveFileDialog1.Filter = "Pdf File |*.pdf";
-                //saveFileDialog1.FileName = "lista_ambulancia.pdf";
-                saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    string file = saveFileDialog1.FileName;
-                    admA.CrearPdf(dato, tipo, disponibilidad, buscarOb, buscarOp, file);
-                    if (File.Exists(file))
-                    {
-                        Process.Start(file);
-                    }
-                }
-                
             }
-            
-            
+                
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -168,7 +133,7 @@ namespace Visual {
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            int disponibilidad = 0, tipo = 0;
+            int tipo = 0;
             if (admA.ValidarC(rdbPlaca, txtDato, chbTipo, cmbTipo, errorP))
             {
                 if (rdbPlaca.Checked == true)
@@ -182,7 +147,6 @@ namespace Visual {
                 if (chbDisponibilidad.Checked == true && chbTipo.Checked == true)
                 {
                     buscarOp = 3;
-                    disponibilidad = 1;
                     tipo = Int32.Parse(cmbTipo.SelectedValue.ToString());
                 }
                 else if (chbTipo.Checked == true)
@@ -193,12 +157,14 @@ namespace Visual {
                 else if(chbDisponibilidad.Checked == true)
                 {
                     buscarOp = 1;
-                    disponibilidad = 1;
                 }
-                
+                else
+                {
+                    buscarOp = 0;
+                }
                 string dato = txtDato.Text;
                 dgvAmbulancias.Refresh();
-                dgvAmbulancias.DataSource = admA.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
+                dgvAmbulancias.DataSource = admA.ConsultarAmbulancias(dato, tipo, buscarOb, buscarOp);
             }
         }
     }

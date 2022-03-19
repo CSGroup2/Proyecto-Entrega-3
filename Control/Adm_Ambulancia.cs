@@ -155,10 +155,10 @@ namespace Control
         }
 
         // método para consultar ambulancias por filtros
-        public DataTable ConsultarAmbulancias(string dato, int tipo, int disponibilidad, int buscarOb, int buscarOp)
+        public DataTable ConsultarAmbulancias(string dato, int tipo, int buscarOb, int buscarOp)
         {
             DataTable dtresult = new DataTable();
-            dtresult = dAmbulancia.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
+            dtresult = dAmbulancia.ConsultarAmbulancias(dato, tipo, buscarOb, buscarOp);
             return dtresult;
         }
 
@@ -287,7 +287,7 @@ namespace Control
             return msj;
         }
 
-        public void CrearPdf (string dato, int tipo, int disponibilidad, int buscarOb, int buscarOp, string file) {
+        public void CrearPdf (DataTable dt, string file) {
             PdfWriter pdfWriter = new PdfWriter (file);
             PdfDocument pdf = new PdfDocument (pdfWriter);
             Document documento = new Document (pdf, PageSize.LETTER);
@@ -296,8 +296,8 @@ namespace Control
             PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
 
-            string [] columnas = { "Nº", "id", "placa", "modelo", "tipo", "capacidad", "observación", "disponibilidad" };
-            float [] tamanios = { 2, 2, 3, 4, 4, 2, 5, 3 };
+            string [] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
+            float [] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
 
             Table tabla = new Table (UnitValue.CreatePercentArray (tamanios));
             tabla.SetWidth (UnitValue.CreatePercentValue (100));
@@ -306,20 +306,18 @@ namespace Control
                 tabla.AddHeaderCell (new Cell ().Add (new Paragraph (columna).SetFont (fontColumnas)));
             }
 
-            DataTable dtresult = new DataTable();
-            dtresult = dAmbulancia.ConsultarAmbulancias(dato, tipo, disponibilidad, buscarOb, buscarOp);
             int f = 1;
-            for (int i = 0; i < dtresult.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
             
                 tabla.AddCell (new Cell ().Add (new Paragraph (f + "").SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["id"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["placa"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["modelo"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["tipo_ambulancia"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dtresult.Rows[i]["capacidad"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(dtresult.Rows[i]["observacion"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell (new Cell().Add(new Paragraph(dtresult.Rows[i]["disponibilidad"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["id"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["disponibilidad"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["placa"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["modelo"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["tipo_ambulancia"].ToString()).SetFont (fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["capacidad"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell (new Cell().Add(new Paragraph(dt.Rows[i]["observacion"].ToString()).SetFont(fontContenido)));
                 f++;
             }
             documento.Add (tabla);
