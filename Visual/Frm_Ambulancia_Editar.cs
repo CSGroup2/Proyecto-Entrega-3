@@ -25,7 +25,7 @@ namespace Visual {
             admA.DesbloquearCampos(txtPlaca, btnBuscar, txtModelo, cmbTipo, txtCapacidad, txtObservacion, cmbDisp);
             int posicion = dgvAmbulancia.CurrentRow.Index;
             string placa = dgvAmbulancia.Rows[posicion].Cells["placa"].Value.ToString();
-            admA.LlenarCamposEditar(posicion, placa, txtModelo, cmbTipo, txtCapacidad, txtObservacion, cmbDisp);
+            admA.LlenarCamposEditar(posicion, placa, txtPlaca, txtModelo, cmbTipo, txtCapacidad, txtObservacion, cmbDisp);
         }
 
         private void FrmAmbulanciaModifi_Load (object sender, EventArgs e) {

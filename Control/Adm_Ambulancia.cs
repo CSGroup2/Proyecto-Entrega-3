@@ -187,18 +187,19 @@ namespace Control
         }
 
         // método para cargar los datos de una fila seleccionada a los campos de la ventana Editar
-        public void LlenarCamposEditar(int posicion, string placa, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
+        public void LlenarCamposEditar(int posicion, string placa, TextBox txtPlaca, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
         {
             if (posicion >= 0)
             {
                 a = dAmbulancia.ConsultarAmbulanciasXplaca(placa);
-                cmbDisp.Items.Clear();
+                //cmbDisp.Items.Clear();
+                txtPlaca.Text = a.Placa.ToString();
                 LlenarComboDisponibilidad(cmbDisp);
-                cmbDisp.SelectedValue = a.Disponibilidad;
+                cmbDisp.SelectedIndex = a.Disponibilidad;
                 txtModelo.Text = a.Modelo.ToString();
-                cmbTipo.Items.Clear();
+                //cmbTipo.Items.Clear();
                 LlenarComboTipoAmbulancia(cmbTipo);
-                cmbTipo.SelectedValue = a.Tipo_ambulancia;
+                cmbTipo.SelectedIndex = a.Tipo_ambulancia;
                 txtCapacidad.Text = a.Capacidad.ToString();
                 txtObservacion.Text = a.Observacion.ToString();
             }
@@ -214,13 +215,13 @@ namespace Control
                 a = dAmbulancia.ConsultarAmbulanciasXplaca(placa);
                 if (a != null)
                 {
-                    cmbDisp.Items.Clear();
+                    //cmbDisp.Items.Clear();
                     LlenarComboDisponibilidad(cmbDisp);
-                    cmbDisp.SelectedValue = a.Disponibilidad;
+                    cmbDisp.SelectedIndex = a.Disponibilidad;
                     txtModelo.Text = a.Modelo.ToString();
-                    cmbTipo.Items.Clear();
+                    //cmbTipo.Items.Clear();
                     LlenarComboTipoAmbulancia(cmbTipo);
-                    cmbTipo.SelectedValue = a.Tipo_ambulancia;
+                    cmbTipo.SelectedIndex = a.Tipo_ambulancia;
                     txtCapacidad.Text = a.Capacidad.ToString();
                     txtObservacion.Text = a.Observacion.ToString();
                 }
