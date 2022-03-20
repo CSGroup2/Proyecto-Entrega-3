@@ -39,10 +39,10 @@ namespace SGAR_TEST
         {
             Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
             DataTable dt = new DataTable();
-            int tipoA = 1, disponibilidad = 1, buscarOb =1, buscarOp = 2;
+            int tipoA = 1, buscarOb =1, buscarOp = 2;
             string dato = "RFG", msj = "";
 
-            dt = admA.ConsultarAmbulancias(dato, tipoA, disponibilidad, buscarOb, buscarOp);
+            dt = admA.ConsultarAmbulancias(dato, tipoA, buscarOb, buscarOp);
 
             if (dt.Rows.Count == 0)
             {
@@ -57,10 +57,10 @@ namespace SGAR_TEST
         {
             Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
             DataTable dt = new DataTable();
-            int tipoA = 1, disponibilidad = 1, buscarOb = 1, buscarOp = 2;
+            int tipoA = 1, buscarOb = 1, buscarOp = 2;
             string dato = "ABC", msj = "";
 
-            dt = admA.ConsultarAmbulancias(dato, tipoA, disponibilidad, buscarOb, buscarOp);
+            dt = admA.ConsultarAmbulancias(dato, tipoA, buscarOb, buscarOp);
             if (dt.Rows.Count > 0)
             {
                 msj = "Se encontraron los registros";
