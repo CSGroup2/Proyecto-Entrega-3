@@ -118,5 +118,62 @@ namespace Datos
             }
             return dt;
         }
+
+        public string eliminarPeticion(int idPeticion)
+        {
+            string msj = "";
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_eliminar_peticion", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter param_id = new SqlParameter();
+                    param_id.ParameterName = "@id";
+                    param_id.SqlDbType = SqlDbType.Int;
+                    param_id.Value = idPeticion;
+                    comando.Parameters.Add(param_id);
+                    comando.ExecuteNonQuery();
+
+                    msj = "La peticion fue eliminada correctamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(conexion);
+                msj="Error al eliminar la peticion " + ex.Message;
+            }
+            return msj;
+        }
+
+        public object listarPeticionesXDestino(string destino)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_listar_peticiones_destino", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter param_destino = new SqlParameter();
+                    param_destino.ParameterName = "@destino";
+                    param_destino.SqlDbType = SqlDbType.VarChar;
+                    param_destino.Value = destino;
+                    comando.Parameters.Add(param_destino);
+
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                con.cerrar_conexion(conexion);
+                Console.WriteLine("Error al listar las peticiones " + ex.Message);
+            }
+            return dt;
+        }
     }
 }

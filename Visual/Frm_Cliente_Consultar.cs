@@ -14,9 +14,17 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
-        Adm_Cliente admC = Adm_Cliente.GetAdm ();
+        Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
+        Frm_Menu menu;
+
         public Frm_Cliente_Consultar () {
             InitializeComponent ();
+        }
+
+        public Frm_Cliente_Consultar(Frm_Menu menuoriginal)
+        {
+            InitializeComponent();
+            this.menu = menuoriginal; 
         }
 
         private void FrmClienteConsul_Load (object sender, EventArgs e) {
@@ -66,6 +74,7 @@ namespace Visual {
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            /*
             DataTable dt = new DataTable();
             //CONVIERTE EL DATAGRIDVIEW EN DATATABLE
             dt = (DataTable)dgvClientes.DataSource;
@@ -87,7 +96,12 @@ namespace Visual {
                     // ABRE EL PDF
                     Process.Start(file);
                 }
-            }
+            }*/
+        }
+
+        private void btnconsultar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

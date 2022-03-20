@@ -112,10 +112,24 @@ namespace Control
         /*--------------------------Frm_Peticion_Consultar-------------------------------*/
 
         //Llena el dgv con las peticiones que se encuentran "En Progreso"
-        internal void llenarTablaPeticion(DataGridView dgvPeticion)
+        public void llenarTablaPeticion(DataGridView dgvPeticion)
         {
             dgvPeticion.Refresh();
             dgvPeticion.DataSource = datosPeticion.listarPeticionesPendientes();
+        }
+
+        public void filtrarXDestino(TextBox txt_Destino, DataGridView dgvPeticion)
+        {
+            dgvPeticion.Refresh();
+            dgvPeticion.DataSource = datosPeticion.listarPeticionesXDestino(txt_Destino.Text);
+        }
+
+        public string eliminarPeticion(int id, DataGridView dgvPeticion)
+        {           
+            string msj = datosPeticion.eliminarPeticion(id);
+            dgvPeticion.Refresh();
+            dgvPeticion.DataSource = datosPeticion.listarPeticionesPendientes();
+            return msj;
         }
 
         /*--------------------------Enviar a Base de Datos-------------------------------*/

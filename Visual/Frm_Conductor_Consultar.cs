@@ -68,6 +68,7 @@ namespace Visual {
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            /*
             DataTable dt = new DataTable();
             //CONVIERTE EL DATAGRIDVIEW EN DATATABLE
             dt = (DataTable)dgvConductor.DataSource;
@@ -89,7 +90,7 @@ namespace Visual {
                     // ABRE EL PDF
                     Process.Start(file);
                 }
-            }
+            }*/
         }
     }
 }
