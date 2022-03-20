@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
+        Adm_Cliente admC = Adm_Cliente.GetAdm ();
         public Frm_Cliente_Consultar () {
             InitializeComponent ();
         }
