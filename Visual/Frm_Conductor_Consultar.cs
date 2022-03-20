@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace Visual {
     public partial class Frm_Conductor_Consultar : Form {
 
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
+        Adm_Conductor admC = Adm_Conductor.GetAdm();
 
         public Frm_Conductor_Consultar () {
             InitializeComponent ();
