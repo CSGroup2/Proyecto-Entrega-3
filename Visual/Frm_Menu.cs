@@ -268,5 +268,10 @@ namespace Visual {
         {
             abrirhijoform(new Frm_Secretaria_Registrar());
         }
+
+        private void btnconsultarpet_Click(object sender, EventArgs e)
+        {
+            abrirhijoform(new Frm_Peticion_Consultar());
+        }
     }
 }
