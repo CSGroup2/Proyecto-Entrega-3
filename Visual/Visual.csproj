@@ -163,6 +163,12 @@
     <Compile Include="Frm_Menu.designer.cs">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Peticion_Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Peticion_Consultar.Designer.cs">
+      <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Peticion_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu.resx">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Peticion_Consultar.resx">
+      <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Registrar.resx">
       <DependentUpon>Frm_Peticion_Registrar.cs</DependentUpon>
