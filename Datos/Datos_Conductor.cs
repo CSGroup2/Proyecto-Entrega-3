@@ -104,7 +104,7 @@ namespace Datos {
             return dataTable_resultado;
         }
 
-        public object buscarDatosConductor (string cedula, string nombre, string disponibilidad) {
+        public DataTable buscarDatosConductor (string cedula_nombre, string disponibilidad) {
             // Extract all "conductor" data from database
             DataTable dataTable_resultado = null;
             Conexion conexion = null;
@@ -123,21 +123,22 @@ namespace Datos {
                 using (sql_comando) {
                     // Adding values to paramerters for SqlCommand below
                     // Use DBNull.Value make stored procedure parameters have defaults of NULL
-                    if (cedula == null) {
+                    sql_comando.Parameters.AddWithValue ("@cedula", cedula_nombre);
+                    sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
+                    /*
+                    if (cedula_nombre == null) {
+                        Console.WriteLine ("cedula_nombre nulo" );
                         sql_comando.Parameters.AddWithValue ("@cedula", DBNull.Value);
                     } else {
-                        sql_comando.Parameters.AddWithValue ("@cedula", cedula);
-                    }
-                    if (nombre == null) {
-                        sql_comando.Parameters.AddWithValue ("@nombre", DBNull.Value);
-                    } else {
-                        sql_comando.Parameters.AddWithValue ("@nombre", nombre);
+                        sql_comando.Parameters.AddWithValue ("@cedula", cedula_nombre);
                     }
                     if (disponibilidad == null) {
+                        Console.WriteLine ("disponibilidad nulo");
                         sql_comando.Parameters.AddWithValue ("@disponibilidad", DBNull.Value);
                     } else {
                         sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
                     }
+                    */
                     sql_adaptador.Fill (dataTable_resultado);
                 }
             } catch (Exception ex) {
