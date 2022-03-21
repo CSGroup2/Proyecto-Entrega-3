@@ -6,7 +6,7 @@
 [![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen&style=social)](https://github.com/hlbv17)
 [![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n&style=social)](https://github.com/ropbGitHub)
 
-
+[![Contributors over time](https://contributor-graph-api.apiseven.com/contributors-svg?chart=contributorOverTime&repo=Naereen/badges)](https://www.apiseven.com/en/contributor-graph?chart=contributorOverTime&repo=Naereen/badges)
 
 
 En este repositorio se encuentran los siguientes archivos:
