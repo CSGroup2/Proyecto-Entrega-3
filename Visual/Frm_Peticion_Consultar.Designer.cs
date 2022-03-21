@@ -38,6 +38,7 @@ namespace Visual
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txt_Destino = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticion)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +77,7 @@ namespace Visual
             this.btnEliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(99, 523);
+            this.btnEliminar.Location = new System.Drawing.Point(240, 523);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEliminar.Size = new System.Drawing.Size(189, 32);
@@ -96,7 +97,7 @@ namespace Visual
             this.btnModificar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 30;
-            this.btnModificar.Location = new System.Drawing.Point(386, 523);
+            this.btnModificar.Location = new System.Drawing.Point(450, 523);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnModificar.Size = new System.Drawing.Size(189, 32);
@@ -104,6 +105,7 @@ namespace Visual
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label3
             // 
@@ -181,6 +183,26 @@ namespace Visual
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 30;
+            this.btnCancelar.Location = new System.Drawing.Point(33, 523);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCancelar.Size = new System.Drawing.Size(189, 32);
+            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Frm_Peticion_Consultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +210,7 @@ namespace Visual
             this.BackgroundImage = global::Visual.Properties.Resources._9;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(662, 576);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txt_Destino);
             this.Controls.Add(this.btnBuscar);
@@ -221,5 +244,6 @@ namespace Visual
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.TextBox txt_Destino;
         private FontAwesome.Sharp.IconButton btnLimpiar;
+        private FontAwesome.Sharp.IconButton btnCancelar;
     }
 }

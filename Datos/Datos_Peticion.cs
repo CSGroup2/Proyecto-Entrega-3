@@ -119,6 +119,128 @@ namespace Datos
             return dt;
         }
 
+        public object listarPeticionesPendientesUsuario(int idCliente)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_listar_peticiones_pend_usuario", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_id = new SqlParameter();
+                    param_id.ParameterName = "@idC";
+                    param_id.SqlDbType = SqlDbType.Int;
+                    param_id.Value = idCliente;
+                    comando.Parameters.Add(param_id);
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al listar las peticiones " + ex.Message);
+            }
+            return dt;
+        }
+
+        public Peticion ConsultarPeticionXId(int idPet)
+        {
+            Peticion p = new Peticion();
+            Cliente c = new Cliente();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                //comando
+                SqlDataReader dr = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = "sp_consultar_peticion_x_id";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param_id = new SqlParameter();
+                param_id.ParameterName = "@idP";
+                param_id.SqlDbType = SqlDbType.Int;
+                param_id.Value = idPet;
+                comando.Parameters.Add(param_id);
+                dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    c = new Cliente();
+                    c.Cedula = dr["Cedula"].ToString();
+                    c.Nombre_1 = dr["Nombre"].ToString();
+                    c.Apellido_1 = dr["Apellido"].ToString();
+                    
+                    p = new Peticion();
+                    p.Cliente = c;
+                    p.Id_tipo_ambulancia = Convert.ToInt32(dr["Tipo_Ambulancia"]);
+                    p.N_ambulancia = Convert.ToInt32(dr["Cant_Ambulancias"]);
+                    p.Punto_origen = dr["Punto_Origen"].ToString();
+                    p.Punto_destino = dr["Punto_Destino"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(conexion);
+                Console.WriteLine("Error al consultar en la placa " + ex.Message);
+            }
+            return p;
+        }
+
+        public string editarPeticion(int idPet, int cant, int id_TA, string punto_Origen, string punto_Destino)
+        {
+            string msj = "";
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                //comando
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = "sp_editar_peticion";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param_id = new SqlParameter();
+                param_id.ParameterName = "@idP";
+                param_id.SqlDbType = SqlDbType.Int;
+                param_id.Value = idPet;
+                comando.Parameters.Add(param_id);
+
+                SqlParameter param_id_tipo_ambulancia = new SqlParameter();
+                param_id_tipo_ambulancia.ParameterName = "@id_tipo_ambulancia";
+                param_id_tipo_ambulancia.SqlDbType = SqlDbType.Int;
+                param_id_tipo_ambulancia.Value = id_TA;
+                comando.Parameters.Add(param_id_tipo_ambulancia);
+
+                SqlParameter param_n_ambulancias = new SqlParameter();
+                param_n_ambulancias.ParameterName = "@n_ambulancias";
+                param_n_ambulancias.SqlDbType = SqlDbType.Int;
+                param_n_ambulancias.Value = cant;
+                comando.Parameters.Add(param_n_ambulancias);
+
+                SqlParameter param_punto_origen = new SqlParameter();
+                param_punto_origen.ParameterName = "@punto_origen";
+                param_punto_origen.SqlDbType = SqlDbType.VarChar;
+                param_punto_origen.Value = punto_Origen;
+                comando.Parameters.Add(param_punto_origen);
+
+                SqlParameter param_punto_destino = new SqlParameter();
+                param_punto_destino.ParameterName = "@punto_destino";
+                param_punto_destino.SqlDbType = SqlDbType.VarChar;
+                param_punto_destino.Value = punto_Destino;
+                comando.Parameters.Add(param_punto_destino);
+
+                comando.ExecuteNonQuery();
+                msj = "1";
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(conexion);
+                msj = "OCURRIO UN ERROR " + ex.Message;
+            }
+            return msj;
+        }
+
         public string eliminarPeticion(int idPeticion)
         {
             string msj = "";
@@ -147,7 +269,7 @@ namespace Datos
             return msj;
         }
 
-        public object listarPeticionesXDestino(string destino)
+        public object listarPeticionesXDestino(string destino, int idCliente)
         {
             DataTable dt = new DataTable();
             SqlConnection conexion = con.abrir_conexion();
@@ -162,6 +284,12 @@ namespace Datos
                     param_destino.SqlDbType = SqlDbType.VarChar;
                     param_destino.Value = destino;
                     comando.Parameters.Add(param_destino);
+
+                    SqlParameter param_id = new SqlParameter();
+                    param_id.ParameterName = "@idC";
+                    param_id.SqlDbType = SqlDbType.Int;
+                    param_id.Value = idCliente;
+                    comando.Parameters.Add(param_id);
 
                     SqlDataAdapter da = new SqlDataAdapter(comando);
                     da.Fill(dt);

@@ -190,7 +190,7 @@
     <Compile Include="Frm_Peticion_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Peticion_Editar.designer.cs">
+    <Compile Include="Frm_Peticion_Editar.Designer.cs">
       <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Peticion_Registrar.cs">
