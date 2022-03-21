@@ -15,11 +15,13 @@ namespace Visual {
     public partial class Frm_Conductor_Consultar : Form {
 
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
-        Adm_Conductor admC = Adm_Conductor.GetAdm();
+        Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
 
         public Frm_Conductor_Consultar () {
             InitializeComponent ();
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
+            admConductor.listarDatosConductor (dgv_Conductor);
+            admConductor.listarDisponibilidad (cbx_Disponibilidad);
         }
 
         #region Efecto boton consultar
@@ -62,35 +64,39 @@ namespace Visual {
         }
         #endregion
 
-        private void btnguardar_Click (object sender, EventArgs e) {
+        private void btn_Modificar_Click (object sender, EventArgs e) {
 
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            /*
-            DataTable dt = new DataTable();
-            //CONVIERTE EL DATAGRIDVIEW EN DATATABLE
-            dt = (DataTable)dgvConductor.DataSource;
-            //DEFINE LA EXTENSION DEL ARCHIVO
+        private void btn_Imprimir_Click (object sender, EventArgs e) {
+            DataTable dt = new DataTable ();
+            // Convert DataGridView to DataTable
+            dt = (DataTable)dgv_Conductor.DataSource;
+            // Defines the file extension
             saveFileDialog1.DefaultExt = "pdf";
-            //DEFINE EL FILTRO DEL EXPLORADOR DE ARCHIVOS
+            // Defines a filter for the file explorer
             saveFileDialog1.Filter = "Pdf File |*.pdf";
-            //DEFINE UN TITULO AL SAVEFILEDIALOG
+            // Defines a title to saveFileDialog
             saveFileDialog1.Title = "SGAR: Conductores - Guardar";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // SE RECOGE LA RUTA DEL ARCHIVO
+            if (saveFileDialog1.ShowDialog () == DialogResult.OK) {
+                // Captures file's path
                 string file = saveFileDialog1.FileName;
-                // CREA EL PDF
-                admC.CrearPdf(dt, file);
+                // Creates PDF file
+                admConductor.CrearPdf (dt, file);
 
-                if (File.Exists(file))
-                {
-                    // ABRE EL PDF
-                    Process.Start(file);
+                if (File.Exists (file)) {
+                    // Opens PDF file
+                    Process.Start (file);
                 }
-            }*/
+            }
+        }
+
+        private void btn_MostrarTodos_Click (object sender, EventArgs e) {
+
+        }
+
+        private void btn_Consultar_Click (object sender, EventArgs e) {
+
         }
     }
 }

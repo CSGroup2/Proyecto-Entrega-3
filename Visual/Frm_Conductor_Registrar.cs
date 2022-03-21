@@ -13,9 +13,8 @@ using Control;
 namespace Visual {
     public partial class Frm_Conductor_Registrar : Form {
 
-        Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
-
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
+        Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
 
         public Frm_Conductor_Registrar () {
             InitializeComponent ();

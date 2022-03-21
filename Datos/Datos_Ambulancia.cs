@@ -63,8 +63,11 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                con.cerrar_conexion(c1);
                 msj = "Error al insertar en la base de datos " + ex.Message;
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return msj;
         }
@@ -91,6 +94,10 @@ namespace Datos
             {
                 DtResultado = null;
                 Console.WriteLine("Error al consultar en el tipo de ambulancia " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return DtResultado;
         }
@@ -126,9 +133,12 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                con.cerrar_conexion(c1);
                 Console.WriteLine("Error al consultar en la placa " + ex.Message);
                 flag = false;
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return flag;
         }
@@ -156,7 +166,11 @@ namespace Datos
                 dt = null;
                 Console.WriteLine("Error al consultar las ambulancias " + ex.Message);
             }
-            
+            finally
+            {
+                con.cerrar_conexion(c1);
+            }
+
             return dt;
         }
 
@@ -178,6 +192,10 @@ namespace Datos
             {
                 dt = null;
                 Console.WriteLine("Error al listar las ambulancias " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
 
             return dt;
@@ -201,6 +219,10 @@ namespace Datos
             {
                 dt = null;
                 Console.WriteLine("Error al listar las ambulancias " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
 
             return dt;
@@ -228,6 +250,10 @@ namespace Datos
             {
                 DtResultado = null;
                 Console.WriteLine("Error al consultar en tabla disponibilidad " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return DtResultado;
         }
@@ -265,8 +291,11 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                con.cerrar_conexion(c1);
                 Console.WriteLine("Error al consultar en la placa " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return a;
         }
@@ -326,8 +355,11 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                con.cerrar_conexion(c1);
                 msj = "Error al actualizar en la base de datos " + ex.Message;
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return msj;
         }
@@ -355,8 +387,11 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                con.cerrar_conexion(c1);
                 msj = "Error al borrar en la base de datos " + ex.Message;
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
             }
             return msj;
         }
