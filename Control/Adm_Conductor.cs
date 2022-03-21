@@ -58,9 +58,16 @@ namespace Control {
             dgv_Conductor.Refresh ();
             dgv_Conductor.DataSource = Datos_Conductor.listarDatosConductor ();
         }
-
+        
         public void listarDisponibilidad (ComboBox cbx_Disponibilidad) {
-            throw new NotImplementedException ();
+            cbx_Disponibilidad.DataSource = Datos_Conductor.listarDatosDisponibilidad ();
+            cbx_Disponibilidad.ValueMember = "ID_DISPONIBILIDAD";
+            cbx_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
+        }
+
+        public void buscarDatosConductor (DataGridView dgv_Conductor, string cedula, string nombre, string disponibilidad) {
+            dgv_Conductor.Refresh ();
+            dgv_Conductor.DataSource = Datos_Conductor.buscarDatosConductor (cedula, nombre, disponibilidad);
         }
 
         #endregion
@@ -114,6 +121,9 @@ namespace Control {
             dtp_FechaNac.Value = DateTime.Today;
             dtp_FechaContrato.Value = DateTime.Today;
         }
+
+        
+
         // Validations
         public string esSexoValidacion (RadioButton rdb_Masculino, RadioButton rdb_Femenino) {
             return Validacion.esSexo (rdb_Masculino, rdb_Femenino);

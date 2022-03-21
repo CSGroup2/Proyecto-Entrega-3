@@ -33,7 +33,7 @@ namespace Visual {
             this.pncontenido = new System.Windows.Forms.Panel();
             this.btn_MostrarTodos = new FontAwesome.Sharp.IconButton();
             this.btn_Consultar = new FontAwesome.Sharp.IconButton();
-            this.cbx_Disponibilidad = new System.Windows.Forms.ComboBox();
+            this.cmb_Disponibilidad = new System.Windows.Forms.ComboBox();
             this.chb_Disponibilidad = new System.Windows.Forms.CheckBox();
             this.rdb_Nombre = new System.Windows.Forms.RadioButton();
             this.rdb_Cedula = new System.Windows.Forms.RadioButton();
@@ -136,7 +136,7 @@ namespace Visual {
             this.pncontenido.BackColor = System.Drawing.Color.White;
             this.pncontenido.Controls.Add(this.btn_MostrarTodos);
             this.pncontenido.Controls.Add(this.btn_Consultar);
-            this.pncontenido.Controls.Add(this.cbx_Disponibilidad);
+            this.pncontenido.Controls.Add(this.cmb_Disponibilidad);
             this.pncontenido.Controls.Add(this.chb_Disponibilidad);
             this.pncontenido.Controls.Add(this.rdb_Nombre);
             this.pncontenido.Controls.Add(this.rdb_Cedula);
@@ -190,13 +190,14 @@ namespace Visual {
             this.btn_Consultar.MouseLeave += new System.EventHandler(this.btnconsultar_MouseLeave);
             this.btn_Consultar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnconsultar_MouseMove);
             // 
-            // cbx_Disponibilidad
+            // cmb_Disponibilidad
             // 
-            this.cbx_Disponibilidad.FormattingEnabled = true;
-            this.cbx_Disponibilidad.Location = new System.Drawing.Point(88, 56);
-            this.cbx_Disponibilidad.Name = "cbx_Disponibilidad";
-            this.cbx_Disponibilidad.Size = new System.Drawing.Size(152, 21);
-            this.cbx_Disponibilidad.TabIndex = 56;
+            this.cmb_Disponibilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Disponibilidad.FormattingEnabled = true;
+            this.cmb_Disponibilidad.Location = new System.Drawing.Point(88, 56);
+            this.cmb_Disponibilidad.Name = "cmb_Disponibilidad";
+            this.cmb_Disponibilidad.Size = new System.Drawing.Size(152, 21);
+            this.cmb_Disponibilidad.TabIndex = 56;
             // 
             // chb_Disponibilidad
             // 
@@ -209,6 +210,7 @@ namespace Visual {
             this.chb_Disponibilidad.TabIndex = 55;
             this.chb_Disponibilidad.Text = "Disponibilidad";
             this.chb_Disponibilidad.UseVisualStyleBackColor = false;
+            this.chb_Disponibilidad.CheckedChanged += new System.EventHandler(this.chb_Disponibilidad_CheckedChanged);
             // 
             // rdb_Nombre
             // 
@@ -235,6 +237,7 @@ namespace Visual {
             this.rdb_Cedula.TabStop = true;
             this.rdb_Cedula.Text = "Cédula";
             this.rdb_Cedula.UseVisualStyleBackColor = false;
+            this.rdb_Cedula.CheckedChanged += new System.EventHandler(this.rdb_Cedula_CheckedChanged);
             // 
             // txt_CedulaNombre
             // 
@@ -242,6 +245,7 @@ namespace Visual {
             this.txt_CedulaNombre.Name = "txt_CedulaNombre";
             this.txt_CedulaNombre.Size = new System.Drawing.Size(152, 20);
             this.txt_CedulaNombre.TabIndex = 50;
+            this.txt_CedulaNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CedulaNombre_KeyPress);
             // 
             // label14
             // 
@@ -281,6 +285,7 @@ namespace Visual {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Conductor_Consultar";
             this.Text = "FrmConductorConsul";
+            this.Load += new System.EventHandler(this.Frm_Conductor_Consultar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -299,7 +304,7 @@ namespace Visual {
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btn_Modificar;
         private System.Windows.Forms.Panel pncontenido;
-        private System.Windows.Forms.ComboBox cbx_Disponibilidad;
+        private System.Windows.Forms.ComboBox cmb_Disponibilidad;
         private System.Windows.Forms.CheckBox chb_Disponibilidad;
         private System.Windows.Forms.RadioButton rdb_Nombre;
         private System.Windows.Forms.RadioButton rdb_Cedula;
