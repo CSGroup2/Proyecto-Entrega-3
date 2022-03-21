@@ -16,10 +16,11 @@ namespace Datos {
             SqlConnection sql_conexion = null;
             SqlCommand sql_comando = null;
             string mensaje = "";
-            string query = "sp_insertar_conductor";  // Stored Procedure name
+            string query = null;
             try {
                 conexion = new Conexion ();
                 sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
+                query = "sp_insertar_conductor";                        // Stored Procedure name
                 sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 if (conductor != null) {
@@ -52,29 +53,100 @@ namespace Datos {
 
         public object listarDatosConductor () {
             // Extract all "conductor" data from database
+            DataTable dataTable_resultado = null;
             Conexion conexion = null;
             SqlConnection sql_conexion = null;
             SqlCommand sql_comando = null;
             SqlDataAdapter sql_adaptador = null;
-            string query = "sp_listar_conductores";  // Stored Procedure name
-            DataTable data_table = null;
+            string query = null;
             try {
                 conexion = new Conexion ();
                 sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
+                query = "sp_listar_conductores";                        // Stored Procedure name
                 sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 sql_adaptador = new SqlDataAdapter (sql_comando);
-                data_table = new DataTable ();
+                dataTable_resultado = new DataTable ();
                 using (sql_comando) {
-                    sql_adaptador.Fill (data_table);
+                    sql_adaptador.Fill (dataTable_resultado);
                 }
             } catch (Exception ex) {
-                data_table = null;
+                dataTable_resultado = null;
                 Console.WriteLine ("Error al listar los datos de los conductores " + ex.Message);
             } finally {
                 conexion.cerrar_conexion (sql_conexion);
             }
-            return data_table;
+            return dataTable_resultado;
+        }
+
+        public object listarDatosDisponibilidad () {
+            // Extract all "disponibilidad" data from database
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+            SqlCommand sql_comando = null;
+            SqlDataAdapter sql_adaptador = null;
+            DataTable dataTable_resultado = null;
+            string query = null;
+            try {
+                conexion = new Conexion ();
+                sql_conexion = conexion.abrir_conexion ();          // Opens conexion to sql server
+                query = "SELECT * FROM DISPONIBILIDAD";             // SQL sentece
+                sql_comando = new SqlCommand (query, sql_conexion); // Creatin SqlCommand object
+                dataTable_resultado = new DataTable ("DISPONIBILIDAD");
+                sql_adaptador = new SqlDataAdapter (sql_comando);
+                sql_adaptador.Fill (dataTable_resultado);
+            } catch (Exception ex) {
+                dataTable_resultado = null;
+                Console.WriteLine ("Error al consultar en el tipo de ambulancia " + ex.Message);
+            } finally {
+                conexion.cerrar_conexion (sql_conexion);
+            }
+            return dataTable_resultado;
+        }
+
+        public object buscarDatosConductor (string cedula, string nombre, string disponibilidad) {
+            // Extract all "conductor" data from database
+            DataTable dataTable_resultado = null;
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+            SqlCommand sql_comando = null;
+            SqlDataAdapter sql_adaptador = null;
+            string query = null;
+            try {
+                conexion = new Conexion ();
+                sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
+                query = "sp_buscar_conductores";                        // Stored Procedure name
+                sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
+                sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
+                sql_adaptador = new SqlDataAdapter (sql_comando);
+                dataTable_resultado = new DataTable ();
+                using (sql_comando) {
+                    // Adding values to paramerters for SqlCommand below
+                    // Use DBNull.Value make stored procedure parameters have defaults of NULL
+                    if (cedula == null) {
+                        sql_comando.Parameters.AddWithValue ("@cedula", DBNull.Value);
+                    } else {
+                        sql_comando.Parameters.AddWithValue ("@cedula", cedula);
+                    }
+                    if (nombre == null) {
+                        sql_comando.Parameters.AddWithValue ("@nombre", DBNull.Value);
+                    } else {
+                        sql_comando.Parameters.AddWithValue ("@nombre", nombre);
+                    }
+                    if (disponibilidad == null) {
+                        sql_comando.Parameters.AddWithValue ("@disponibilidad", DBNull.Value);
+                    } else {
+                        sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
+                    }
+                    sql_adaptador.Fill (dataTable_resultado);
+                }
+            } catch (Exception ex) {
+                dataTable_resultado = null;
+                Console.WriteLine ("Error al listar los datos de los conductores " + ex.Message);
+            } finally {
+                conexion.cerrar_conexion (sql_conexion);
+            }
+            return dataTable_resultado;
         }
 
 

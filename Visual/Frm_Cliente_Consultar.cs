@@ -15,7 +15,7 @@ namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
-        Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
+  
         Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
@@ -31,7 +31,8 @@ namespace Visual {
 
         private void FrmClienteConsul_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
-            admA.ListarAmbulancias(dgvAmbulancias);
+            dgvClientes.Refresh();
+            dgvClientes.DataSource = admCliente.ListarClientes();
         }
 
         #region Efecto boton consultar
@@ -78,7 +79,7 @@ namespace Visual {
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = (DataTable)dgvAmbulancias.DataSource;
+            dt = (DataTable)dgvClientes.DataSource;
             string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
             float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
             saveFileDialog1.DefaultExt = "pdf";
@@ -98,17 +99,58 @@ namespace Visual {
 
         private void btnconsultar_Click(object sender, EventArgs e)
         {
+            int buscarOb, buscarOp, hospital = 0, estado = 0;
+            if (opcedula.Checked == true)
+            {
+                buscarOb = 2;
+            }
+            else
+            {
+                buscarOb = 1;
+            }
 
+            if (chxhospital.Checked == true && chxestado.Checked == true)
+            {
+                buscarOp = 3;
+                hospital = Int32.Parse(cbxhospital.SelectedValue.ToString());
+                estado = Int32.Parse(cbxestado.SelectedValue.ToString());
+                 
+            }
+            else if (chxestado.Checked == true)
+            {
+                buscarOp = 2;
+                estado = Int32.Parse(cbxestado.SelectedValue.ToString());
+                estado = 1;
+            }
+            else if (chxhospital.Checked == true)
+            {
+                buscarOp = 1;
+                hospital = Int32.Parse(cbxhospital.SelectedValue.ToString());
+                hospital = 100;
+            }
+            else
+            {
+                buscarOp = 0;
+            }
+
+            string dato = txtCriterio.Text.Replace(" ", String.Empty);
+            //dgvClientes.Refresh();
+            //MessageBox.Show("DATO:"+dato+" ESTADO: "+estado + " HOSPITAL: " + hospital + " OPCIONA: " + buscarOb + " OPCIONB: " + buscarOp);
+            dgvClientes.DataSource = admCliente.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
         }
 
         private void btnmostrartodos_Click(object sender, EventArgs e)
         {
-            admA.ListarAmbulancias(dgvAmbulancias);
+            //admA.ListarAmbulancias(dgvAmbulancias);
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-          
+            //string criterio = Regex.Replace(txtCriterio.Text, @"\s", "");
+
+            /*string criterio = txtCriterio.Text.Replace(" ", String.Empty);
+            MessageBox.Show(criterio); */
+           
         }
     }
 }
