@@ -1,7 +1,7 @@
 # Proyecto-Entrega-3
 
-[![GitHub]()](https://github.com/Stefan-Castro)
-[![GitHub]()](https://github.com/blilllly)
+[![GitHub](https://img.shields.io/github/followers/Stefan-Castro?label=Alexander&style=social)](https://github.com/Stefan-Castro)
+[![GitHub](https://img.shields.io/github/followers/blilllly?label=Billy&style=social)](https://github.com/blilllly)
 [![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen&style=social)](https://github.com/hlbv17)
 [![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n&style=social)](https://github.com/ropbGitHub)
 
