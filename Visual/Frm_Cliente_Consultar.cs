@@ -85,7 +85,7 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admCliente.CrearPdf(dt, file);
+                admCliente.CrearPdf2(dt, file);
                 if (File.Exists(file))
                 {
                     Process.Start(file);
