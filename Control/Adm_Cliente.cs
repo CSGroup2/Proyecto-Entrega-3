@@ -45,15 +45,6 @@ namespace Control
             return adm_client;
         }
 
-        //Metodo para cargar la lista de hospitales afiliados a un combo box
-        public void LlenarComboHospitales(ComboBox cmbhospitales)
-        {
-            cmbhospitales.Items.Clear();
-            cmbhospitales.DataSource = Datos_client.ConsultarHospitales();
-            cmbhospitales.ValueMember = "ID_HOSPITAL";
-            cmbhospitales.DisplayMember = "NOMBRE_HOSPITAL";
-        }
-
         #region Validaciones
         // Methods for KeyPress
         public void validarSoloNumerosKeyPress(object sender, KeyPressEventArgs e)

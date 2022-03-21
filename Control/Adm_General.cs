@@ -37,8 +37,20 @@ namespace Control {
 
         /*---------------------------------------------------------------------------------------*/
         public DataTable listarDisponibilidad () {
-            return Datos_General.listarDatosDisponibilidad ();
+            return Datos_General.listarDatosDisponibilidad();
         }
+
+        public DataTable listerEstados()
+        {
+            //return Datos_General.listarEstados();
+            return Datos_General.listarestados();
+        }
+        public DataTable LlenarComboHospitales()
+        {
+            return Datos_General.ConsultarHospitales();
+        }
+
+
 
     }
 }

@@ -15,41 +15,6 @@ namespace Datos
 
         Conexion con = new Conexion();
 
-
-        // Metodo para poder cargar todos los hospitales disponibles de la base de datos
-        public DataTable ConsultarHospitales()
-        {
-            // Se definen las variables necesarias para la conexion y ejecucion de comandos. 
-            DataTable DtResultado = new DataTable("HOSPITAL");
-            SqlConnection sqlconn = con.abrir_conexion();
-            SqlCommand sql_comando = null;
-            try
-            {
-                string procedimeinto = "sp_consultar_hospitales"; //Se define que procedimiento ejecutar
-                sql_comando = new SqlCommand(procedimeinto, sqlconn);     // Creatin SqlCommand object
-                sql_comando.CommandType = CommandType.StoredProcedure; //Se especifico que el comando es de tipo procedimiento
-                SqlDataAdapter SqlDat = new SqlDataAdapter(sql_comando);
-                SqlDat.Fill(DtResultado);  //empiezo a recoger los datos
-                DataRow nuevaFila = DtResultado.NewRow();
-
-                // creo la opcion por defecto
-                nuevaFila["ID_HOSPITAL"] = 0;
-                nuevaFila["NOMBRE_HOSPITAL"] = "--Seleccione--";
-                //inserto la opcion por defecto
-                DtResultado.Rows.InsertAt(nuevaFila, 0);
-            }
-            catch (Exception ex)
-            {
-                DtResultado = null;
-                Console.WriteLine("Error al consultar los hospitales " + ex.Message);
-            }
-            finally
-            {
-                con.cerrar_conexion(sqlconn);
-            }
-            return DtResultado;
-        }
-
         //metodo para insertar la informacion pasado desde la capa de control a la base de datos
         public string insertarDatosCliente(Cliente cliente)
         {

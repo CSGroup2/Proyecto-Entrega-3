@@ -20,7 +20,7 @@ namespace Visual
 
         private void Frm_Peticion_Consultar_Load(object sender, EventArgs e)
         {
-            adm.llenarTablaPeticion(dgvPeticion);
+            adm.llenarTablaPeticionUsuario(dgvPeticion);
         }
 
         private static string GetValorCelda(DataGridView dgv, int num)
@@ -35,7 +35,7 @@ namespace Visual
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txt_Destino.Text="";
-            adm.llenarTablaPeticion(dgvPeticion);
+            adm.llenarTablaPeticionUsuario(dgvPeticion);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -46,18 +46,57 @@ namespace Visual
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(GetValorCelda(dgvPeticion, 0));
+            string estado = GetValorCelda(dgvPeticion, 6);
             if (id != 0)
             {
-                var result = MessageBox.Show("Seguro desea eliminar la petición.", "Advertencia",
+                if (estado.Equals("En Progreso"))
+                {
+                    var result = MessageBox.Show("Seguro desea eliminar la petición."+estado, "Advertencia",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
-                if (result != DialogResult.No)
-                MessageBox.Show(adm.eliminarPeticion(id, dgvPeticion).ToString());
+                    if (result != DialogResult.No)
+                        MessageBox.Show(adm.eliminarPeticion(id, dgvPeticion).ToString());
+                }
+                else {
+                    MessageBox.Show("No puede eliminar una petición que ya fue asignada.");
+                }
             }
             else {
                 MessageBox.Show("Seleccione una petición a eliminar.");
             }
             
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(GetValorCelda(dgvPeticion, 0));
+            string estado = GetValorCelda(dgvPeticion, 6);
+            if (id != 0)
+            {
+                if (estado.Equals("En Progreso"))
+                {
+                    var result = MessageBox.Show("Seguro desea editar la petición.", "Advertencia",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+                    if (result != DialogResult.No) {
+                        Frm_Peticion_Editar frmE = new Frm_Peticion_Editar(id);
+                        frmE.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puede editar una petición que ya fue asignada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una petición a eliminar.");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

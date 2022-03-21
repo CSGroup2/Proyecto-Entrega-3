@@ -13,6 +13,8 @@ namespace Visual {
     public partial class Frm_Cliente_Registrar : Form {
 
         Adm_Cliente admclient = Adm_Cliente.GetAdm();
+        Adm_General admgeneral = Adm_General.GetAdm();
+
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
 
         public Frm_Cliente_Registrar () {
@@ -21,7 +23,10 @@ namespace Visual {
 
         private void FrmClienteReg_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
-            admclient.LlenarComboHospitales(cbxhospitales);
+            cbxhospitales.Items.Clear();
+            cbxhospitales.DataSource = admgeneral.LlenarComboHospitales();
+            cbxhospitales.ValueMember = "ID_HOSPITAL";
+            cbxhospitales.DisplayMember = "NOMBRE_HOSPITAL";
 
         }
 

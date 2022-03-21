@@ -283,5 +283,10 @@ namespace Visual {
             showsubmenu(pnsubmenuasignacion);
             ActivarBoton(sender, RGBCOLORS.azulbajo);
         }
+
+        private void btnopciones1_Click(object sender, EventArgs e)
+        {
+            abrirhijoform(new Frm_Ayuda());
+        }
     }
 }
