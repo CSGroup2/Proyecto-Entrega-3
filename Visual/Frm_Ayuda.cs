@@ -33,7 +33,7 @@ namespace Visual
                     System.Diagnostics.Process.Start("https://docs.google.com/document/d/1i9QP0QT5JUKx3qXi7gQXPC3ds55L7C4nWttKpE6r8Bo/edit?usp=sharing");
                     break;
                 case "Cliente":
-                    System.Diagnostics.Process.Start("");
+                    System.Diagnostics.Process.Start("https://docs.google.com/document/d/1MdYvLupKHoEtBz57OeeYk68nr-F36i-5diQc_fxpFkw/edit?usp=sharing");
                     break;
                 case "Secretaria":
                     System.Diagnostics.Process.Start("https://docs.google.com/document/d/1c1CxQTJ21j7Wmxw40SRSxLoBCAkXJ-xppDd0FmM2pVk/edit?usp=sharing");
