@@ -26,7 +26,7 @@ namespace Visual {
         private void InitializeComponent () {
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
+            this.btnmodificar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
             this.dgvAmbulancias = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -54,7 +54,7 @@ namespace Visual {
             this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.btnImprimir);
-            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.btnmodificar);
             this.panel2.Controls.Add(this.pncontenido);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 63);
@@ -64,8 +64,7 @@ namespace Visual {
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
@@ -84,26 +83,26 @@ namespace Visual {
             this.btnImprimir.MouseLeave += new System.EventHandler(this.btnimprimir_MouseLeave);
             this.btnImprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnimprimir_MouseMove);
             // 
-            // btnguardar
+            // btnmodificar
             // 
-            this.btnguardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.Location = new System.Drawing.Point(148, 346);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnguardar.Size = new System.Drawing.Size(183, 52);
-            this.btnguardar.TabIndex = 15;
-            this.btnguardar.Text = "Modificar";
-            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnguardar.UseVisualStyleBackColor = true;
-            this.btnguardar.MouseLeave += new System.EventHandler(this.btnguardar_MouseLeave);
-            this.btnguardar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnguardar_MouseMove);
+            this.btnmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnmodificar.FlatAppearance.BorderSize = 0;
+            this.btnmodificar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnmodificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnmodificar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnmodificar.Location = new System.Drawing.Point(148, 346);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnmodificar.Size = new System.Drawing.Size(183, 52);
+            this.btnmodificar.TabIndex = 15;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            this.btnmodificar.MouseLeave += new System.EventHandler(this.btnguardar_MouseLeave);
+            this.btnmodificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnguardar_MouseMove);
             // 
             // pncontenido
             // 
@@ -131,6 +130,8 @@ namespace Visual {
             // 
             this.dgvAmbulancias.AllowUserToAddRows = false;
             this.dgvAmbulancias.AllowUserToDeleteRows = false;
+            this.dgvAmbulancias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvAmbulancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAmbulancias.Location = new System.Drawing.Point(27, 104);
             this.dgvAmbulancias.Name = "dgvAmbulancias";
@@ -314,7 +315,7 @@ namespace Visual {
 
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnImprimir;
-        private FontAwesome.Sharp.IconButton btnguardar;
+        private FontAwesome.Sharp.IconButton btnmodificar;
         private System.Windows.Forms.Panel pncontenido;
         private FontAwesome.Sharp.IconButton btnmostrartodos;
         private FontAwesome.Sharp.IconButton btnconsultar;

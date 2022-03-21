@@ -122,7 +122,7 @@ namespace Visual
             this.btnConductor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnConductor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConductor.IconSize = 30;
-            this.btnConductor.Location = new System.Drawing.Point(446, 156);
+            this.btnConductor.Location = new System.Drawing.Point(467, 150);
             this.btnConductor.Name = "btnConductor";
             this.btnConductor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnConductor.Size = new System.Drawing.Size(189, 32);
@@ -142,10 +142,10 @@ namespace Visual
             this.btnAmbulancia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnAmbulancia.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAmbulancia.IconSize = 30;
-            this.btnAmbulancia.Location = new System.Drawing.Point(446, 193);
+            this.btnAmbulancia.Location = new System.Drawing.Point(467, 191);
             this.btnAmbulancia.Name = "btnAmbulancia";
             this.btnAmbulancia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAmbulancia.Size = new System.Drawing.Size(189, 32);
+            this.btnAmbulancia.Size = new System.Drawing.Size(189, 40);
             this.btnAmbulancia.TabIndex = 17;
             this.btnAmbulancia.Text = "Ambulancia";
             this.btnAmbulancia.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -162,7 +162,7 @@ namespace Visual
             this.btnAsignar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnAsignar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAsignar.IconSize = 40;
-            this.btnAsignar.Location = new System.Drawing.Point(465, 243);
+            this.btnAsignar.Location = new System.Drawing.Point(486, 237);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAsignar.Size = new System.Drawing.Size(170, 41);
@@ -206,9 +206,9 @@ namespace Visual
             this.Conductor_Codigo,
             this.Ambulancia_Codigo});
             this.dgvAmb_Cond.Enabled = false;
-            this.dgvAmb_Cond.Location = new System.Drawing.Point(25, 308);
+            this.dgvAmb_Cond.Location = new System.Drawing.Point(25, 296);
             this.dgvAmb_Cond.Name = "dgvAmb_Cond";
-            this.dgvAmb_Cond.Size = new System.Drawing.Size(610, 186);
+            this.dgvAmb_Cond.Size = new System.Drawing.Size(644, 186);
             this.dgvAmb_Cond.TabIndex = 18;
             // 
             // Peticion_Codigo
@@ -239,7 +239,7 @@ namespace Visual
             this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 40;
-            this.btnCancelar.Location = new System.Drawing.Point(111, 510);
+            this.btnCancelar.Location = new System.Drawing.Point(120, 501);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCancelar.Size = new System.Drawing.Size(170, 41);
@@ -259,7 +259,7 @@ namespace Visual
             this.btnGuardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 40;
-            this.btnGuardar.Location = new System.Drawing.Point(370, 510);
+            this.btnGuardar.Location = new System.Drawing.Point(380, 501);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGuardar.Size = new System.Drawing.Size(170, 41);
@@ -354,7 +354,7 @@ namespace Visual
             this.btnPeticion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnPeticion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPeticion.IconSize = 30;
-            this.btnPeticion.Location = new System.Drawing.Point(446, 22);
+            this.btnPeticion.Location = new System.Drawing.Point(467, 10);
             this.btnPeticion.Name = "btnPeticion";
             this.btnPeticion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPeticion.Size = new System.Drawing.Size(189, 32);
@@ -370,7 +370,7 @@ namespace Visual
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(89, 31);
+            this.label7.Location = new System.Drawing.Point(89, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
             this.label7.TabIndex = 10;
@@ -383,7 +383,7 @@ namespace Visual
             this.lblIdPeticion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblIdPeticion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdPeticion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblIdPeticion.Location = new System.Drawing.Point(235, 27);
+            this.lblIdPeticion.Location = new System.Drawing.Point(235, 15);
             this.lblIdPeticion.Name = "lblIdPeticion";
             this.lblIdPeticion.Size = new System.Drawing.Size(194, 26);
             this.lblIdPeticion.TabIndex = 16;
@@ -441,7 +441,7 @@ namespace Visual
             this.btnLimpiar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 30;
-            this.btnLimpiar.Location = new System.Drawing.Point(446, 55);
+            this.btnLimpiar.Location = new System.Drawing.Point(467, 55);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnLimpiar.Size = new System.Drawing.Size(189, 32);
@@ -457,7 +457,7 @@ namespace Visual
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Visual.Properties.Resources._9;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(662, 576);
+            this.ClientSize = new System.Drawing.Size(690, 554);
             this.Controls.Add(this.dgvAmb_Cond);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

@@ -16,6 +16,7 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
         Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
+        Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
         public Frm_Cliente_Consultar () {
@@ -78,6 +79,8 @@ namespace Visual {
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dgvAmbulancias.DataSource;
+            string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
+            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
@@ -85,7 +88,7 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admCliente.CrearPdf(dt, file);
+                admpdf.CrearPdf(dt, file, columnas, tamanios);
                 if (File.Exists(file))
                 {
                     Process.Start(file);
@@ -101,6 +104,11 @@ namespace Visual {
         private void btnmostrartodos_Click(object sender, EventArgs e)
         {
             admA.ListarAmbulancias(dgvAmbulancias);
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

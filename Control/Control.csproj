@@ -82,6 +82,7 @@
     <Compile Include="Adm_Cliente.cs" />
     <Compile Include="Adm_Conductor.cs" />
     <Compile Include="Adm_Login.cs" />
+    <Compile Include="Adm_PDF.cs" />
     <Compile Include="Adm_Peticion.cs" />
     <Compile Include="Adm_Secretaria.cs" />
     <Compile Include="Amd_General.cs" />

@@ -28,6 +28,7 @@ namespace Visual {
             this.pnlateral = new System.Windows.Forms.Panel();
             this.pnsubmenupeticion = new System.Windows.Forms.Panel();
             this.btnasignar = new FontAwesome.Sharp.IconButton();
+            this.btnconsultarpet = new FontAwesome.Sharp.IconButton();
             this.btnregistrar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btncerrarsesion = new FontAwesome.Sharp.IconButton();
@@ -64,7 +65,9 @@ namespace Visual {
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timerhorafecha = new System.Windows.Forms.Timer(this.components);
-            this.btnconsultarpet = new FontAwesome.Sharp.IconButton();
+            this.btnasignacion = new FontAwesome.Sharp.IconButton();
+            this.pnsubmenuasignacion = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.pnlateral.SuspendLayout();
             this.pnsubmenupeticion.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,14 +80,17 @@ namespace Visual {
             this.panel1.SuspendLayout();
             this.pnhijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnsubmenuasignacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlateral
             // 
             this.pnlateral.AutoScroll = true;
             this.pnlateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.pnlateral.Controls.Add(this.pnsubmenupeticion);
             this.pnlateral.Controls.Add(this.panel3);
+            this.pnlateral.Controls.Add(this.pnsubmenuasignacion);
+            this.pnlateral.Controls.Add(this.btnasignacion);
+            this.pnlateral.Controls.Add(this.pnsubmenupeticion);
             this.pnlateral.Controls.Add(this.btnpeticion);
             this.pnlateral.Controls.Add(this.pnsubmconductor);
             this.pnlateral.Controls.Add(this.btnconductor);
@@ -97,22 +103,21 @@ namespace Visual {
             this.pnlateral.Controls.Add(this.panel2);
             this.pnlateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlateral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlateral.Name = "pnlateral";
-            this.pnlateral.Size = new System.Drawing.Size(345, 777);
+            this.pnlateral.Size = new System.Drawing.Size(259, 609);
             this.pnlateral.TabIndex = 0;
             // 
             // pnsubmenupeticion
             // 
+            this.pnsubmenupeticion.AutoSize = true;
             this.pnsubmenupeticion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
             this.pnsubmenupeticion.Controls.Add(this.btnasignar);
             this.pnsubmenupeticion.Controls.Add(this.btnconsultarpet);
             this.pnsubmenupeticion.Controls.Add(this.btnregistrar);
             this.pnsubmenupeticion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmenupeticion.Location = new System.Drawing.Point(0, 1126);
-            this.pnsubmenupeticion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnsubmenupeticion.Location = new System.Drawing.Point(0, 918);
             this.pnsubmenupeticion.Name = "pnsubmenupeticion";
-            this.pnsubmenupeticion.Size = new System.Drawing.Size(324, 154);
+            this.pnsubmenupeticion.Size = new System.Drawing.Size(242, 123);
             this.pnsubmenupeticion.TabIndex = 14;
             // 
             // btnasignar
@@ -125,16 +130,35 @@ namespace Visual {
             this.btnasignar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnasignar.IconColor = System.Drawing.Color.Black;
             this.btnasignar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnasignar.Location = new System.Drawing.Point(0, 100);
-            this.btnasignar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnasignar.Location = new System.Drawing.Point(0, 82);
             this.btnasignar.Name = "btnasignar";
-            this.btnasignar.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnasignar.Size = new System.Drawing.Size(324, 50);
+            this.btnasignar.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnasignar.Size = new System.Drawing.Size(242, 41);
             this.btnasignar.TabIndex = 5;
             this.btnasignar.Text = "Asignar";
             this.btnasignar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnasignar.UseVisualStyleBackColor = true;
             this.btnasignar.Click += new System.EventHandler(this.btnasignar_Click);
+            // 
+            // btnconsultarpet
+            // 
+            this.btnconsultarpet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnconsultarpet.FlatAppearance.BorderSize = 0;
+            this.btnconsultarpet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnconsultarpet.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconsultarpet.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnconsultarpet.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnconsultarpet.IconColor = System.Drawing.Color.Black;
+            this.btnconsultarpet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnconsultarpet.Location = new System.Drawing.Point(0, 41);
+            this.btnconsultarpet.Name = "btnconsultarpet";
+            this.btnconsultarpet.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnconsultarpet.Size = new System.Drawing.Size(242, 41);
+            this.btnconsultarpet.TabIndex = 6;
+            this.btnconsultarpet.Text = "Consultar";
+            this.btnconsultarpet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnconsultarpet.UseVisualStyleBackColor = true;
+            this.btnconsultarpet.Click += new System.EventHandler(this.btnconsultarpet_Click);
             // 
             // btnregistrar
             // 
@@ -147,10 +171,9 @@ namespace Visual {
             this.btnregistrar.IconColor = System.Drawing.Color.Black;
             this.btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnregistrar.Location = new System.Drawing.Point(0, 0);
-            this.btnregistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnregistrar.Name = "btnregistrar";
-            this.btnregistrar.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnregistrar.Size = new System.Drawing.Size(324, 50);
+            this.btnregistrar.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnregistrar.Size = new System.Drawing.Size(242, 41);
             this.btnregistrar.TabIndex = 3;
             this.btnregistrar.Text = "Registrar";
             this.btnregistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,10 +184,9 @@ namespace Visual {
             // 
             this.panel3.Controls.Add(this.btncerrarsesion);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 1280);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 1136);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(324, 123);
+            this.panel3.Size = new System.Drawing.Size(242, 100);
             this.panel3.TabIndex = 13;
             // 
             // btncerrarsesion
@@ -179,10 +201,9 @@ namespace Visual {
             this.btncerrarsesion.IconColor = System.Drawing.Color.Gainsboro;
             this.btncerrarsesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncerrarsesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btncerrarsesion.Location = new System.Drawing.Point(117, 38);
-            this.btncerrarsesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncerrarsesion.Location = new System.Drawing.Point(88, 31);
             this.btncerrarsesion.Name = "btncerrarsesion";
-            this.btncerrarsesion.Size = new System.Drawing.Size(71, 59);
+            this.btncerrarsesion.Size = new System.Drawing.Size(53, 48);
             this.btncerrarsesion.TabIndex = 12;
             this.btncerrarsesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncerrarsesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -202,11 +223,10 @@ namespace Visual {
             this.btnpeticion.IconColor = System.Drawing.Color.Gainsboro;
             this.btnpeticion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnpeticion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpeticion.Location = new System.Drawing.Point(0, 1060);
-            this.btnpeticion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnpeticion.Location = new System.Drawing.Point(0, 864);
             this.btnpeticion.Name = "btnpeticion";
-            this.btnpeticion.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnpeticion.Size = new System.Drawing.Size(324, 66);
+            this.btnpeticion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnpeticion.Size = new System.Drawing.Size(242, 54);
             this.btnpeticion.TabIndex = 11;
             this.btnpeticion.Text = "Peticiones";
             this.btnpeticion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,10 +241,9 @@ namespace Visual {
             this.pnsubmconductor.Controls.Add(this.btnconsulconduc);
             this.pnsubmconductor.Controls.Add(this.btnregconduc);
             this.pnsubmconductor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmconductor.Location = new System.Drawing.Point(0, 904);
-            this.pnsubmconductor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnsubmconductor.Location = new System.Drawing.Point(0, 737);
             this.pnsubmconductor.Name = "pnsubmconductor";
-            this.pnsubmconductor.Size = new System.Drawing.Size(324, 156);
+            this.pnsubmconductor.Size = new System.Drawing.Size(242, 127);
             this.pnsubmconductor.TabIndex = 10;
             // 
             // btnmodiconductor
@@ -237,11 +256,10 @@ namespace Visual {
             this.btnmodiconductor.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnmodiconductor.IconColor = System.Drawing.Color.Black;
             this.btnmodiconductor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmodiconductor.Location = new System.Drawing.Point(0, 100);
-            this.btnmodiconductor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnmodiconductor.Location = new System.Drawing.Point(0, 82);
             this.btnmodiconductor.Name = "btnmodiconductor";
-            this.btnmodiconductor.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnmodiconductor.Size = new System.Drawing.Size(324, 50);
+            this.btnmodiconductor.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnmodiconductor.Size = new System.Drawing.Size(242, 41);
             this.btnmodiconductor.TabIndex = 5;
             this.btnmodiconductor.Text = "Modificar";
             this.btnmodiconductor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,11 +276,10 @@ namespace Visual {
             this.btnconsulconduc.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnconsulconduc.IconColor = System.Drawing.Color.Black;
             this.btnconsulconduc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnconsulconduc.Location = new System.Drawing.Point(0, 50);
-            this.btnconsulconduc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconsulconduc.Location = new System.Drawing.Point(0, 41);
             this.btnconsulconduc.Name = "btnconsulconduc";
-            this.btnconsulconduc.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnconsulconduc.Size = new System.Drawing.Size(324, 50);
+            this.btnconsulconduc.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnconsulconduc.Size = new System.Drawing.Size(242, 41);
             this.btnconsulconduc.TabIndex = 4;
             this.btnconsulconduc.Text = "Consultar";
             this.btnconsulconduc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,10 +297,9 @@ namespace Visual {
             this.btnregconduc.IconColor = System.Drawing.Color.Black;
             this.btnregconduc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnregconduc.Location = new System.Drawing.Point(0, 0);
-            this.btnregconduc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnregconduc.Name = "btnregconduc";
-            this.btnregconduc.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnregconduc.Size = new System.Drawing.Size(324, 50);
+            this.btnregconduc.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnregconduc.Size = new System.Drawing.Size(242, 41);
             this.btnregconduc.TabIndex = 3;
             this.btnregconduc.Text = "Registrar";
             this.btnregconduc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -301,11 +317,10 @@ namespace Visual {
             this.btnconductor.IconColor = System.Drawing.Color.Gainsboro;
             this.btnconductor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnconductor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnconductor.Location = new System.Drawing.Point(0, 838);
-            this.btnconductor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconductor.Location = new System.Drawing.Point(0, 683);
             this.btnconductor.Name = "btnconductor";
-            this.btnconductor.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnconductor.Size = new System.Drawing.Size(324, 66);
+            this.btnconductor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnconductor.Size = new System.Drawing.Size(242, 54);
             this.btnconductor.TabIndex = 10;
             this.btnconductor.Text = "Conductor";
             this.btnconductor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,10 +335,9 @@ namespace Visual {
             this.pnsubmambulancia.Controls.Add(this.btnconsulambulancia);
             this.pnsubmambulancia.Controls.Add(this.btnregambulancia);
             this.pnsubmambulancia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmambulancia.Location = new System.Drawing.Point(0, 682);
-            this.pnsubmambulancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnsubmambulancia.Location = new System.Drawing.Point(0, 556);
             this.pnsubmambulancia.Name = "pnsubmambulancia";
-            this.pnsubmambulancia.Size = new System.Drawing.Size(324, 156);
+            this.pnsubmambulancia.Size = new System.Drawing.Size(242, 127);
             this.pnsubmambulancia.TabIndex = 9;
             // 
             // btnmodifiambulancia
@@ -336,11 +350,10 @@ namespace Visual {
             this.btnmodifiambulancia.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnmodifiambulancia.IconColor = System.Drawing.Color.Black;
             this.btnmodifiambulancia.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmodifiambulancia.Location = new System.Drawing.Point(0, 100);
-            this.btnmodifiambulancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnmodifiambulancia.Location = new System.Drawing.Point(0, 82);
             this.btnmodifiambulancia.Name = "btnmodifiambulancia";
-            this.btnmodifiambulancia.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnmodifiambulancia.Size = new System.Drawing.Size(324, 50);
+            this.btnmodifiambulancia.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnmodifiambulancia.Size = new System.Drawing.Size(242, 41);
             this.btnmodifiambulancia.TabIndex = 5;
             this.btnmodifiambulancia.Text = "Modificar";
             this.btnmodifiambulancia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,11 +370,10 @@ namespace Visual {
             this.btnconsulambulancia.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnconsulambulancia.IconColor = System.Drawing.Color.Black;
             this.btnconsulambulancia.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnconsulambulancia.Location = new System.Drawing.Point(0, 50);
-            this.btnconsulambulancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconsulambulancia.Location = new System.Drawing.Point(0, 41);
             this.btnconsulambulancia.Name = "btnconsulambulancia";
-            this.btnconsulambulancia.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnconsulambulancia.Size = new System.Drawing.Size(324, 50);
+            this.btnconsulambulancia.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnconsulambulancia.Size = new System.Drawing.Size(242, 41);
             this.btnconsulambulancia.TabIndex = 4;
             this.btnconsulambulancia.Text = "Consultar";
             this.btnconsulambulancia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,10 +391,9 @@ namespace Visual {
             this.btnregambulancia.IconColor = System.Drawing.Color.Black;
             this.btnregambulancia.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnregambulancia.Location = new System.Drawing.Point(0, 0);
-            this.btnregambulancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnregambulancia.Name = "btnregambulancia";
-            this.btnregambulancia.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnregambulancia.Size = new System.Drawing.Size(324, 50);
+            this.btnregambulancia.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnregambulancia.Size = new System.Drawing.Size(242, 41);
             this.btnregambulancia.TabIndex = 3;
             this.btnregambulancia.Text = "Registrar";
             this.btnregambulancia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -400,11 +411,10 @@ namespace Visual {
             this.btnambulancia.IconColor = System.Drawing.Color.Gainsboro;
             this.btnambulancia.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnambulancia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnambulancia.Location = new System.Drawing.Point(0, 616);
-            this.btnambulancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnambulancia.Location = new System.Drawing.Point(0, 502);
             this.btnambulancia.Name = "btnambulancia";
-            this.btnambulancia.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnambulancia.Size = new System.Drawing.Size(324, 66);
+            this.btnambulancia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnambulancia.Size = new System.Drawing.Size(242, 54);
             this.btnambulancia.TabIndex = 9;
             this.btnambulancia.Text = "Ambulancia";
             this.btnambulancia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,10 +429,9 @@ namespace Visual {
             this.pnsubmcliente.Controls.Add(this.btnclienteconsul);
             this.pnsubmcliente.Controls.Add(this.btnclientereg);
             this.pnsubmcliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmcliente.Location = new System.Drawing.Point(0, 460);
-            this.pnsubmcliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnsubmcliente.Location = new System.Drawing.Point(0, 375);
             this.pnsubmcliente.Name = "pnsubmcliente";
-            this.pnsubmcliente.Size = new System.Drawing.Size(324, 156);
+            this.pnsubmcliente.Size = new System.Drawing.Size(242, 127);
             this.pnsubmcliente.TabIndex = 8;
             // 
             // btnclientemodi
@@ -435,11 +444,10 @@ namespace Visual {
             this.btnclientemodi.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnclientemodi.IconColor = System.Drawing.Color.Black;
             this.btnclientemodi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnclientemodi.Location = new System.Drawing.Point(0, 100);
-            this.btnclientemodi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnclientemodi.Location = new System.Drawing.Point(0, 82);
             this.btnclientemodi.Name = "btnclientemodi";
-            this.btnclientemodi.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnclientemodi.Size = new System.Drawing.Size(324, 50);
+            this.btnclientemodi.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnclientemodi.Size = new System.Drawing.Size(242, 41);
             this.btnclientemodi.TabIndex = 5;
             this.btnclientemodi.Text = "Modificar";
             this.btnclientemodi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -456,11 +464,10 @@ namespace Visual {
             this.btnclienteconsul.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnclienteconsul.IconColor = System.Drawing.Color.Black;
             this.btnclienteconsul.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnclienteconsul.Location = new System.Drawing.Point(0, 50);
-            this.btnclienteconsul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnclienteconsul.Location = new System.Drawing.Point(0, 41);
             this.btnclienteconsul.Name = "btnclienteconsul";
-            this.btnclienteconsul.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnclienteconsul.Size = new System.Drawing.Size(324, 50);
+            this.btnclienteconsul.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnclienteconsul.Size = new System.Drawing.Size(242, 41);
             this.btnclienteconsul.TabIndex = 4;
             this.btnclienteconsul.Text = "Consultar";
             this.btnclienteconsul.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -478,10 +485,9 @@ namespace Visual {
             this.btnclientereg.IconColor = System.Drawing.Color.Black;
             this.btnclientereg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnclientereg.Location = new System.Drawing.Point(0, 0);
-            this.btnclientereg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnclientereg.Name = "btnclientereg";
-            this.btnclientereg.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnclientereg.Size = new System.Drawing.Size(324, 50);
+            this.btnclientereg.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnclientereg.Size = new System.Drawing.Size(242, 41);
             this.btnclientereg.TabIndex = 3;
             this.btnclientereg.Text = "Registrar";
             this.btnclientereg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -499,11 +505,10 @@ namespace Visual {
             this.btncliente.IconColor = System.Drawing.Color.Gainsboro;
             this.btncliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncliente.Location = new System.Drawing.Point(0, 394);
-            this.btncliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncliente.Location = new System.Drawing.Point(0, 321);
             this.btncliente.Name = "btncliente";
-            this.btncliente.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btncliente.Size = new System.Drawing.Size(324, 66);
+            this.btncliente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btncliente.Size = new System.Drawing.Size(242, 54);
             this.btncliente.TabIndex = 7;
             this.btncliente.Text = "Cliente";
             this.btncliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -518,10 +523,9 @@ namespace Visual {
             this.pnsubmgerente.Controls.Add(this.btnconsulsecretaria);
             this.pnsubmgerente.Controls.Add(this.btnregsecretaria);
             this.pnsubmgerente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmgerente.Location = new System.Drawing.Point(0, 238);
-            this.pnsubmgerente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnsubmgerente.Location = new System.Drawing.Point(0, 194);
             this.pnsubmgerente.Name = "pnsubmgerente";
-            this.pnsubmgerente.Size = new System.Drawing.Size(324, 156);
+            this.pnsubmgerente.Size = new System.Drawing.Size(242, 127);
             this.pnsubmgerente.TabIndex = 6;
             // 
             // btnmodisecretaria
@@ -534,11 +538,10 @@ namespace Visual {
             this.btnmodisecretaria.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnmodisecretaria.IconColor = System.Drawing.Color.Black;
             this.btnmodisecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmodisecretaria.Location = new System.Drawing.Point(0, 100);
-            this.btnmodisecretaria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnmodisecretaria.Location = new System.Drawing.Point(0, 82);
             this.btnmodisecretaria.Name = "btnmodisecretaria";
-            this.btnmodisecretaria.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnmodisecretaria.Size = new System.Drawing.Size(324, 50);
+            this.btnmodisecretaria.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnmodisecretaria.Size = new System.Drawing.Size(242, 41);
             this.btnmodisecretaria.TabIndex = 2;
             this.btnmodisecretaria.Text = "Modificar";
             this.btnmodisecretaria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,11 +557,10 @@ namespace Visual {
             this.btnconsulsecretaria.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnconsulsecretaria.IconColor = System.Drawing.Color.Black;
             this.btnconsulsecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnconsulsecretaria.Location = new System.Drawing.Point(0, 50);
-            this.btnconsulsecretaria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnconsulsecretaria.Location = new System.Drawing.Point(0, 41);
             this.btnconsulsecretaria.Name = "btnconsulsecretaria";
-            this.btnconsulsecretaria.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnconsulsecretaria.Size = new System.Drawing.Size(324, 50);
+            this.btnconsulsecretaria.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnconsulsecretaria.Size = new System.Drawing.Size(242, 41);
             this.btnconsulsecretaria.TabIndex = 1;
             this.btnconsulsecretaria.Text = "Consultar";
             this.btnconsulsecretaria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -575,10 +577,9 @@ namespace Visual {
             this.btnregsecretaria.IconColor = System.Drawing.Color.Black;
             this.btnregsecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnregsecretaria.Location = new System.Drawing.Point(0, 0);
-            this.btnregsecretaria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnregsecretaria.Name = "btnregsecretaria";
-            this.btnregsecretaria.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnregsecretaria.Size = new System.Drawing.Size(324, 50);
+            this.btnregsecretaria.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnregsecretaria.Size = new System.Drawing.Size(242, 41);
             this.btnregsecretaria.TabIndex = 0;
             this.btnregsecretaria.Text = "Registrar";
             this.btnregsecretaria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -596,11 +597,10 @@ namespace Visual {
             this.btnsecretaria.IconColor = System.Drawing.Color.Gainsboro;
             this.btnsecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnsecretaria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsecretaria.Location = new System.Drawing.Point(0, 172);
-            this.btnsecretaria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnsecretaria.Location = new System.Drawing.Point(0, 140);
             this.btnsecretaria.Name = "btnsecretaria";
-            this.btnsecretaria.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnsecretaria.Size = new System.Drawing.Size(324, 66);
+            this.btnsecretaria.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnsecretaria.Size = new System.Drawing.Size(242, 54);
             this.btnsecretaria.TabIndex = 1;
             this.btnsecretaria.Text = "Secretaria";
             this.btnsecretaria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -616,9 +616,8 @@ namespace Visual {
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(324, 172);
+            this.panel2.Size = new System.Drawing.Size(242, 140);
             this.panel2.TabIndex = 0;
             // 
             // lbltipo
@@ -626,10 +625,9 @@ namespace Visual {
             this.lbltipo.AutoSize = true;
             this.lbltipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltipo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbltipo.Location = new System.Drawing.Point(127, 117);
-            this.lbltipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltipo.Location = new System.Drawing.Point(95, 95);
             this.lbltipo.Name = "lbltipo";
-            this.lbltipo.Size = new System.Drawing.Size(67, 29);
+            this.lbltipo.Size = new System.Drawing.Size(52, 24);
             this.lbltipo.TabIndex = 10;
             this.lbltipo.Text = "Tipo";
             // 
@@ -638,10 +636,9 @@ namespace Visual {
             this.lblapellido.AutoSize = true;
             this.lblapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblapellido.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblapellido.Location = new System.Drawing.Point(127, 80);
-            this.lblapellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblapellido.Location = new System.Drawing.Point(95, 65);
             this.lblapellido.Name = "lblapellido";
-            this.lblapellido.Size = new System.Drawing.Size(102, 29);
+            this.lblapellido.Size = new System.Drawing.Size(79, 24);
             this.lblapellido.TabIndex = 9;
             this.lblapellido.Text = "Apellido";
             // 
@@ -650,10 +647,9 @@ namespace Visual {
             this.lblnombres.AutoSize = true;
             this.lblnombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombres.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblnombres.Location = new System.Drawing.Point(127, 46);
-            this.lblnombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnombres.Location = new System.Drawing.Point(95, 37);
             this.lblnombres.Name = "lblnombres";
-            this.lblnombres.Size = new System.Drawing.Size(101, 29);
+            this.lblnombres.Size = new System.Drawing.Size(79, 24);
             this.lblnombres.TabIndex = 8;
             this.lblnombres.Text = "Nombre";
             this.lblnombres.Click += new System.EventHandler(this.lblnombres_Click);
@@ -662,10 +658,9 @@ namespace Visual {
             // 
             this.pictureBox1.BackgroundImage = global::Visual.Properties.Resources.iconologed;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 52);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(77, 71);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -675,10 +670,9 @@ namespace Visual {
             this.panel1.Controls.Add(this.lblfecha);
             this.panel1.Controls.Add(this.lblhora);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(345, 709);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(259, 554);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 68);
+            this.panel1.Size = new System.Drawing.Size(690, 55);
             this.panel1.TabIndex = 1;
             // 
             // lblfecha
@@ -686,10 +680,9 @@ namespace Visual {
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
-            this.lblfecha.Location = new System.Drawing.Point(279, 10);
-            this.lblfecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblfecha.Location = new System.Drawing.Point(209, 8);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(108, 51);
+            this.lblfecha.Size = new System.Drawing.Size(85, 39);
             this.lblfecha.TabIndex = 2;
             this.lblfecha.Text = "hora";
             // 
@@ -698,10 +691,9 @@ namespace Visual {
             this.lblhora.AutoSize = true;
             this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblhora.Location = new System.Drawing.Point(35, 10);
-            this.lblhora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblhora.Location = new System.Drawing.Point(26, 8);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(190, 51);
+            this.lblhora.Size = new System.Drawing.Size(149, 39);
             this.lblhora.TabIndex = 1;
             this.lblhora.Text = "99:99:99";
             // 
@@ -711,10 +703,9 @@ namespace Visual {
             this.pnhijo.Controls.Add(this.label2);
             this.pnhijo.Controls.Add(this.pictureBox2);
             this.pnhijo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnhijo.Location = new System.Drawing.Point(345, 0);
-            this.pnhijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnhijo.Location = new System.Drawing.Point(259, 0);
             this.pnhijo.Name = "pnhijo";
-            this.pnhijo.Size = new System.Drawing.Size(920, 709);
+            this.pnhijo.Size = new System.Drawing.Size(690, 554);
             this.pnhijo.TabIndex = 2;
             // 
             // label2
@@ -722,10 +713,9 @@ namespace Visual {
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(128, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(96, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(577, 69);
+            this.label2.Size = new System.Drawing.Size(465, 55);
             this.label2.TabIndex = 3;
             this.label2.Text = "Los Rapidos System";
             // 
@@ -736,10 +726,9 @@ namespace Visual {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackgroundImage = global::Visual.Properties.Resources.Logo_Solo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(221, 144);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(166, 117);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(485, 410);
+            this.pictureBox2.Size = new System.Drawing.Size(364, 311);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -748,41 +737,72 @@ namespace Visual {
             this.timerhorafecha.Enabled = true;
             this.timerhorafecha.Tick += new System.EventHandler(this.timerhorafecha_Tick);
             // 
-            // btnconsultarpet
+            // btnasignacion
             // 
-            this.btnconsultarpet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnconsultarpet.FlatAppearance.BorderSize = 0;
-            this.btnconsultarpet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnconsultarpet.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnconsultarpet.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnconsultarpet.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnconsultarpet.IconColor = System.Drawing.Color.Black;
-            this.btnconsultarpet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnconsultarpet.Location = new System.Drawing.Point(0, 50);
-            this.btnconsultarpet.Margin = new System.Windows.Forms.Padding(4);
-            this.btnconsultarpet.Name = "btnconsultarpet";
-            this.btnconsultarpet.Padding = new System.Windows.Forms.Padding(73, 0, 0, 0);
-            this.btnconsultarpet.Size = new System.Drawing.Size(324, 50);
-            this.btnconsultarpet.TabIndex = 6;
-            this.btnconsultarpet.Text = "Consultar";
-            this.btnconsultarpet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnconsultarpet.UseVisualStyleBackColor = true;
-            this.btnconsultarpet.Click += new System.EventHandler(this.btnconsultarpet_Click);
+            this.btnasignacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnasignacion.FlatAppearance.BorderSize = 0;
+            this.btnasignacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnasignacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnasignacion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnasignacion.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
+            this.btnasignacion.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnasignacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnasignacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnasignacion.Location = new System.Drawing.Point(0, 1041);
+            this.btnasignacion.Name = "btnasignacion";
+            this.btnasignacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnasignacion.Size = new System.Drawing.Size(242, 54);
+            this.btnasignacion.TabIndex = 15;
+            this.btnasignacion.Text = "Asignaciones";
+            this.btnasignacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnasignacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnasignacion.UseVisualStyleBackColor = true;
+            this.btnasignacion.Click += new System.EventHandler(this.btnasignacion_Click);
+            // 
+            // pnsubmenuasignacion
+            // 
+            this.pnsubmenuasignacion.AutoSize = true;
+            this.pnsubmenuasignacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.pnsubmenuasignacion.Controls.Add(this.iconButton3);
+            this.pnsubmenuasignacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnsubmenuasignacion.Location = new System.Drawing.Point(0, 1095);
+            this.pnsubmenuasignacion.Name = "pnsubmenuasignacion";
+            this.pnsubmenuasignacion.Size = new System.Drawing.Size(242, 41);
+            this.pnsubmenuasignacion.TabIndex = 15;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(0, 0);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.iconButton3.Size = new System.Drawing.Size(242, 41);
+            this.iconButton3.TabIndex = 6;
+            this.iconButton3.Text = "Consultar";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // Frm_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 777);
+            this.ClientSize = new System.Drawing.Size(949, 609);
             this.Controls.Add(this.pnhijo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlateral);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuPr";
             this.Load += new System.EventHandler(this.FrmMenuPr_Load);
             this.pnlateral.ResumeLayout(false);
+            this.pnlateral.PerformLayout();
             this.pnsubmenupeticion.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.pnsubmconductor.ResumeLayout(false);
@@ -797,6 +817,7 @@ namespace Visual {
             this.pnhijo.ResumeLayout(false);
             this.pnhijo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnsubmenuasignacion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -843,5 +864,8 @@ namespace Visual {
         private FontAwesome.Sharp.IconButton btnregistrar;
         public System.Windows.Forms.Panel pnhijo;
         private FontAwesome.Sharp.IconButton btnconsultarpet;
+        private System.Windows.Forms.Panel pnsubmenuasignacion;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnasignacion;
     }
 }
