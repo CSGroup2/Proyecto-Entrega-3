@@ -30,13 +30,13 @@ namespace Datos
                 sql_comando.CommandType = CommandType.StoredProcedure; //Se especifico que el comando es de tipo procedimiento
                 SqlDataAdapter SqlDat = new SqlDataAdapter(sql_comando);
                 SqlDat.Fill(DtResultado);  //empiezo a recoger los datos
-                DataRow nuevaFila = DtResultado.NewRow();
+                //DataRow nuevaFila = DtResultado.NewRow();
 
                 // creo la opcion por defecto
-                nuevaFila["ID_HOSPITAL"] = 0;
-                nuevaFila["NOMBRE_HOSPITAL"] = "--Seleccione--";
+                //nuevaFila["ID_HOSPITAL"] = 0;
+                //nuevaFila["NOMBRE_HOSPITAL"] = "--Seleccione--";
                 //inserto la opcion por defecto
-                DtResultado.Rows.InsertAt(nuevaFila, 0);
+                //DtResultado.Rows.InsertAt(nuevaFila, 0);
             }
             catch (Exception ex)
             {
