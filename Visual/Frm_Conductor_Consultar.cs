@@ -65,9 +65,9 @@ namespace Visual {
         private void Frm_Conductor_Consultar_Load (object sender, EventArgs e) {
             // Load changes
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
-            // admConductor.listarDisponibilidad (cmb_Disponibilidad);
-            // admGeneral.
-
+            cmb_Disponibilidad.DataSource = admGeneral.listarDisponibilidad ();
+            cmb_Disponibilidad.ValueMember = "ID_DISPONIBILIDAD";
+            cmb_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
             admConductor.listarDatosConductor (dgv_Conductor);
             cmb_Disponibilidad.Enabled = false;
         }
