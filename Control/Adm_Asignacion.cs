@@ -72,6 +72,7 @@ namespace Control {
         //Llena dgv con las peticiones "En Progreso"
         public void llenarTablaPeticion(DataGridView dgvPeticion)
         {
+            dgvPeticion.Refresh();
             admP.llenarTablaPeticion(dgvPeticion);
         }
 
