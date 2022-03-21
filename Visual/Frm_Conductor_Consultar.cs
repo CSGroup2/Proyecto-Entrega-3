@@ -16,6 +16,7 @@ namespace Visual {
 
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
+        Adm_General admGeneral = Adm_General.GetAdm ();
 
         public Frm_Conductor_Consultar () {
             InitializeComponent ();
@@ -64,7 +65,9 @@ namespace Visual {
         private void Frm_Conductor_Consultar_Load (object sender, EventArgs e) {
             // Load changes
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
-            admConductor.listarDisponibilidad (cmb_Disponibilidad);
+            // admConductor.listarDisponibilidad (cmb_Disponibilidad);
+            // admGeneral.
+
             admConductor.listarDatosConductor (dgv_Conductor);
             cmb_Disponibilidad.Enabled = false;
         }
