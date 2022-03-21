@@ -177,7 +177,7 @@ namespace Control
             documento.Close();
         }
 
-        public void CrearPdf2(DataTable dt, string file)
+        public void CrearPdf2(DataTable dt, string file, string[] columnas, float[] tamanios)
         {
             PdfWriter pdfWriter = new PdfWriter(file);
             PdfDocument pdf = new PdfDocument(pdfWriter);
@@ -187,17 +187,8 @@ namespace Control
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
 
-            /*EL SIGUIENTE ARRAY ES PARA DETALLAR LOS NOMBRES DE LAS COLUMNAS EN LA TABLA DEL PDF
-              MODIFICALO EN EL MISMO ORDEN QUE UBICASTE LAS COLUMNAS DE TU DATAGRIDVIEW*/
-
-            string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
-            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
-
-            
             Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
-            //Table tabla = new Table(dt.Columns.Count); 
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
-
             foreach (string columna in columnas)
             {
                 tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
@@ -206,14 +197,11 @@ namespace Control
             int fila = 1;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                int columna = 1;
-                //RECORRE EL DATATABLE PARA AGREGAR ESOS DATOS A LA PDF - PON EL MISMO ORDEN DE LAS COLUMNAS QUE DECLARASTE ARRIBA
+                tabla.AddCell(new Cell().Add(new Paragraph(fila + "").SetFont(fontContenido)));
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
-                    tabla.AddCell(new Cell().Add(new Paragraph(fila + "").SetFont(fontContenido)));
-                    tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["id"].ToString()).SetFont(fontContenido)));
-                    columna++;
-                } 
+                    tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i][j].ToString()).SetFont(fontContenido)));
+                }
                 fila++;
             }
             documento.Add(tabla);

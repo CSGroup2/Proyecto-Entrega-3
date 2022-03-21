@@ -78,6 +78,8 @@ namespace Visual {
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dgvAmbulancias.DataSource;
+            string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
+            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
@@ -85,7 +87,7 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admCliente.CrearPdf2(dt, file);
+                admCliente.CrearPdf2(dt, file, columnas, tamanios);
                 if (File.Exists(file))
                 {
                     Process.Start(file);
@@ -101,6 +103,13 @@ namespace Visual {
         private void btnmostrartodos_Click(object sender, EventArgs e)
         {
             admA.ListarAmbulancias(dgvAmbulancias);
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)dgvAmbulancias.DataSource;
+            MessageBox.Show(dt.Rows[0][0].ToString(), "Sistema de Libreria", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
