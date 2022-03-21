@@ -1,12 +1,12 @@
 # Proyecto-Entrega-3
 
 [![Contributors](https://img.shields.io/badge/Contributors-%3D%3D%3E-brightgreen)](https://github.com/JoeTech-Studio/UserTags)
-[![GitHub](https://img.shields.io/github/followers/Stefan-Castro?label=Alexander&style=social)](https://github.com/Stefan-Castro)
-[![GitHub](https://img.shields.io/github/followers/blilllly?label=Billy&style=social)](https://github.com/blilllly)
-[![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen&style=social)](https://github.com/hlbv17)
-[![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n&style=social)](https://github.com/ropbGitHub)
+[![GitHub](https://img.shields.io/github/followers/Stefan-Castro?label=Alexander_Castro&style=social)](https://github.com/Stefan-Castro)
+[![GitHub](https://img.shields.io/github/followers/blilllly?label=Billy_Alvear&style=social)](https://github.com/blilllly)
+[![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen_Bernal&style=social)](https://github.com/hlbv17)
+[![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n&style_Perez=social)](https://github.com/ropbGitHub)
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=CSGroup2&theme=blue-green)](https://github.com/CSGroup2/Proyecto-Entrega-3)
+
 
 En este repositorio se encuentran los siguientes archivos:
 * Documento de plan de pruebas del SGAR
