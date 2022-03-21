@@ -101,23 +101,22 @@ namespace Visual {
         }
 
         private void btn_Consultar_Click (object sender, EventArgs e) {
-            string cedula = null;
-            string nombre = null;
+            string cedula_nombre = null;
             string disponibilidad = null;
             errorProvider.Clear ();
             if (txt_CedulaNombre.Text.Trim () == "" && chb_Disponibilidad.Checked == false) {
                 errorProvider.SetError (txt_CedulaNombre, "Opcional 1");
                 errorProvider.SetError (chb_Disponibilidad, "Opcional 2");
             } else {
-                if (rdb_Cedula.Checked) {
-                    cedula = txt_CedulaNombre.Text.Trim ();
-                } else {
-                    nombre = txt_CedulaNombre.Text.Trim ();
+                if (!String.IsNullOrWhiteSpace (txt_CedulaNombre.Text)) {
+                    cedula_nombre = txt_CedulaNombre.Text.Trim ().Replace (" ", String.Empty);
                 }
                 if (chb_Disponibilidad.Checked) {
                     disponibilidad = cmb_Disponibilidad.SelectedValue.ToString ();
                 }
-                admConductor.buscarDatosConductor (dgv_Conductor, cedula, nombre, disponibilidad);
+                Console.WriteLine ("Cedula/Nombre:" + cedula_nombre + "     disponibilidad "+disponibilidad);
+                dgv_Conductor.Refresh ();
+                dgv_Conductor.DataSource = admConductor.buscarDatosConductor (cedula_nombre, disponibilidad);
             }
         }
 
