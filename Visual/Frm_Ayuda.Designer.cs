@@ -44,6 +44,9 @@ namespace Visual
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
+            this.btn12 = new System.Windows.Forms.Button();
+            this.btn13 = new System.Windows.Forms.Button();
+            this.btn14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
@@ -89,6 +92,9 @@ namespace Visual
             // 
             this.pncontenido.AutoScroll = true;
             this.pncontenido.BackColor = System.Drawing.Color.White;
+            this.pncontenido.Controls.Add(this.btn14);
+            this.pncontenido.Controls.Add(this.btn13);
+            this.pncontenido.Controls.Add(this.btn12);
             this.pncontenido.Controls.Add(this.btn11);
             this.pncontenido.Controls.Add(this.btn10);
             this.pncontenido.Controls.Add(this.btn9);
@@ -112,8 +118,9 @@ namespace Visual
             this.btn11.Name = "btn11";
             this.btn11.Size = new System.Drawing.Size(590, 53);
             this.btn11.TabIndex = 10;
-            this.btn11.Text = "-----";
+            this.btn11.Text = "¿Cómo asignar ambulancia-conductor en SGAR?";
             this.btn11.UseVisualStyleBackColor = true;
+            this.btn11.Click += new System.EventHandler(this.btn11_Click);
             // 
             // btn10
             // 
@@ -225,6 +232,39 @@ namespace Visual
             this.btn1.UseVisualStyleBackColor = true;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
+            // btn12
+            // 
+            this.btn12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn12.Location = new System.Drawing.Point(0, 583);
+            this.btn12.Name = "btn12";
+            this.btn12.Size = new System.Drawing.Size(590, 53);
+            this.btn12.TabIndex = 11;
+            this.btn12.Text = "¿Cómo se registra un conductor en SGAR?";
+            this.btn12.UseVisualStyleBackColor = true;
+            this.btn12.Click += new System.EventHandler(this.btn12_Click);
+            // 
+            // btn13
+            // 
+            this.btn13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn13.Location = new System.Drawing.Point(0, 636);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(590, 53);
+            this.btn13.TabIndex = 12;
+            this.btn13.Text = "¿Cómo consultar los datos de los conductores en SGAR?";
+            this.btn13.UseVisualStyleBackColor = true;
+            this.btn13.Click += new System.EventHandler(this.btn13_Click);
+            // 
+            // btn14
+            // 
+            this.btn14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn14.Location = new System.Drawing.Point(0, 689);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(590, 53);
+            this.btn14.TabIndex = 13;
+            this.btn14.Text = "¿Cómo modificar los datos de los conductores en SGAR?";
+            this.btn14.UseVisualStyleBackColor = true;
+            this.btn14.Click += new System.EventHandler(this.btn14_Click);
+            // 
             // Frm_Ayuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,5 +301,8 @@ namespace Visual
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn11;
         private System.Windows.Forms.Button btn10;
+        private System.Windows.Forms.Button btn14;
+        private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Button btn12;
     }
 }
