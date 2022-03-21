@@ -169,6 +169,12 @@
     <Compile Include="Frm_Peticion_Consultar.Designer.cs">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Peticion_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Peticion_Editar.Designer.cs">
+      <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Peticion_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Consultar.resx">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Peticion_Editar.resx">
+      <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Registrar.resx">
       <DependentUpon>Frm_Peticion_Registrar.cs</DependentUpon>

@@ -120,8 +120,14 @@ namespace Control
 
         public void filtrarXDestino(TextBox txt_Destino, DataGridView dgvPeticion)
         {
-            dgvPeticion.Refresh();
-            dgvPeticion.DataSource = datosPeticion.listarPeticionesXDestino(txt_Destino.Text);
+            if (!txt_Destino.Text.Equals(""))
+            {
+                dgvPeticion.Refresh();
+                dgvPeticion.DataSource = datosPeticion.listarPeticionesXDestino(txt_Destino.Text, admL.IdUsuario());
+            }
+            else {
+                MessageBox.Show("Ingrese un Destino a consultar");
+            }
         }
 
         public string eliminarPeticion(int id, DataGridView dgvPeticion)
@@ -129,6 +135,40 @@ namespace Control
             string msj = datosPeticion.eliminarPeticion(id);
             dgvPeticion.Refresh();
             dgvPeticion.DataSource = datosPeticion.listarPeticionesPendientes();
+            return msj;
+        }
+
+        public void llenarTablaPeticionUsuario(DataGridView dgvPeticion)
+        {
+            dgvPeticion.Refresh();
+            dgvPeticion.DataSource = datosPeticion.listarPeticionesPendientesUsuario(admL.IdUsuario());
+        }
+
+        /*--------------------------Frm_Peticion_Editar-------------------------------*/
+        public void llenarCamposEditar(int idPet, Label lbl_cedula, Label lbl_nombre, Label lbl_apellido, NumericUpDown nud_Ambulancia, ComboBox cmb_TAmb, TextBox txt_Origen, TextBox txt_Destino)
+        {
+            peticion = datosPeticion.ConsultarPeticionXId(idPet);
+            lbl_cedula.Text = peticion.Cliente.Cedula;
+            lbl_nombre.Text = peticion.Cliente.Nombre_1;
+            lbl_apellido.Text = peticion.Cliente.Apellido_1;
+            nud_Ambulancia.Value = peticion.N_ambulancia;
+            cmb_TAmb.SelectedIndex = peticion.Id_tipo_ambulancia;
+            txt_Origen.Text = peticion.Punto_origen;
+            txt_Destino.Text = peticion.Punto_destino;
+        }
+
+        public string editarPeticion(int idPet, string cantAmb, string tipo_ambulancia, string punto_Origen, string punto_Destino)
+        {
+            int id_TA = Int32.Parse(tipo_ambulancia);
+            int cant = Int32.Parse(cantAmb);
+            string mensaje = "", msj = "";
+            mensaje = datosPeticion.editarPeticion(idPet, cant, id_TA, punto_Origen, punto_Destino);   //editar la peticion en la base de datos
+
+            if (mensaje[0] == '1')
+                msj = "Su petición fue editada correctamente.";
+            else
+                msj = "Error: " + mensaje;
+            //msj = "Error no se pudo ingresar la petición."; //solo para el TEST
             return msj;
         }
 
