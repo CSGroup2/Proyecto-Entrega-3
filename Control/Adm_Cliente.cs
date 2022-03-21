@@ -18,7 +18,7 @@ namespace Control
 {
     public class Adm_Cliente
     {
-        /*
+        /* conprobar nombre
             Aplicar el patron de diseño Singleton:
             1. Crear 1 atributo estático y privado de la misma clase.
             2. Cambiar el constructor de public a private.
