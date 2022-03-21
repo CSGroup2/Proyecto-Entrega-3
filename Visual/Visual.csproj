@@ -67,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Btn_Comportamiento.cs" />
+    <Compile Include="Frm_Alternativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Alternativa.Designer.cs">
+      <DependentUpon>Frm_Alternativa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Ambulancia_Consulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Alternativa.resx">
+      <DependentUpon>Frm_Alternativa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Ambulancia_Consulta.resx">
       <DependentUpon>Frm_Ambulancia_Consulta.cs</DependentUpon>
     </EmbeddedResource>
