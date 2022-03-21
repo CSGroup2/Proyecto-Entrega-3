@@ -45,12 +45,6 @@ namespace Control
             return adm_client;
         }
 
-        //Metodo para cargar la lista de hospitales afiliados a un combo box
-        public DataTable LlenarComboHospitales()
-        {
-            return Datos_client.ConsultarHospitales();
-        }
-
         #region Validaciones
         // Methods for KeyPress
         public void validarSoloNumerosKeyPress(object sender, KeyPressEventArgs e)

@@ -15,7 +15,9 @@ namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
-  
+        Adm_General admgeneral = Adm_General.GetAdm();
+
+
         Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
@@ -31,9 +33,34 @@ namespace Visual {
 
         private void FrmClienteConsul_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
+            this.cargarhospitales();
+            this.cargarclientes();
+            this.cargarestados(); 
+        }
+
+        #region cargado de datos al iniciar 
+        private void cargarclientes()
+        {
             dgvClientes.Refresh();
             dgvClientes.DataSource = admCliente.ListarClientes();
         }
+
+        private void cargarhospitales()
+        {
+            cbxhospital.Items.Clear();
+            cbxhospital.DataSource = admgeneral.LlenarComboHospitales();
+            cbxhospital.ValueMember = "ID_HOSPITAL";
+            cbxhospital.DisplayMember = "NOMBRE_HOSPITAL";
+        }
+
+        private void cargarestados()
+        {
+            cbxestado.Items.Clear();
+            cbxestado.DataSource = admgeneral.listerEstados();
+            cbxestado.ValueMember = "ID_ESTADO";
+            cbxestado.DisplayMember = "NOMBRE_ESTADO";
+        }
+        #endregion
 
         #region Efecto boton consultar
         private void btnconsultar_MouseMove (object sender, MouseEventArgs e) {
@@ -120,28 +147,26 @@ namespace Visual {
             {
                 buscarOp = 2;
                 estado = Int32.Parse(cbxestado.SelectedValue.ToString());
-                estado = 1;
             }
             else if (chxhospital.Checked == true)
             {
                 buscarOp = 1;
                 hospital = Int32.Parse(cbxhospital.SelectedValue.ToString());
-                hospital = 100;
             }
             else
             {
                 buscarOp = 0;
-            }
+            } 
 
             string dato = txtCriterio.Text.Replace(" ", String.Empty);
             //dgvClientes.Refresh();
-            //MessageBox.Show("DATO:"+dato+" ESTADO: "+estado + " HOSPITAL: " + hospital + " OPCIONA: " + buscarOb + " OPCIONB: " + buscarOp);
+            MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
             dgvClientes.DataSource = admCliente.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
         }
 
         private void btnmostrartodos_Click(object sender, EventArgs e)
         {
-            //admA.ListarAmbulancias(dgvAmbulancias);
+            this.cargarclientes(); 
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
