@@ -13,7 +13,6 @@ namespace Visual
     public partial class Frm_Peticion_Editar : Form
     {
         Btn_Comportamiento cbtn = new Btn_Comportamiento();
-        public Frm_Peticion_Editar()
         int idPet;
         Adm_Peticion adm = Adm_Peticion.GetAdm();
         public Frm_Peticion_Editar(int idPeticion)
@@ -28,8 +27,6 @@ namespace Visual
         {
             this.Close();
         }
-
-        private void Frm_Peticion_Editar_Load(object sender, EventArgs e)
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string cantAmb = nud_Ambulancia.Value.ToString(), punto_Origen = txt_Origen.Text,
