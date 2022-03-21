@@ -9,8 +9,9 @@ using System.Text;
 namespace Datos {
     public class Datos_Conductor {
 
-        /*----------------------Frm_Conductor_Editar-------------------------------------*/
+        /*----------------------Frm_Conductor_Registrar-------------------------------------*/
         public string insertarDatosConductor (Conductor conductor) {
+            // insert new "condutor" data into the database
             Conexion conexion = null;
             SqlConnection sql_conexion = null;
             SqlCommand sql_comando = null;
@@ -47,8 +48,34 @@ namespace Datos {
             return mensaje;
         }
 
+        /*----------------------Frm_Conductor_Consultar-------------------------------------*/
 
-
+        public object listarDatosConductor () {
+            // Extract all "conductor" data from database
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+            SqlCommand sql_comando = null;
+            SqlDataAdapter sql_adaptador = null;
+            string query = "sp_listar_conductores";  // Stored Procedure name
+            DataTable data_table = null;
+            try {
+                conexion = new Conexion ();
+                sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
+                sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
+                sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
+                sql_adaptador = new SqlDataAdapter (sql_comando);
+                data_table = new DataTable ();
+                using (sql_comando) {
+                    sql_adaptador.Fill (data_table);
+                }
+            } catch (Exception ex) {
+                data_table = null;
+                Console.WriteLine ("Error al listar los datos de los conductores " + ex.Message);
+            } finally {
+                conexion.cerrar_conexion (sql_conexion);
+            }
+            return data_table;
+        }
 
 
         /*---------------------- Billy -------------------------------------*/
