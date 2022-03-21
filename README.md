@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/github/followers/Stefan-Castro?label=Alexander_Castro&style=social)](https://github.com/Stefan-Castro)
 [![GitHub](https://img.shields.io/github/followers/blilllly?label=Billy_Alvear&style=social)](https://github.com/blilllly)
 [![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen_Bernal&style=social)](https://github.com/hlbv17)
-[![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n_Perez&style=social)](https://github.com/ropbGitHub)
+[![GitHub](https://img.shields.io/github/followers/ropbGitHub?label=Ren%C3%A1n_P%C3%E1rez&style=social)](https://github.com/ropbGitHub)
 
 
 
