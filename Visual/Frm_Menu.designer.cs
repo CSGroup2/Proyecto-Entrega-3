@@ -26,12 +26,15 @@ namespace Visual {
         private void InitializeComponent () {
             this.components = new System.ComponentModel.Container();
             this.pnlateral = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btncerrarsesion = new FontAwesome.Sharp.IconButton();
+            this.pnsubmenuasignacion = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnasignacion = new FontAwesome.Sharp.IconButton();
             this.pnsubmenupeticion = new System.Windows.Forms.Panel();
             this.btnasignar = new FontAwesome.Sharp.IconButton();
             this.btnconsultarpet = new FontAwesome.Sharp.IconButton();
             this.btnregistrar = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btncerrarsesion = new FontAwesome.Sharp.IconButton();
             this.btnpeticion = new FontAwesome.Sharp.IconButton();
             this.pnsubmconductor = new System.Windows.Forms.Panel();
             this.btnmodiconductor = new FontAwesome.Sharp.IconButton();
@@ -65,12 +68,13 @@ namespace Visual {
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timerhorafecha = new System.Windows.Forms.Timer(this.components);
-            this.btnasignacion = new FontAwesome.Sharp.IconButton();
-            this.pnsubmenuasignacion = new System.Windows.Forms.Panel();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnopciones1 = new FontAwesome.Sharp.IconButton();
+            this.btnopciones2 = new FontAwesome.Sharp.IconButton();
+            this.btnopciones3 = new FontAwesome.Sharp.IconButton();
             this.pnlateral.SuspendLayout();
-            this.pnsubmenupeticion.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnsubmenuasignacion.SuspendLayout();
+            this.pnsubmenupeticion.SuspendLayout();
             this.pnsubmconductor.SuspendLayout();
             this.pnsubmambulancia.SuspendLayout();
             this.pnsubmcliente.SuspendLayout();
@@ -80,7 +84,6 @@ namespace Visual {
             this.panel1.SuspendLayout();
             this.pnhijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.pnsubmenuasignacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlateral
@@ -106,6 +109,90 @@ namespace Visual {
             this.pnlateral.Name = "pnlateral";
             this.pnlateral.Size = new System.Drawing.Size(259, 609);
             this.pnlateral.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btncerrarsesion);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 1136);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(242, 100);
+            this.panel3.TabIndex = 13;
+            // 
+            // btncerrarsesion
+            // 
+            this.btncerrarsesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btncerrarsesion.FlatAppearance.BorderSize = 0;
+            this.btncerrarsesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btncerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncerrarsesion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrarsesion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btncerrarsesion.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.btncerrarsesion.IconColor = System.Drawing.Color.Gainsboro;
+            this.btncerrarsesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btncerrarsesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btncerrarsesion.Location = new System.Drawing.Point(88, 31);
+            this.btncerrarsesion.Name = "btncerrarsesion";
+            this.btncerrarsesion.Size = new System.Drawing.Size(53, 48);
+            this.btncerrarsesion.TabIndex = 12;
+            this.btncerrarsesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncerrarsesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btncerrarsesion.UseVisualStyleBackColor = false;
+            this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
+            this.btncerrarsesion.MouseLeave += new System.EventHandler(this.btncerrarsesion_MouseLeave);
+            this.btncerrarsesion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrarsesion_MouseMove);
+            // 
+            // pnsubmenuasignacion
+            // 
+            this.pnsubmenuasignacion.AutoSize = true;
+            this.pnsubmenuasignacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.pnsubmenuasignacion.Controls.Add(this.iconButton3);
+            this.pnsubmenuasignacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnsubmenuasignacion.Location = new System.Drawing.Point(0, 1095);
+            this.pnsubmenuasignacion.Name = "pnsubmenuasignacion";
+            this.pnsubmenuasignacion.Size = new System.Drawing.Size(242, 41);
+            this.pnsubmenuasignacion.TabIndex = 15;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(0, 0);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.iconButton3.Size = new System.Drawing.Size(242, 41);
+            this.iconButton3.TabIndex = 6;
+            this.iconButton3.Text = "Consultar";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // btnasignacion
+            // 
+            this.btnasignacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnasignacion.FlatAppearance.BorderSize = 0;
+            this.btnasignacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnasignacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnasignacion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnasignacion.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
+            this.btnasignacion.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnasignacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnasignacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnasignacion.Location = new System.Drawing.Point(0, 1041);
+            this.btnasignacion.Name = "btnasignacion";
+            this.btnasignacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnasignacion.Size = new System.Drawing.Size(242, 54);
+            this.btnasignacion.TabIndex = 15;
+            this.btnasignacion.Text = "Asignaciones";
+            this.btnasignacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnasignacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnasignacion.UseVisualStyleBackColor = true;
+            this.btnasignacion.Click += new System.EventHandler(this.btnasignacion_Click);
             // 
             // pnsubmenupeticion
             // 
@@ -179,38 +266,6 @@ namespace Visual {
             this.btnregistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnregistrar.UseVisualStyleBackColor = true;
             this.btnregistrar.Click += new System.EventHandler(this.btnregistrar_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btncerrarsesion);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 1136);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(242, 100);
-            this.panel3.TabIndex = 13;
-            // 
-            // btncerrarsesion
-            // 
-            this.btncerrarsesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btncerrarsesion.FlatAppearance.BorderSize = 0;
-            this.btncerrarsesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btncerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncerrarsesion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncerrarsesion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btncerrarsesion.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-            this.btncerrarsesion.IconColor = System.Drawing.Color.Gainsboro;
-            this.btncerrarsesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btncerrarsesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btncerrarsesion.Location = new System.Drawing.Point(88, 31);
-            this.btncerrarsesion.Name = "btncerrarsesion";
-            this.btncerrarsesion.Size = new System.Drawing.Size(53, 48);
-            this.btncerrarsesion.TabIndex = 12;
-            this.btncerrarsesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncerrarsesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btncerrarsesion.UseVisualStyleBackColor = false;
-            this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
-            this.btncerrarsesion.MouseLeave += new System.EventHandler(this.btncerrarsesion_MouseLeave);
-            this.btncerrarsesion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrarsesion_MouseMove);
             // 
             // btnpeticion
             // 
@@ -610,8 +665,11 @@ namespace Visual {
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnopciones3);
             this.panel2.Controls.Add(this.lbltipo);
+            this.panel2.Controls.Add(this.btnopciones2);
             this.panel2.Controls.Add(this.lblapellido);
+            this.panel2.Controls.Add(this.btnopciones1);
             this.panel2.Controls.Add(this.lblnombres);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -737,57 +795,48 @@ namespace Visual {
             this.timerhorafecha.Enabled = true;
             this.timerhorafecha.Tick += new System.EventHandler(this.timerhorafecha_Tick);
             // 
-            // btnasignacion
+            // btnopciones1
             // 
-            this.btnasignacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnasignacion.FlatAppearance.BorderSize = 0;
-            this.btnasignacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnasignacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnasignacion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnasignacion.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
-            this.btnasignacion.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnasignacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnasignacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnasignacion.Location = new System.Drawing.Point(0, 1041);
-            this.btnasignacion.Name = "btnasignacion";
-            this.btnasignacion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnasignacion.Size = new System.Drawing.Size(242, 54);
-            this.btnasignacion.TabIndex = 15;
-            this.btnasignacion.Text = "Asignaciones";
-            this.btnasignacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnasignacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnasignacion.UseVisualStyleBackColor = true;
-            this.btnasignacion.Click += new System.EventHandler(this.btnasignacion_Click);
+            this.btnopciones1.FlatAppearance.BorderSize = 0;
+            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.btnopciones1.IconColor = System.Drawing.Color.White;
+            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones1.IconSize = 28;
+            this.btnopciones1.Location = new System.Drawing.Point(12, 12);
+            this.btnopciones1.Name = "btnopciones1";
+            this.btnopciones1.Size = new System.Drawing.Size(35, 23);
+            this.btnopciones1.TabIndex = 11;
+            this.btnopciones1.UseVisualStyleBackColor = true;
+            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
             // 
-            // pnsubmenuasignacion
+            // btnopciones2
             // 
-            this.pnsubmenuasignacion.AutoSize = true;
-            this.pnsubmenuasignacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
-            this.pnsubmenuasignacion.Controls.Add(this.iconButton3);
-            this.pnsubmenuasignacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnsubmenuasignacion.Location = new System.Drawing.Point(0, 1095);
-            this.pnsubmenuasignacion.Name = "pnsubmenuasignacion";
-            this.pnsubmenuasignacion.Size = new System.Drawing.Size(242, 41);
-            this.pnsubmenuasignacion.TabIndex = 15;
+            this.btnopciones2.FlatAppearance.BorderSize = 0;
+            this.btnopciones2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones2.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
+            this.btnopciones2.IconColor = System.Drawing.Color.White;
+            this.btnopciones2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones2.IconSize = 28;
+            this.btnopciones2.Location = new System.Drawing.Point(53, 5);
+            this.btnopciones2.Name = "btnopciones2";
+            this.btnopciones2.Size = new System.Drawing.Size(20, 37);
+            this.btnopciones2.TabIndex = 12;
+            this.btnopciones2.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // btnopciones3
             // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(0, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(242, 41);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.Text = "Consultar";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnopciones3.FlatAppearance.BorderSize = 0;
+            this.btnopciones3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones3.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
+            this.btnopciones3.IconColor = System.Drawing.Color.White;
+            this.btnopciones3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones3.IconSize = 28;
+            this.btnopciones3.Location = new System.Drawing.Point(88, 11);
+            this.btnopciones3.Name = "btnopciones3";
+            this.btnopciones3.Size = new System.Drawing.Size(35, 23);
+            this.btnopciones3.TabIndex = 13;
+            this.btnopciones3.UseVisualStyleBackColor = true;
             // 
             // Frm_Menu
             // 
@@ -803,8 +852,9 @@ namespace Visual {
             this.Load += new System.EventHandler(this.FrmMenuPr_Load);
             this.pnlateral.ResumeLayout(false);
             this.pnlateral.PerformLayout();
-            this.pnsubmenupeticion.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.pnsubmenuasignacion.ResumeLayout(false);
+            this.pnsubmenupeticion.ResumeLayout(false);
             this.pnsubmconductor.ResumeLayout(false);
             this.pnsubmambulancia.ResumeLayout(false);
             this.pnsubmcliente.ResumeLayout(false);
@@ -817,7 +867,6 @@ namespace Visual {
             this.pnhijo.ResumeLayout(false);
             this.pnhijo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.pnsubmenuasignacion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -867,5 +916,8 @@ namespace Visual {
         private System.Windows.Forms.Panel pnsubmenuasignacion;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton btnasignacion;
+        private FontAwesome.Sharp.IconButton btnopciones2;
+        private FontAwesome.Sharp.IconButton btnopciones1;
+        private FontAwesome.Sharp.IconButton btnopciones3;
     }
 }
