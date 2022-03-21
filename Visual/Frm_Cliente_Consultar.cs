@@ -16,6 +16,7 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
         Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
+        Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
         public Frm_Cliente_Consultar () {
@@ -87,7 +88,7 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admCliente.CrearPdf2(dt, file, columnas, tamanios);
+                admpdf.CrearPdf(dt, file, columnas, tamanios);
                 if (File.Exists(file))
                 {
                     Process.Start(file);
@@ -107,9 +108,7 @@ namespace Visual {
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = (DataTable)dgvAmbulancias.DataSource;
-            MessageBox.Show(dt.Rows[0][0].ToString(), "Sistema de Libreria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          
         }
     }
 }
