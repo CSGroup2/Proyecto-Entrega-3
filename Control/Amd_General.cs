@@ -1,11 +1,12 @@
 ﻿using Datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
 namespace Control {
-    public class Amd_General {
+    public class Adm_General {
 
         /*
            Aplicar el patron de diseño Singleton:
@@ -15,30 +16,27 @@ namespace Control {
            3.2.Verificar si atributo es null, si es así, crearlo.
        */
 
-        private static Amd_General adm_general = null;    // 1.
+        private static Adm_General adm_general = null;    // 1.
         Datos_General Datos_General = null;
         //Persona Persona = null;
 
         //public Usuario_Cache UsuarioCache { get => usuarioCache; set => usuarioCache = value; }
 
         // Constructor: Adm_Login
-        private Amd_General () {                  // 2.
+        private Adm_General () {                  // 2.
             Datos_General = new Datos_General ();
         }
 
         // Getter: GetAdm
-        public static Amd_General GetAdm () {     // 3.1.
+        public static Adm_General GetAdm () {     // 3.1.
             if (adm_general == null) {                  //3.2
-                adm_general = new Amd_General ();
+                adm_general = new Adm_General ();
             }
             return adm_general;
         }
 
         /*---------------------------------------------------------------------------------------*/
-        public object listarDisponibilidad () {
-            // cbx_Disponibilidad.DataSource =
-            // cbx_Disponibilidad.ValueMember = "ID_DISPONIBILIDAD";
-            // cbx_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
+        public DataTable listarDisponibilidad () {
             return Datos_General.listarDatosDisponibilidad ();
         }
 
