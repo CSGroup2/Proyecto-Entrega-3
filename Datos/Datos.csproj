@@ -47,6 +47,7 @@
     <Compile Include="Datos_Conductor.cs" />
     <Compile Include="Datos_Email_Sistema.cs" />
     <Compile Include="Datos_Email_Servidor.cs" />
+    <Compile Include="Datos_General.cs" />
     <Compile Include="Datos_Login.cs" />
     <Compile Include="Datos_Peticion.cs" />
     <Compile Include="Datos_Secretaria.cs" />
