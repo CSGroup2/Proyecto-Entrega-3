@@ -33,15 +33,17 @@ namespace Visual
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pncontenido = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn11 = new System.Windows.Forms.Button();
+            this.btn10 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
@@ -87,110 +89,141 @@ namespace Visual
             // 
             this.pncontenido.AutoScroll = true;
             this.pncontenido.BackColor = System.Drawing.Color.White;
-            this.pncontenido.Controls.Add(this.button9);
-            this.pncontenido.Controls.Add(this.button8);
-            this.pncontenido.Controls.Add(this.button7);
-            this.pncontenido.Controls.Add(this.button6);
-            this.pncontenido.Controls.Add(this.button5);
-            this.pncontenido.Controls.Add(this.button4);
-            this.pncontenido.Controls.Add(this.button3);
-            this.pncontenido.Controls.Add(this.button2);
-            this.pncontenido.Controls.Add(this.button1);
+            this.pncontenido.Controls.Add(this.btn11);
+            this.pncontenido.Controls.Add(this.btn10);
+            this.pncontenido.Controls.Add(this.btn9);
+            this.pncontenido.Controls.Add(this.btn8);
+            this.pncontenido.Controls.Add(this.btn7);
+            this.pncontenido.Controls.Add(this.btn6);
+            this.pncontenido.Controls.Add(this.btn5);
+            this.pncontenido.Controls.Add(this.btn4);
+            this.pncontenido.Controls.Add(this.btn3);
+            this.pncontenido.Controls.Add(this.btn2);
+            this.pncontenido.Controls.Add(this.btn1);
             this.pncontenido.Location = new System.Drawing.Point(21, 17);
             this.pncontenido.Name = "pncontenido";
             this.pncontenido.Size = new System.Drawing.Size(607, 344);
             this.pncontenido.TabIndex = 14;
             // 
-            // button9
+            // btn11
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.Location = new System.Drawing.Point(0, 424);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(590, 53);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "¿Cómo registrar un empleado?";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn11.Location = new System.Drawing.Point(0, 530);
+            this.btn11.Name = "btn11";
+            this.btn11.Size = new System.Drawing.Size(590, 53);
+            this.btn11.TabIndex = 10;
+            this.btn11.Text = "-----";
+            this.btn11.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btn10
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.Location = new System.Drawing.Point(0, 371);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(590, 53);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "¿Cómo registrar un empleado?";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn10.Location = new System.Drawing.Point(0, 477);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(590, 53);
+            this.btn10.TabIndex = 9;
+            this.btn10.Text = "¿Cómo modificar los datos de las peticiones en SGAR?";
+            this.btn10.UseVisualStyleBackColor = true;
+            this.btn10.Click += new System.EventHandler(this.btn10_Click);
             // 
-            // button7
+            // btn9
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.Location = new System.Drawing.Point(0, 318);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(590, 53);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "¿Cómo registrar un empleado?";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn9.Location = new System.Drawing.Point(0, 424);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(590, 53);
+            this.btn9.TabIndex = 8;
+            this.btn9.Text = "¿Cómo consultar los datos de las peticiones en SGAR?";
+            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
-            // button6
+            // btn8
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(0, 265);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(590, 53);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "¿Cómo registrar un empleado?";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn8.Location = new System.Drawing.Point(0, 371);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(590, 53);
+            this.btn8.TabIndex = 7;
+            this.btn8.Text = "¿Cómo se registra una petición en SGAR?";
+            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
-            // button5
+            // btn7
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 212);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(590, 53);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "¿Cómo registrar un empleado?";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn7.Location = new System.Drawing.Point(0, 318);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(590, 53);
+            this.btn7.TabIndex = 6;
+            this.btn7.Text = "¿Cómo modificar los datos de las ambulancias en SGAR?";
+            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
-            // button4
+            // btn6
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 159);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(590, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "¿Cómo registrar un empleado?";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn6.Location = new System.Drawing.Point(0, 265);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(590, 53);
+            this.btn6.TabIndex = 5;
+            this.btn6.Text = "¿Cómo modificar los datos de las clientes/conductores/secretarias en SGAR?";
+            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
-            // button3
+            // btn5
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(590, 53);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "¿Cómo registrar un empleado?";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn5.Location = new System.Drawing.Point(0, 212);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(590, 53);
+            this.btn5.TabIndex = 4;
+            this.btn5.Text = "¿Cómo consultar los datos de los clientes/conductores/secretarias en SGAR?";
+            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
-            // button2
+            // btn4
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(590, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "¿Cómo registrar una petición?";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn4.Location = new System.Drawing.Point(0, 159);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(590, 53);
+            this.btn4.TabIndex = 3;
+            this.btn4.Text = "¿Cómo consultar los datos de las ambulancias en SGAR?";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
-            // button1
+            // btn3
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(590, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "¿Cómo registrar un empleado?";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn3.Location = new System.Drawing.Point(0, 106);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(590, 53);
+            this.btn3.TabIndex = 2;
+            this.btn3.Text = "¿Cómo se registra un cliente en SGAR?";
+            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            // 
+            // btn2
+            // 
+            this.btn2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn2.Location = new System.Drawing.Point(0, 53);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(590, 53);
+            this.btn2.TabIndex = 1;
+            this.btn2.Text = "¿Cómo se registra una ambulancia en SGAR?";
+            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            // 
+            // btn1
+            // 
+            this.btn1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn1.Location = new System.Drawing.Point(0, 0);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(590, 53);
+            this.btn1.TabIndex = 0;
+            this.btn1.Text = "¿Cómo se registra un empleado en SGAR?";
+            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // Frm_Ayuda
             // 
@@ -217,14 +250,16 @@ namespace Visual
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pncontenido;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn9;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn11;
+        private System.Windows.Forms.Button btn10;
     }
 }
