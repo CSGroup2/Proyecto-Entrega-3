@@ -36,7 +36,7 @@ namespace Visual
                     System.Diagnostics.Process.Start("");
                     break;
                 case "Secretaria":
-                    System.Diagnostics.Process.Start("");
+                    System.Diagnostics.Process.Start("https://docs.google.com/document/d/1c1CxQTJ21j7Wmxw40SRSxLoBCAkXJ-xppDd0FmM2pVk/edit?usp=sharing");
                     break;
                 default:
                     break;
