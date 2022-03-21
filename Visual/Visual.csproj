@@ -222,6 +222,9 @@
     <EmbeddedResource Include="Frm_Asignar_PeticionConsulta.resx">
       <DependentUpon>Frm_Asignar_PeticionConsulta.cs</DependentUpon>
     </EmbeddedResource>
+	<EmbeddedResource Include="Frm_Ayuda.resx">
+	  <DependentUpon>Frm_Ayuda.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Frm_Cliente_Consultar.resx">
       <DependentUpon>Frm_Cliente_Consultar.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +261,9 @@
     <EmbeddedResource Include="Frm_Peticion_Consultar.resx">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
     </EmbeddedResource>
+	<EmbeddedResource Include="Frm_Peticion_Editar.resx">
+      <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Registrar.resx">
       <DependentUpon>Frm_Peticion_Registrar.cs</DependentUpon>
     </EmbeddedResource>
