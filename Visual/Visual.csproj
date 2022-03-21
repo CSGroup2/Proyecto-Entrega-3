@@ -97,6 +97,12 @@
     <Compile Include="Frm_Asignar_PeticionConsulta.Designer.cs">
       <DependentUpon>Frm_Asignar_PeticionConsulta.cs</DependentUpon>
     </Compile>
+	<Compile Include="Frm_Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ayuda.designer.cs">
+      <DependentUpon>Frm_Ayuda.cs</DependentUpon>
+    </Compile>  
     <Compile Include="Frm_Cliente_Consultar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="Frm_Peticion_Consultar.Designer.cs">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
+    </Compile>
+	<Compile Include="Frm_Peticion_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Peticion_Editar.designer.cs">
+      <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Peticion_Registrar.cs">
       <SubType>Form</SubType>
