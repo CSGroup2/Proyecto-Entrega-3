@@ -15,6 +15,7 @@ namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
+  
         Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
