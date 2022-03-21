@@ -29,10 +29,6 @@ namespace Visual
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
-            this.btncancelar = new FontAwesome.Sharp.IconButton();
-            this.btnlimpiar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
             this.cmb_TAmb = new System.Windows.Forms.ComboBox();
             this.nud_Ambulancia = new System.Windows.Forms.NumericUpDown();
@@ -48,82 +44,11 @@ namespace Visual
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Origen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
+            this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.pncontenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Ambulancia)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.btnguardar);
-            this.panel2.Controls.Add(this.btncancelar);
-            this.panel2.Controls.Add(this.btnlimpiar);
-            this.panel2.Controls.Add(this.pncontenido);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(646, 363);
-            this.panel2.TabIndex = 7;
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.Location = new System.Drawing.Point(439, 34);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnguardar.Size = new System.Drawing.Size(183, 52);
-            this.btnguardar.TabIndex = 15;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnguardar.UseVisualStyleBackColor = true;
-            // 
-            // btncancelar
-            // 
-            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancelar.FlatAppearance.BorderSize = 0;
-            this.btncancelar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btncancelar.Location = new System.Drawing.Point(439, 213);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btncancelar.Size = new System.Drawing.Size(183, 52);
-            this.btncancelar.TabIndex = 12;
-            this.btncancelar.Text = "Cancelar";
-            this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btncancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnlimpiar
-            // 
-            this.btnlimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnlimpiar.FlatAppearance.BorderSize = 0;
-            this.btnlimpiar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnlimpiar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnlimpiar.Location = new System.Drawing.Point(439, 122);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnlimpiar.Size = new System.Drawing.Size(183, 52);
-            this.btnlimpiar.TabIndex = 11;
-            this.btnlimpiar.Text = "Limpiar";
-            this.btnlimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnlimpiar.UseVisualStyleBackColor = true;
             // 
             // pncontenido
             // 
@@ -142,10 +67,10 @@ namespace Visual
             this.pncontenido.Controls.Add(this.label1);
             this.pncontenido.Controls.Add(this.txt_Origen);
             this.pncontenido.Controls.Add(this.label5);
-            this.pncontenido.Location = new System.Drawing.Point(24, 28);
+            this.pncontenido.Location = new System.Drawing.Point(24, 12);
             this.pncontenido.Name = "pncontenido";
-            this.pncontenido.Size = new System.Drawing.Size(409, 303);
-            this.pncontenido.TabIndex = 14;
+            this.pncontenido.Size = new System.Drawing.Size(409, 285);
+            this.pncontenido.TabIndex = 17;
             // 
             // cmb_TAmb
             // 
@@ -324,62 +249,68 @@ namespace Visual
             this.label5.TabIndex = 9;
             this.label5.Text = "Num. Cédula:";
             // 
-            // panel1
+            // btnguardar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 80);
-            this.panel1.TabIndex = 6;
+            this.btnguardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnguardar.Location = new System.Drawing.Point(464, 77);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnguardar.Size = new System.Drawing.Size(183, 50);
+            this.btnguardar.TabIndex = 18;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // label2
+            // btncancelar
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.label2.Location = new System.Drawing.Point(182, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 44);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Editar Peticiones";
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btncancelar.Location = new System.Drawing.Point(464, 179);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btncancelar.Size = new System.Drawing.Size(183, 49);
+            this.btncancelar.TabIndex = 16;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // Frm_Peticion_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 443);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackgroundImage = global::Visual.Properties.Resources._9;
+            this.ClientSize = new System.Drawing.Size(677, 314);
+            this.Controls.Add(this.pncontenido);
+            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.btncancelar);
             this.Name = "Frm_Peticion_Editar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Peticion_Editar";
-            this.Load += new System.EventHandler(this.Frm_Peticion_Editar_Load);
-            this.panel2.ResumeLayout(false);
             this.pncontenido.ResumeLayout(false);
             this.pncontenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Ambulancia)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton btnguardar;
-        private FontAwesome.Sharp.IconButton btncancelar;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
         private System.Windows.Forms.Panel pncontenido;
         private System.Windows.Forms.ComboBox cmb_TAmb;
         private System.Windows.Forms.NumericUpDown nud_Ambulancia;
-        private System.Windows.Forms.Label lbl_apellido;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_cedula;
@@ -390,7 +321,9 @@ namespace Visual
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_Origen;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton btnguardar;
+        private FontAwesome.Sharp.IconButton btncancelar;
+        private System.Windows.Forms.Label lbl_apellido;
+        private System.Windows.Forms.Label label9;
     }
 }
