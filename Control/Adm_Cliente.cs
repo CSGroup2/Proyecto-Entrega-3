@@ -105,6 +105,21 @@ namespace Control
             return mensaje;
         }
 
+        public DataTable ListarClientes()
+        {
+            DataTable dtresult = new DataTable();
+            dtresult = Datos_client.ListarClientes();
+            return dtresult;
+        }
+
+        public DataTable ConsultarClientes(string dato, int estado, int hospital, int buscarOb, int buscarOp)
+        {
+            DataTable dtresult = new DataTable();
+            dtresult = Datos_client.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
+            return dtresult;
+        }
+
+
         #endregion
 
 
