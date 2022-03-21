@@ -29,33 +29,23 @@ namespace Visual
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pncontenido = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pncontenido = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pncontenido.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.pncontenido);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 63);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(655, 387);
-            this.panel2.TabIndex = 6;
-            // 
-            // pncontenido
-            // 
-            this.pncontenido.BackColor = System.Drawing.Color.White;
-            this.pncontenido.Location = new System.Drawing.Point(20, 15);
-            this.pncontenido.Name = "pncontenido";
-            this.pncontenido.Size = new System.Drawing.Size(622, 308);
-            this.pncontenido.TabIndex = 14;
             // 
             // panel1
             // 
@@ -81,6 +71,127 @@ namespace Visual
             this.label2.TabIndex = 1;
             this.label2.Text = "Ayuda";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pncontenido);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 63);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(655, 387);
+            this.panel2.TabIndex = 6;
+            // 
+            // pncontenido
+            // 
+            this.pncontenido.AutoScroll = true;
+            this.pncontenido.BackColor = System.Drawing.Color.White;
+            this.pncontenido.Controls.Add(this.button9);
+            this.pncontenido.Controls.Add(this.button8);
+            this.pncontenido.Controls.Add(this.button7);
+            this.pncontenido.Controls.Add(this.button6);
+            this.pncontenido.Controls.Add(this.button5);
+            this.pncontenido.Controls.Add(this.button4);
+            this.pncontenido.Controls.Add(this.button3);
+            this.pncontenido.Controls.Add(this.button2);
+            this.pncontenido.Controls.Add(this.button1);
+            this.pncontenido.Location = new System.Drawing.Point(21, 17);
+            this.pncontenido.Name = "pncontenido";
+            this.pncontenido.Size = new System.Drawing.Size(607, 344);
+            this.pncontenido.TabIndex = 14;
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.Location = new System.Drawing.Point(0, 424);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(590, 53);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "¿Cómo registrar un empleado?";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.Location = new System.Drawing.Point(0, 371);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(590, 53);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "¿Cómo registrar un empleado?";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.Location = new System.Drawing.Point(0, 318);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(590, 53);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "¿Cómo registrar un empleado?";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 265);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(590, 53);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "¿Cómo registrar un empleado?";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(0, 212);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(590, 53);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "¿Cómo registrar un empleado?";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 159);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(590, 53);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "¿Cómo registrar un empleado?";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 106);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(590, 53);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "¿Cómo registrar un empleado?";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(590, 53);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "¿Cómo registrar una petición?";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(590, 53);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "¿Cómo registrar un empleado?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_Ayuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,9 +203,10 @@ namespace Visual
             this.Name = "Frm_Ayuda";
             this.Text = "Frm_Ayuda";
             this.Load += new System.EventHandler(this.Frm_Ayuda_Load);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.pncontenido.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -102,8 +214,17 @@ namespace Visual
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pncontenido;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pncontenido;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

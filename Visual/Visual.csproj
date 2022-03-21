@@ -97,12 +97,12 @@
     <Compile Include="Frm_Asignar_PeticionConsulta.Designer.cs">
       <DependentUpon>Frm_Asignar_PeticionConsulta.cs</DependentUpon>
     </Compile>
-	<Compile Include="Frm_Ayuda.cs">
+    <Compile Include="Frm_Ayuda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Ayuda.designer.cs">
       <DependentUpon>Frm_Ayuda.cs</DependentUpon>
-    </Compile>  
+    </Compile>
     <Compile Include="Frm_Cliente_Consultar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +163,12 @@
     <Compile Include="Frm_Login.designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mensaje.Designer.cs">
+      <DependentUpon>Frm_Mensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,7 +181,7 @@
     <Compile Include="Frm_Peticion_Consultar.Designer.cs">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
     </Compile>
-	<Compile Include="Frm_Peticion_Editar.cs">
+    <Compile Include="Frm_Peticion_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Peticion_Editar.designer.cs">
@@ -234,9 +240,9 @@
     <EmbeddedResource Include="Frm_Asignar_PeticionConsulta.resx">
       <DependentUpon>Frm_Asignar_PeticionConsulta.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="Frm_Ayuda.resx">
-	  <DependentUpon>Frm_Ayuda.cs</DependentUpon>
-	</EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ayuda.resx">
+      <DependentUpon>Frm_Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Cliente_Consultar.resx">
       <DependentUpon>Frm_Cliente_Consultar.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,15 +273,18 @@
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mensaje.resx">
+      <DependentUpon>Frm_Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu.resx">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Consultar.resx">
       <DependentUpon>Frm_Peticion_Consultar.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="Frm_Peticion_Editar.resx">
+    <EmbeddedResource Include="Frm_Peticion_Editar.resx">
       <DependentUpon>Frm_Peticion_Editar.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Peticion_Registrar.resx">
       <DependentUpon>Frm_Peticion_Registrar.cs</DependentUpon>
     </EmbeddedResource>
