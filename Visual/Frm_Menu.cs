@@ -69,6 +69,7 @@ namespace Visual {
             this.pnsubmambulancia.Visible = false;
             this.pnsubmconductor.Visible = false;
             this.pnsubmenupeticion.Visible = false;
+            this.pnsubmenuasignacion.Visible = false;
         }
 
         private void hidesubmenu () {
@@ -139,7 +140,8 @@ namespace Visual {
             //switch (Usuario_Cache.Tipo) {
             switch (admLogin.TipoUsuario ()) {
                 case "Gerente":
-                    btnpeticion.Visible = false; 
+                    btnpeticion.Visible = false;
+                    btnasignacion.Visible = false;
                     break;
                 case "Cliente":
                     btnsecretaria.Visible = false;
@@ -147,6 +149,7 @@ namespace Visual {
                     btnambulancia.Visible = false;
                     btnconductor.Visible = false;
                     btnasignar.Visible = false;
+                    btnasignacion.Visible = false;
                     break;
                 case "Secretaria":
                     btnsecretaria.Visible = false;
@@ -272,6 +275,18 @@ namespace Visual {
         private void btnconsultarpet_Click(object sender, EventArgs e)
         {
             abrirhijoform(new Frm_Peticion_Consultar());
+        }
+
+
+        private void btnasignacion_Click(object sender, EventArgs e)
+        {
+            showsubmenu(pnsubmenuasignacion);
+            ActivarBoton(sender, RGBCOLORS.azulbajo);
+        }
+
+        private void btnopciones1_Click(object sender, EventArgs e)
+        {
+            abrirhijoform(new Frm_Ayuda());
         }
     }
 }

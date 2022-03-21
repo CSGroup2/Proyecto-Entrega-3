@@ -21,7 +21,10 @@ namespace Visual {
 
         private void FrmClienteReg_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
-            admclient.LlenarComboHospitales(cbxhospitales);
+            cbxhospitales.Items.Clear();
+            cbxhospitales.DataSource = admclient.LlenarComboHospitales();
+            cbxhospitales.ValueMember = "ID_HOSPITAL";
+            cbxhospitales.DisplayMember = "NOMBRE_HOSPITAL";
 
         }
 

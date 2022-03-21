@@ -30,13 +30,13 @@ namespace Datos
                 sql_comando.CommandType = CommandType.StoredProcedure; //Se especifico que el comando es de tipo procedimiento
                 SqlDataAdapter SqlDat = new SqlDataAdapter(sql_comando);
                 SqlDat.Fill(DtResultado);  //empiezo a recoger los datos
-                DataRow nuevaFila = DtResultado.NewRow();
+                //DataRow nuevaFila = DtResultado.NewRow();
 
                 // creo la opcion por defecto
-                nuevaFila["ID_HOSPITAL"] = 0;
-                nuevaFila["NOMBRE_HOSPITAL"] = "--Seleccione--";
+                //nuevaFila["ID_HOSPITAL"] = 0;
+                //nuevaFila["NOMBRE_HOSPITAL"] = "--Seleccione--";
                 //inserto la opcion por defecto
-                DtResultado.Rows.InsertAt(nuevaFila, 0);
+                //DtResultado.Rows.InsertAt(nuevaFila, 0);
             }
             catch (Exception ex)
             {
@@ -103,6 +103,65 @@ namespace Datos
                 conexion.cerrar_conexion(sql_conexion);
             }
             return mensaje;
+        }
+
+        //metodo para listar todos los clientes
+        public DataTable ListarClientes()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection sqlconn = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_listar_clientes", sqlconn))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al listar los clientes" + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(sqlconn);
+            }
+
+            return dt;
+        }
+
+        // metodo de consulta de cliente por los filtros 
+        public DataTable ConsultarClientes(string dato, int estado, int hospital, int buscarOb, int buscarOp)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection c1 = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_consultar_clientes", c1))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add(new SqlParameter("@opcionA", buscarOb));
+                    comando.Parameters.Add(new SqlParameter("@opcionB", buscarOp));
+                    comando.Parameters.Add(new SqlParameter("@dato", dato));
+                    comando.Parameters.Add(new SqlParameter("@estado", estado));
+                    comando.Parameters.Add(new SqlParameter("@hospital", hospital));
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al consultar los Clientes " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
+            }
+
+            return dt;
         }
     }
 }
