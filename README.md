@@ -15,7 +15,7 @@
 * Código en C# 
 ```
 
-Pasos para ejecutar el programa:
+# Pasos para ejecutar el programa:
 ```
 1. Descargar el proyecto en .zip
 2. Extraer la carpeta
@@ -25,13 +25,13 @@ Pasos para ejecutar el programa:
 6. Clic derecho en solución > Compilar solución
 ```
 
-Requisitos para ejecutar el proyecto:
+# Requisitos para ejecutar el proyecto:
 ```
 * Microsoft Visual Studio 2019
 * Microsoft SQL Server 2019
 ```
 
-Credenciales
+# Credenciales
 ```
 * Gerente    -->  Usuario: Stefan45S   Contraseña: 12345
 * Cliente    -->  Usuario: Helen45B    Contraseña: 12345
