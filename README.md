@@ -1,5 +1,6 @@
 # Proyecto-Entrega-3
 
+[![Contributors](https://img.shields.io/badge/Contributors-%3D%3D%3E-brightgreen)](https://github.com/JoeTech-Studio/UserTags)
 [![GitHub](https://img.shields.io/github/followers/Stefan-Castro?label=Alexander&style=social)](https://github.com/Stefan-Castro)
 [![GitHub](https://img.shields.io/github/followers/blilllly?label=Billy&style=social)](https://github.com/blilllly)
 [![GitHub](https://img.shields.io/github/followers/hlbv17?label=Helen&style=social)](https://github.com/hlbv17)
