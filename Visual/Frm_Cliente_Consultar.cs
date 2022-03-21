@@ -15,6 +15,7 @@ namespace Visual {
     public partial class Frm_Cliente_Consultar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
+        Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
         Frm_Menu menu;
 
         public Frm_Cliente_Consultar () {
@@ -29,6 +30,7 @@ namespace Visual {
 
         private void FrmClienteConsul_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
+            admA.ListarAmbulancias(dgvAmbulancias);
         }
 
         #region Efecto boton consultar
@@ -74,34 +76,31 @@ namespace Visual {
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            /*
             DataTable dt = new DataTable();
-            //CONVIERTE EL DATAGRIDVIEW EN DATATABLE
-            dt = (DataTable)dgvClientes.DataSource;
-            //DEFINE LA EXTENSION DEL ARCHIVO
+            dt = (DataTable)dgvAmbulancias.DataSource;
             saveFileDialog1.DefaultExt = "pdf";
-            //DEFINE EL FILTRO DEL EXPLORADOR DE ARCHIVOS
             saveFileDialog1.Filter = "Pdf File |*.pdf";
-            //DEFINE UN TITULO AL SAVEFILEDIALOG
-            saveFileDialog1.Title = "SGAR: Clientes - Guardar";
+            //saveFileDialog1.FileName = "lista_ambulancia.pdf";
+            saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                // SE RECOGE LA RUTA DEL ARCHIVO
                 string file = saveFileDialog1.FileName;
-                // CREA EL PDF
-                admC.CrearPdf(dt, file);
-                
+                admCliente.CrearPdf(dt, file);
                 if (File.Exists(file))
                 {
-                    // ABRE EL PDF
                     Process.Start(file);
                 }
-            }*/
+            }
         }
 
         private void btnconsultar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnmostrartodos_Click(object sender, EventArgs e)
+        {
+            admA.ListarAmbulancias(dgvAmbulancias);
         }
     }
 }

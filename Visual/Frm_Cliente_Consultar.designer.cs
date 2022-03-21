@@ -28,6 +28,7 @@ namespace Visual {
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
+            this.dgvAmbulancias = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnmostrartodos = new FontAwesome.Sharp.IconButton();
@@ -38,36 +39,24 @@ namespace Visual {
             this.opcedula = new System.Windows.Forms.RadioButton();
             this.txtCriterio = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hospital = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbulancias)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.btnImprimir);
             this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Controls.Add(this.pncontenido);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(662, 419);
@@ -122,6 +111,7 @@ namespace Visual {
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pncontenido.BackColor = System.Drawing.Color.White;
+            this.pncontenido.Controls.Add(this.dgvAmbulancias);
             this.pncontenido.Controls.Add(this.comboBox1);
             this.pncontenido.Controls.Add(this.checkBox1);
             this.pncontenido.Controls.Add(this.btnmostrartodos);
@@ -132,11 +122,22 @@ namespace Visual {
             this.pncontenido.Controls.Add(this.opcedula);
             this.pncontenido.Controls.Add(this.txtCriterio);
             this.pncontenido.Controls.Add(this.label14);
-            this.pncontenido.Controls.Add(this.dgvClientes);
             this.pncontenido.Location = new System.Drawing.Point(20, 28);
             this.pncontenido.Name = "pncontenido";
             this.pncontenido.Size = new System.Drawing.Size(622, 299);
             this.pncontenido.TabIndex = 14;
+            // 
+            // dgvAmbulancias
+            // 
+            this.dgvAmbulancias.AllowUserToAddRows = false;
+            this.dgvAmbulancias.AllowUserToDeleteRows = false;
+            this.dgvAmbulancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAmbulancias.Location = new System.Drawing.Point(27, 104);
+            this.dgvAmbulancias.Name = "dgvAmbulancias";
+            this.dgvAmbulancias.ReadOnly = true;
+            this.dgvAmbulancias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAmbulancias.Size = new System.Drawing.Size(572, 182);
+            this.dgvAmbulancias.TabIndex = 60;
             // 
             // comboBox1
             // 
@@ -175,6 +176,7 @@ namespace Visual {
             this.btnmostrartodos.Text = "Mostrar Todos";
             this.btnmostrartodos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnmostrartodos.UseVisualStyleBackColor = true;
+            this.btnmostrartodos.Click += new System.EventHandler(this.btnmostrartodos_Click);
             this.btnmostrartodos.MouseLeave += new System.EventHandler(this.btnmostrartodos_MouseLeave);
             this.btnmostrartodos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnmostrartodos_MouseMove);
             // 
@@ -263,96 +265,11 @@ namespace Visual {
             this.label14.TabIndex = 49;
             this.label14.Text = "Dato: ";
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.estado,
-            this.hospital,
-            this.Cedula,
-            this.Nombres,
-            this.Apellidos,
-            this.Sexo,
-            this.FechaNac,
-            this.telefono,
-            this.correo});
-            this.dgvClientes.Location = new System.Drawing.Point(24, 99);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(575, 182);
-            this.dgvClientes.TabIndex = 48;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // hospital
-            // 
-            this.hospital.HeaderText = "Hospital";
-            this.hospital.Name = "hospital";
-            this.hospital.ReadOnly = true;
-            // 
-            // Cedula
-            // 
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Sexo
-            // 
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "Fech. Nacimiento";
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(662, 63);
@@ -386,7 +303,7 @@ namespace Visual {
             this.panel2.ResumeLayout(false);
             this.pncontenido.ResumeLayout(false);
             this.pncontenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbulancias)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -407,21 +324,11 @@ namespace Visual {
         private System.Windows.Forms.RadioButton opcedula;
         private System.Windows.Forms.TextBox txtCriterio;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hospital;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView dgvAmbulancias;
     }
 }

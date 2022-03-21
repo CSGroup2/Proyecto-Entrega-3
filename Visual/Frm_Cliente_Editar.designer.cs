@@ -27,6 +27,7 @@ namespace Visual {
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -64,13 +65,24 @@ namespace Visual {
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hospital = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gboxnombres.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -109,6 +121,7 @@ namespace Visual {
             // pncontenido
             // 
             this.pncontenido.BackColor = System.Drawing.Color.White;
+            this.pncontenido.Controls.Add(this.dgvClientes);
             this.pncontenido.Controls.Add(this.btnBuscar);
             this.pncontenido.Controls.Add(this.lblcodigo);
             this.pncontenido.Controls.Add(this.label15);
@@ -134,6 +147,24 @@ namespace Visual {
             this.pncontenido.Name = "pncontenido";
             this.pncontenido.Size = new System.Drawing.Size(625, 333);
             this.pncontenido.TabIndex = 14;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 20;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(271, 49);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnBuscar.Size = new System.Drawing.Size(44, 26);
+            this.btnBuscar.TabIndex = 59;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // lblcodigo
             // 
@@ -557,23 +588,89 @@ namespace Visual {
             this.label2.TabIndex = 1;
             this.label2.Text = "Actualizar Cliente";
             // 
-            // btnBuscar
+            // dgvClientes
             // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnBuscar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 20;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(271, 49);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBuscar.Size = new System.Drawing.Size(44, 26);
-            this.btnBuscar.TabIndex = 59;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.estado,
+            this.hospital,
+            this.Cedula,
+            this.Nombres,
+            this.Apellidos,
+            this.Sexo,
+            this.FechaNac,
+            this.telefono,
+            this.correo});
+            this.dgvClientes.Location = new System.Drawing.Point(25, 75);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClientes.Size = new System.Drawing.Size(575, 182);
+            this.dgvClientes.TabIndex = 60;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // hospital
+            // 
+            this.hospital.HeaderText = "Hospital";
+            this.hospital.Name = "hospital";
+            this.hospital.ReadOnly = true;
+            // 
+            // Cedula
+            // 
+            this.Cedula.HeaderText = "Cédula";
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Sexo
+            // 
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            // 
+            // FechaNac
+            // 
+            this.FechaNac.HeaderText = "Fech. Nacimiento";
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
             // 
             // Frm_Cliente_Editar
             // 
@@ -597,6 +694,7 @@ namespace Visual {
             this.gboxnombres.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +742,16 @@ namespace Visual {
         private System.Windows.Forms.CheckBox chxusuario;
         private System.Windows.Forms.TextBox textBox8;
         private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hospital;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
     }
 }
