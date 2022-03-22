@@ -71,7 +71,7 @@ namespace Visual {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 63);
+            this.panel1.Size = new System.Drawing.Size(690, 85);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -82,7 +82,7 @@ namespace Visual {
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.label2.Location = new System.Drawing.Point(117, 9);
+            this.label2.Location = new System.Drawing.Point(119, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(461, 44);
             this.label2.TabIndex = 1;
@@ -98,9 +98,9 @@ namespace Visual {
             this.panel2.Controls.Add(this.btn_Cancelar);
             this.panel2.Controls.Add(this.btn_Limpiar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 63);
+            this.panel2.Location = new System.Drawing.Point(0, 85);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(662, 513);
+            this.panel2.Size = new System.Drawing.Size(690, 491);
             this.panel2.TabIndex = 1;
             // 
             // btn_Guardar
@@ -112,7 +112,7 @@ namespace Visual {
             this.btn_Guardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btn_Guardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btn_Guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Guardar.Location = new System.Drawing.Point(38, 440);
+            this.btn_Guardar.Location = new System.Drawing.Point(38, 418);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Guardar.Size = new System.Drawing.Size(183, 52);
@@ -143,17 +143,18 @@ namespace Visual {
             this.pncontenido.Controls.Add(this.txt_Cedula);
             this.pncontenido.Controls.Add(this.label5);
             this.pncontenido.Controls.Add(this.gboxnombres);
-            this.pncontenido.Location = new System.Drawing.Point(20, 38);
+            this.pncontenido.Location = new System.Drawing.Point(22, 27);
             this.pncontenido.Name = "pncontenido";
-            this.pncontenido.Size = new System.Drawing.Size(622, 378);
+            this.pncontenido.Size = new System.Drawing.Size(639, 346);
             this.pncontenido.TabIndex = 14;
             // 
             // dtp_FechaContrato
             // 
-            this.dtp_FechaContrato.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_FechaContrato.Location = new System.Drawing.Point(158, 339);
+            this.dtp_FechaContrato.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_FechaContrato.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_FechaContrato.Location = new System.Drawing.Point(466, 247);
             this.dtp_FechaContrato.Name = "dtp_FechaContrato";
-            this.dtp_FechaContrato.Size = new System.Drawing.Size(173, 26);
+            this.dtp_FechaContrato.Size = new System.Drawing.Size(149, 23);
             this.dtp_FechaContrato.TabIndex = 22;
             // 
             // label11
@@ -162,7 +163,7 @@ namespace Visual {
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label11.Location = new System.Drawing.Point(16, 343);
+            this.label11.Location = new System.Drawing.Point(323, 250);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 18);
             this.label11.TabIndex = 21;
@@ -173,9 +174,9 @@ namespace Visual {
             this.txt_Correo.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Correo.Location = new System.Drawing.Point(91, 233);
+            this.txt_Correo.Location = new System.Drawing.Point(89, 175);
             this.txt_Correo.Name = "txt_Correo";
-            this.txt_Correo.Size = new System.Drawing.Size(222, 26);
+            this.txt_Correo.Size = new System.Drawing.Size(223, 26);
             this.txt_Correo.TabIndex = 19;
             this.txt_Correo.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             this.txt_Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Correo_KeyPress);
@@ -186,7 +187,7 @@ namespace Visual {
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label10.Location = new System.Drawing.Point(15, 236);
+            this.label10.Location = new System.Drawing.Point(20, 178);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 18);
             this.label10.TabIndex = 20;
@@ -197,10 +198,10 @@ namespace Visual {
             this.txt_Telefono.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Telefono.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Telefono.Location = new System.Drawing.Point(429, 15);
+            this.txt_Telefono.Location = new System.Drawing.Point(408, 173);
             this.txt_Telefono.MaxLength = 10;
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(169, 26);
+            this.txt_Telefono.Size = new System.Drawing.Size(207, 26);
             this.txt_Telefono.TabIndex = 17;
             this.txt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cedula_KeyPress);
             // 
@@ -210,7 +211,7 @@ namespace Visual {
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label9.Location = new System.Drawing.Point(345, 18);
+            this.label9.Location = new System.Drawing.Point(323, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 18);
             this.label9.TabIndex = 18;
@@ -218,10 +219,11 @@ namespace Visual {
             // 
             // dtp_FechaNac
             // 
-            this.dtp_FechaNac.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_FechaNac.Location = new System.Drawing.Point(158, 297);
+            this.dtp_FechaNac.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_FechaNac.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_FechaNac.Location = new System.Drawing.Point(466, 216);
             this.dtp_FechaNac.Name = "dtp_FechaNac";
-            this.dtp_FechaNac.Size = new System.Drawing.Size(173, 26);
+            this.dtp_FechaNac.Size = new System.Drawing.Size(149, 23);
             this.dtp_FechaNac.TabIndex = 16;
             // 
             // label8
@@ -230,7 +232,7 @@ namespace Visual {
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label8.Location = new System.Drawing.Point(16, 301);
+            this.label8.Location = new System.Drawing.Point(323, 219);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(142, 18);
             this.label8.TabIndex = 15;
@@ -241,7 +243,7 @@ namespace Visual {
             this.rdb_Femenino.AutoSize = true;
             this.rdb_Femenino.BackColor = System.Drawing.Color.Transparent;
             this.rdb_Femenino.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_Femenino.Location = new System.Drawing.Point(209, 267);
+            this.rdb_Femenino.Location = new System.Drawing.Point(87, 246);
             this.rdb_Femenino.Name = "rdb_Femenino";
             this.rdb_Femenino.Size = new System.Drawing.Size(98, 24);
             this.rdb_Femenino.TabIndex = 14;
@@ -254,7 +256,7 @@ namespace Visual {
             this.rdb_Masculino.BackColor = System.Drawing.Color.Transparent;
             this.rdb_Masculino.Checked = true;
             this.rdb_Masculino.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_Masculino.Location = new System.Drawing.Point(85, 267);
+            this.rdb_Masculino.Location = new System.Drawing.Point(88, 216);
             this.rdb_Masculino.Name = "rdb_Masculino";
             this.rdb_Masculino.Size = new System.Drawing.Size(102, 24);
             this.rdb_Masculino.TabIndex = 13;
@@ -268,7 +270,7 @@ namespace Visual {
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(17, 270);
+            this.label7.Location = new System.Drawing.Point(20, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 18);
             this.label7.TabIndex = 6;
@@ -282,9 +284,9 @@ namespace Visual {
             this.groupBox1.Controls.Add(this.txt_Apellido1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 136);
+            this.groupBox1.Location = new System.Drawing.Point(320, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 85);
+            this.groupBox1.Size = new System.Drawing.Size(308, 85);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Apellidos";
@@ -338,7 +340,7 @@ namespace Visual {
             this.txt_Cedula.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Cedula.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cedula.Location = new System.Drawing.Point(125, 15);
+            this.txt_Cedula.Location = new System.Drawing.Point(129, 41);
             this.txt_Cedula.MaxLength = 10;
             this.txt_Cedula.Name = "txt_Cedula";
             this.txt_Cedula.Size = new System.Drawing.Size(169, 26);
@@ -351,7 +353,7 @@ namespace Visual {
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(16, 17);
+            this.label5.Location = new System.Drawing.Point(20, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 18);
             this.label5.TabIndex = 7;
@@ -365,9 +367,9 @@ namespace Visual {
             this.gboxnombres.Controls.Add(this.txt_Nombre1);
             this.gboxnombres.Controls.Add(this.label4);
             this.gboxnombres.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxnombres.Location = new System.Drawing.Point(11, 44);
+            this.gboxnombres.Location = new System.Drawing.Point(15, 73);
             this.gboxnombres.Name = "gboxnombres";
-            this.gboxnombres.Size = new System.Drawing.Size(320, 85);
+            this.gboxnombres.Size = new System.Drawing.Size(302, 85);
             this.gboxnombres.TabIndex = 4;
             this.gboxnombres.TabStop = false;
             this.gboxnombres.Text = "Nombres";
@@ -425,7 +427,7 @@ namespace Visual {
             this.btn_Cancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btn_Cancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btn_Cancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Cancelar.Location = new System.Drawing.Point(237, 440);
+            this.btn_Cancelar.Location = new System.Drawing.Point(251, 418);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Cancelar.Size = new System.Drawing.Size(183, 52);
@@ -446,7 +448,7 @@ namespace Visual {
             this.btn_Limpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btn_Limpiar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btn_Limpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Limpiar.Location = new System.Drawing.Point(440, 440);
+            this.btn_Limpiar.Location = new System.Drawing.Point(468, 418);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Limpiar.Size = new System.Drawing.Size(183, 52);
@@ -467,7 +469,7 @@ namespace Visual {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 576);
+            this.ClientSize = new System.Drawing.Size(690, 576);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
