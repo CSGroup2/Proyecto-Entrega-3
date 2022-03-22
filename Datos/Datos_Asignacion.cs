@@ -228,5 +228,72 @@ namespace Datos {
             }
             return msj;
         }
+
+        public object LlenarTablaAsignaciones(int idSecretario)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_listar_asignaciones", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_id = new SqlParameter();
+                    param_id.ParameterName = "@idS";
+                    param_id.SqlDbType = SqlDbType.Int;
+                    param_id.Value = idSecretario;
+                    comando.Parameters.Add(param_id);
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al listar las asignaciones " + ex.Message);
+            }
+            return dt;
+        }
+
+        public object FiltrarAsignaciones(int idSecretario, string ced, string condicion)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_filtrar_asignaciones", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_id = new SqlParameter();
+                    param_id.ParameterName = "@idS";
+                    param_id.SqlDbType = SqlDbType.Int;
+                    param_id.Value = idSecretario;
+                    comando.Parameters.Add(param_id);
+
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_cedCliente = new SqlParameter();
+                    param_cedCliente.ParameterName = "@cedC";
+                    param_cedCliente.SqlDbType = SqlDbType.VarChar;
+                    param_cedCliente.Value = ced;
+                    comando.Parameters.Add(param_cedCliente);
+
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_condicion = new SqlParameter();
+                    param_condicion.ParameterName = "@cond";
+                    param_condicion.SqlDbType = SqlDbType.VarChar;
+                    param_condicion.Value = condicion;
+                    comando.Parameters.Add(param_condicion);
+
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al listar las peticiones " + ex.Message);
+            }
+            return dt;
+        }
     }
 }

@@ -288,5 +288,10 @@ namespace Visual {
         {
             abrirhijoform(new Frm_Ayuda());
         }
+
+        private void btnConsultarAsig_Click(object sender, EventArgs e)
+        {
+            abrirhijoform(new Frm_Asignacion_Consultar());
+        }
     }
 }

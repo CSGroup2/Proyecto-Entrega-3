@@ -40,6 +40,7 @@ namespace Control {
 
         //Getters y Setters de las listas cabecera y detalle
         public List<Asignacion_Cabecera> ListaC { get => listaC; set => listaC = value; }
+
         public List<Asignacion_Detalle> ListaD { get => listaD; set => listaD = value; }
 
         //constructor adm asignacion
@@ -215,6 +216,28 @@ namespace Control {
                 msj = "Error no se pudo ingresar la asignacion";
             }
             return mensaje;
+        }
+
+        /*--------------------------Frm_Asignacion_Consultar-------------------------------*/
+        public void LlenarTablaAsignaciones(DataGridView dgvAsignaciones)
+        {
+            dgvAsignaciones.Refresh();
+            dgvAsignaciones.DataSource = datosAsignacion.LlenarTablaAsignaciones(admL.IdUsuario());
+        }
+
+        public void LimpiarCamposConsulta(TextBox txt_Cedula,RadioButton rdbCumplida, RadioButton rdbProgreso)
+        {
+            txt_Cedula.Text = "";
+            rdbCumplida.Checked = false;
+            rdbProgreso.Checked = false;
+        }
+
+        public void FiltarAsignaciones(DataGridView dgvAsignaciones, TextBox txt_Cedula, RadioButton rdbCumplida, RadioButton rdbProgreso)
+        {
+            string ced = txt_Cedula.Text,
+                condicion = v.VerificarCondicion(rdbProgreso, rdbCumplida);
+            dgvAsignaciones.Refresh();
+            dgvAsignaciones.DataSource = datosAsignacion.FiltrarAsignaciones(admL.IdUsuario(), ced, condicion);
         }
     }
 }

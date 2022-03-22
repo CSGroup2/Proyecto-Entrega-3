@@ -43,30 +43,6 @@ namespace Visual
             adm.filtrarXDestino(txt_Destino, dgvPeticion);
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int id = Int32.Parse(GetValorCelda(dgvPeticion, 0));
-            string estado = GetValorCelda(dgvPeticion, 6);
-            if (id != 0)
-            {
-                if (estado.Equals("En Progreso"))
-                {
-                    var result = MessageBox.Show("Seguro desea eliminar la petición."+estado, "Advertencia",
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
-                    if (result != DialogResult.No)
-                        MessageBox.Show(adm.eliminarPeticion(id, dgvPeticion).ToString());
-                }
-                else {
-                    MessageBox.Show("No puede eliminar una petición que ya fue asignada.");
-                }
-            }
-            else {
-                MessageBox.Show("Seleccione una petición a eliminar.");
-            }
-            
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(GetValorCelda(dgvPeticion, 0));
