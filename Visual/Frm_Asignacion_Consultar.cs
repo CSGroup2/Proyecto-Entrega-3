@@ -49,5 +49,33 @@ namespace Visual
                 MessageBox.Show("Ingrese datos para buscar.");
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int idAs = Int32.Parse(GetValorCelda(dgvAsignaciones, 0));
+            string condicion = GetValorCelda(dgvAsignaciones, 8);
+            if (idAs!=0)
+            {
+                if (condicion.Equals("En Progreso"))
+                {
+                    var result = MessageBox.Show("¿Seguro desea editar la asignación?", "Advertencia",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+                    if (result != DialogResult.No)
+                    {
+                        Frm_Asignacion_Editar frmE = new Frm_Asignacion_Editar(idAs);
+                        frmE.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No puede editar una asignación que ya fue cumplida.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una asignación a editar.");
+            }
+        }
     }
 }

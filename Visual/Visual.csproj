@@ -97,6 +97,12 @@
     <Compile Include="Frm_Asignacion_Consultar.Designer.cs">
       <DependentUpon>Frm_Asignacion_Consultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Asignacion_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Asignacion_Editar.Designer.cs">
+      <DependentUpon>Frm_Asignacion_Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Asignacion_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Asignacion_Consultar.resx">
       <DependentUpon>Frm_Asignacion_Consultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Asignacion_Editar.resx">
+      <DependentUpon>Frm_Asignacion_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Asignacion_Registrar.resx">
       <DependentUpon>Frm_Asignacion_Registrar.cs</DependentUpon>
