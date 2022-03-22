@@ -195,7 +195,7 @@ namespace Visual
             this.btnImprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 30;
-            this.btnImprimir.Location = new System.Drawing.Point(250, 493);
+            this.btnImprimir.Location = new System.Drawing.Point(240, 493);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnImprimir.Size = new System.Drawing.Size(189, 32);
