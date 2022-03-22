@@ -38,7 +38,7 @@ namespace Visual {
             this.cargarestados(); 
         }
 
-        #region cargado de datos al iniciar 
+        #region cargado de datos al iniciar  y helpers
         private void cargarclientes()
         {
             dgvClientes.Refresh();
@@ -59,6 +59,18 @@ namespace Visual {
             cbxestado.DataSource = admgeneral.listerEstados();
             cbxestado.ValueMember = "ID_ESTADO";
             cbxestado.DisplayMember = "NOMBRE_ESTADO";
+        }
+
+        private void habilitardeshabilitar(CheckBox obj,ComboBox combo)
+        {
+            if (obj.Checked)
+            {
+                combo.Enabled = true;
+            }
+            else
+            {
+                combo.Enabled = false;
+            }
         }
         #endregion
 
@@ -176,6 +188,17 @@ namespace Visual {
             /*string criterio = txtCriterio.Text.Replace(" ", String.Empty);
             MessageBox.Show(criterio); */
            
+        }
+
+        private void chxestado_CheckedChanged(object sender, EventArgs e)
+        {
+            this.habilitardeshabilitar(chxestado, cbxestado);   
+        }
+
+        private void chxhospital_CheckedChanged(object sender, EventArgs e)
+        {
+            this.habilitardeshabilitar(chxhospital, cbxhospital);
+
         }
     }
 }
