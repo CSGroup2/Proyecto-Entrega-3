@@ -120,30 +120,27 @@ namespace Datos {
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 sql_adaptador = new SqlDataAdapter (sql_comando);
                 dataTable_resultado = new DataTable ();
+                
                 using (sql_comando) {
                     // Adding values to paramerters for SqlCommand below
                     // Use DBNull.Value make stored procedure parameters have defaults of NULL
-                    sql_comando.Parameters.AddWithValue ("@cedula", cedula_nombre);
-                    sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
-                    /*
-                    if (cedula_nombre == null) {
-                        Console.WriteLine ("cedula_nombre nulo" );
-                        sql_comando.Parameters.AddWithValue ("@cedula", DBNull.Value);
-                    } else {
-                        sql_comando.Parameters.AddWithValue ("@cedula", cedula_nombre);
+                    if (cedula_nombre != null) {
+                        sql_comando.Parameters.Add (new SqlParameter ("@cedula_nombre", cedula_nombre));
+                    }else {
+                        sql_comando.Parameters.Add (new SqlParameter ("@cedula_nombre", DBNull.Value));
                     }
-                    if (disponibilidad == null) {
-                        Console.WriteLine ("disponibilidad nulo");
-                        sql_comando.Parameters.AddWithValue ("@disponibilidad", DBNull.Value);
+                    
+                    if (disponibilidad != null) {
+                        sql_comando.Parameters.Add (new SqlParameter ("@disponibilidad", disponibilidad));
                     } else {
-                        sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
+                        sql_comando.Parameters.Add (new SqlParameter ("@disponibilidad", DBNull.Value));
                     }
-                    */
+                    
                     sql_adaptador.Fill (dataTable_resultado);
                 }
             } catch (Exception ex) {
                 dataTable_resultado = null;
-                Console.WriteLine ("Error al listar los datos de los conductores " + ex.Message);
+                Console.WriteLine ("¡ERROR! al listar los datos de los conductores " + ex.Message);
             } finally {
                 conexion.cerrar_conexion (sql_conexion);
             }
