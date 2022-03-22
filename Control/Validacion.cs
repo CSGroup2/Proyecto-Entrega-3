@@ -289,5 +289,21 @@ namespace Control {
             return salida;
         }
         #endregion
+
+        #region Validaciones de FrmAsignacion Consultar
+        internal string VerificarCondicion(RadioButton rdbProgreso, RadioButton rdbCumplida)
+        {
+            string cond = "";
+            if (rdbProgreso.Checked)
+            {
+                cond = "En Progreso";
+            }
+            else if (rdbCumplida.Checked)
+            {
+                cond = "Cumplida";
+            }
+            return cond;
+        }
+        #endregion
     }
 }

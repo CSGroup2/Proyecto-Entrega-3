@@ -35,10 +35,11 @@ namespace Visual {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
             this.cargarhospitales();
             this.cargarclientes();
-            this.cargarestados(); 
+            this.cargarestados();
+            this.tamaniocriterio(); 
         }
 
-        #region cargado de datos al iniciar 
+        #region cargado de datos al iniciar  y helpers
         private void cargarclientes()
         {
             dgvClientes.Refresh();
@@ -60,6 +61,32 @@ namespace Visual {
             cbxestado.ValueMember = "ID_ESTADO";
             cbxestado.DisplayMember = "NOMBRE_ESTADO";
         }
+
+        private void habilitardeshabilitar(CheckBox obj,ComboBox combo)
+        {
+            if (obj.Checked)
+            {
+                combo.Enabled = true;
+            }
+            else
+            {
+                combo.Enabled = false;
+            }
+        }
+
+        private void tamaniocriterio()
+        {
+            if (opcedula.Checked)
+            {
+                txtCriterio.MaxLength = 10;
+            }
+            else
+            {
+                txtCriterio.MaxLength = 75;
+            }
+            txtCriterio.Text = "";
+        }
+
         #endregion
 
         #region Efecto boton consultar
@@ -109,6 +136,7 @@ namespace Visual {
             dt = (DataTable)dgvClientes.DataSource;
             string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
             float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+            
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
@@ -116,7 +144,7 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admpdf.CrearPdf(dt, file, columnas, tamanios);
+                admpdf.CrearPdf(dt, file, columnas, tamanios, 0);
                 if (File.Exists(file))
                 {
                     Process.Start(file);
@@ -176,6 +204,30 @@ namespace Visual {
             /*string criterio = txtCriterio.Text.Replace(" ", String.Empty);
             MessageBox.Show(criterio); */
            
+        }
+
+        private void chxestado_CheckedChanged(object sender, EventArgs e)
+        {
+            this.habilitardeshabilitar(chxestado, cbxestado);   
+        }
+
+        private void chxhospital_CheckedChanged(object sender, EventArgs e)
+        {
+            this.habilitardeshabilitar(chxhospital, cbxhospital);
+
+        }
+
+        private void opcedula_CheckedChanged(object sender, EventArgs e)
+        {
+            this.tamaniocriterio();
+        }
+
+        private void txtCriterio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (opcedula.Checked)
+            {
+                admCliente.validarSoloNumerosKeyPress(sender, e);
+            }
         }
     }
 }

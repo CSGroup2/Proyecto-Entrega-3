@@ -245,34 +245,6 @@ namespace Datos
             return msj;
         }
 
-        public string eliminarPeticion(int idPeticion)
-        {
-            string msj = "";
-            SqlConnection conexion = con.abrir_conexion();
-            try
-            {
-                using (SqlCommand comando = new SqlCommand("sp_eliminar_peticion", conexion))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
-
-                    SqlParameter param_id = new SqlParameter();
-                    param_id.ParameterName = "@id";
-                    param_id.SqlDbType = SqlDbType.Int;
-                    param_id.Value = idPeticion;
-                    comando.Parameters.Add(param_id);
-                    comando.ExecuteNonQuery();
-
-                    msj = "La peticion fue eliminada correctamente.";
-                }
-            }
-            catch (Exception ex)
-            {
-                con.cerrar_conexion(conexion);
-                msj="Error al eliminar la peticion " + ex.Message;
-            }
-            return msj;
-        }
-
         public object listarPeticionesXDestino(string destino, int idCliente)
         {
             DataTable dt = new DataTable();

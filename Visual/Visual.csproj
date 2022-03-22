@@ -91,6 +91,12 @@
     <Compile Include="Frm_Ambulancia_Registrar.designer.cs">
       <DependentUpon>Frm_Ambulancia_Registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Asignacion_Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Asignacion_Consultar.Designer.cs">
+      <DependentUpon>Frm_Asignacion_Consultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Asignacion_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Ambulancia_Registrar.resx">
       <DependentUpon>Frm_Ambulancia_Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Asignacion_Consultar.resx">
+      <DependentUpon>Frm_Asignacion_Consultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Asignacion_Registrar.resx">
       <DependentUpon>Frm_Asignacion_Registrar.cs</DependentUpon>

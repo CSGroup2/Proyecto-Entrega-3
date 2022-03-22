@@ -29,7 +29,7 @@ namespace Visual {
             this.panel3 = new System.Windows.Forms.Panel();
             this.btncerrarsesion = new FontAwesome.Sharp.IconButton();
             this.pnsubmenuasignacion = new System.Windows.Forms.Panel();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnConsultarAsig = new FontAwesome.Sharp.IconButton();
             this.btnasignacion = new FontAwesome.Sharp.IconButton();
             this.pnsubmenupeticion = new System.Windows.Forms.Panel();
             this.btnasignar = new FontAwesome.Sharp.IconButton();
@@ -57,8 +57,11 @@ namespace Visual {
             this.btnregsecretaria = new FontAwesome.Sharp.IconButton();
             this.btnsecretaria = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnopciones3 = new FontAwesome.Sharp.IconButton();
             this.lbltipo = new System.Windows.Forms.Label();
+            this.btnopciones2 = new FontAwesome.Sharp.IconButton();
             this.lblapellido = new System.Windows.Forms.Label();
+            this.btnopciones1 = new FontAwesome.Sharp.IconButton();
             this.lblnombres = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,9 +71,6 @@ namespace Visual {
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timerhorafecha = new System.Windows.Forms.Timer(this.components);
-            this.btnopciones1 = new FontAwesome.Sharp.IconButton();
-            this.btnopciones2 = new FontAwesome.Sharp.IconButton();
-            this.btnopciones3 = new FontAwesome.Sharp.IconButton();
             this.pnlateral.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnsubmenuasignacion.SuspendLayout();
@@ -146,31 +146,32 @@ namespace Visual {
             // 
             this.pnsubmenuasignacion.AutoSize = true;
             this.pnsubmenuasignacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
-            this.pnsubmenuasignacion.Controls.Add(this.iconButton3);
+            this.pnsubmenuasignacion.Controls.Add(this.btnConsultarAsig);
             this.pnsubmenuasignacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnsubmenuasignacion.Location = new System.Drawing.Point(0, 1095);
             this.pnsubmenuasignacion.Name = "pnsubmenuasignacion";
             this.pnsubmenuasignacion.Size = new System.Drawing.Size(242, 41);
             this.pnsubmenuasignacion.TabIndex = 15;
             // 
-            // iconButton3
+            // btnConsultarAsig
             // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(0, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
-            this.iconButton3.Size = new System.Drawing.Size(242, 41);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.Text = "Consultar";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnConsultarAsig.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultarAsig.FlatAppearance.BorderSize = 0;
+            this.btnConsultarAsig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarAsig.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarAsig.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnConsultarAsig.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnConsultarAsig.IconColor = System.Drawing.Color.Black;
+            this.btnConsultarAsig.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConsultarAsig.Location = new System.Drawing.Point(0, 0);
+            this.btnConsultarAsig.Name = "btnConsultarAsig";
+            this.btnConsultarAsig.Padding = new System.Windows.Forms.Padding(55, 0, 0, 0);
+            this.btnConsultarAsig.Size = new System.Drawing.Size(242, 41);
+            this.btnConsultarAsig.TabIndex = 6;
+            this.btnConsultarAsig.Text = "Consultar";
+            this.btnConsultarAsig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarAsig.UseVisualStyleBackColor = true;
+            this.btnConsultarAsig.Click += new System.EventHandler(this.btnConsultarAsig_Click);
             // 
             // btnasignacion
             // 
@@ -678,6 +679,20 @@ namespace Visual {
             this.panel2.Size = new System.Drawing.Size(242, 140);
             this.panel2.TabIndex = 0;
             // 
+            // btnopciones3
+            // 
+            this.btnopciones3.FlatAppearance.BorderSize = 0;
+            this.btnopciones3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones3.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
+            this.btnopciones3.IconColor = System.Drawing.Color.White;
+            this.btnopciones3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones3.IconSize = 28;
+            this.btnopciones3.Location = new System.Drawing.Point(88, 11);
+            this.btnopciones3.Name = "btnopciones3";
+            this.btnopciones3.Size = new System.Drawing.Size(35, 23);
+            this.btnopciones3.TabIndex = 13;
+            this.btnopciones3.UseVisualStyleBackColor = true;
+            // 
             // lbltipo
             // 
             this.lbltipo.AutoSize = true;
@@ -689,6 +704,20 @@ namespace Visual {
             this.lbltipo.TabIndex = 10;
             this.lbltipo.Text = "Tipo";
             // 
+            // btnopciones2
+            // 
+            this.btnopciones2.FlatAppearance.BorderSize = 0;
+            this.btnopciones2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones2.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
+            this.btnopciones2.IconColor = System.Drawing.Color.White;
+            this.btnopciones2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones2.IconSize = 28;
+            this.btnopciones2.Location = new System.Drawing.Point(53, 5);
+            this.btnopciones2.Name = "btnopciones2";
+            this.btnopciones2.Size = new System.Drawing.Size(20, 37);
+            this.btnopciones2.TabIndex = 12;
+            this.btnopciones2.UseVisualStyleBackColor = true;
+            // 
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
@@ -699,6 +728,21 @@ namespace Visual {
             this.lblapellido.Size = new System.Drawing.Size(79, 24);
             this.lblapellido.TabIndex = 9;
             this.lblapellido.Text = "Apellido";
+            // 
+            // btnopciones1
+            // 
+            this.btnopciones1.FlatAppearance.BorderSize = 0;
+            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.btnopciones1.IconColor = System.Drawing.Color.White;
+            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnopciones1.IconSize = 28;
+            this.btnopciones1.Location = new System.Drawing.Point(12, 12);
+            this.btnopciones1.Name = "btnopciones1";
+            this.btnopciones1.Size = new System.Drawing.Size(35, 23);
+            this.btnopciones1.TabIndex = 11;
+            this.btnopciones1.UseVisualStyleBackColor = true;
+            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
             // 
             // lblnombres
             // 
@@ -795,49 +839,6 @@ namespace Visual {
             this.timerhorafecha.Enabled = true;
             this.timerhorafecha.Tick += new System.EventHandler(this.timerhorafecha_Tick);
             // 
-            // btnopciones1
-            // 
-            this.btnopciones1.FlatAppearance.BorderSize = 0;
-            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.btnopciones1.IconColor = System.Drawing.Color.White;
-            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones1.IconSize = 28;
-            this.btnopciones1.Location = new System.Drawing.Point(12, 12);
-            this.btnopciones1.Name = "btnopciones1";
-            this.btnopciones1.Size = new System.Drawing.Size(35, 23);
-            this.btnopciones1.TabIndex = 11;
-            this.btnopciones1.UseVisualStyleBackColor = true;
-            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
-            // 
-            // btnopciones2
-            // 
-            this.btnopciones2.FlatAppearance.BorderSize = 0;
-            this.btnopciones2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones2.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
-            this.btnopciones2.IconColor = System.Drawing.Color.White;
-            this.btnopciones2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones2.IconSize = 28;
-            this.btnopciones2.Location = new System.Drawing.Point(53, 5);
-            this.btnopciones2.Name = "btnopciones2";
-            this.btnopciones2.Size = new System.Drawing.Size(20, 37);
-            this.btnopciones2.TabIndex = 12;
-            this.btnopciones2.UseVisualStyleBackColor = true;
-            // 
-            // btnopciones3
-            // 
-            this.btnopciones3.FlatAppearance.BorderSize = 0;
-            this.btnopciones3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones3.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
-            this.btnopciones3.IconColor = System.Drawing.Color.White;
-            this.btnopciones3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones3.IconSize = 28;
-            this.btnopciones3.Location = new System.Drawing.Point(88, 11);
-            this.btnopciones3.Name = "btnopciones3";
-            this.btnopciones3.Size = new System.Drawing.Size(35, 23);
-            this.btnopciones3.TabIndex = 13;
-            this.btnopciones3.UseVisualStyleBackColor = true;
-            // 
             // Frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -914,7 +915,7 @@ namespace Visual {
         public System.Windows.Forms.Panel pnhijo;
         private FontAwesome.Sharp.IconButton btnconsultarpet;
         private System.Windows.Forms.Panel pnsubmenuasignacion;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnConsultarAsig;
         private FontAwesome.Sharp.IconButton btnasignacion;
         private FontAwesome.Sharp.IconButton btnopciones2;
         private FontAwesome.Sharp.IconButton btnopciones1;
