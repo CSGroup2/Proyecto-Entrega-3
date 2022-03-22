@@ -130,14 +130,6 @@ namespace Control
             }
         }
 
-        public string eliminarPeticion(int id, DataGridView dgvPeticion)
-        {           
-            string msj = datosPeticion.eliminarPeticion(id);
-            dgvPeticion.Refresh();
-            dgvPeticion.DataSource = datosPeticion.listarPeticionesPendientes();
-            return msj;
-        }
-
         public void llenarTablaPeticionUsuario(DataGridView dgvPeticion)
         {
             dgvPeticion.Refresh();
