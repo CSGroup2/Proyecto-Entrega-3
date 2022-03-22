@@ -43,7 +43,13 @@ namespace Control
         {
             PdfWriter pdfWriter = new PdfWriter(file);
             PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document documento = new Document(pdf, PageSize.LETTER);
+            Document documento = new Document(pdf, PageSize.LETTER);            
+            
+            iText.IO.Image.ImageData imageData = iText.IO.Image.ImageDataFactory.Create("..\\..\\Resources\\LosRapidos.png");
+            Image image = new Image(imageData);
+            image.SetHeight(75);
+            image.SetWidth(75);
+            documento.Add(image);
 
             documento.SetMargins(60, 20, 55, 20);
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);

@@ -191,7 +191,7 @@ namespace Visual {
         }
 
         private void btnconsulconduc_Click (object sender, EventArgs e) {
-            abrirhijoform (new Frm_Conductor_Consultar ());
+            abrirhijoform (new Frm_Conductor_Consultar (this));
         }
 
         private void btnmodiconductor_Click (object sender, EventArgs e) {

@@ -65,9 +65,8 @@ namespace Control {
             cbx_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
         }
 
-        public void buscarDatosConductor (DataGridView dgv_Conductor, string cedula, string nombre, string disponibilidad) {
-            dgv_Conductor.Refresh ();
-            dgv_Conductor.DataSource = Datos_Conductor.buscarDatosConductor (cedula, nombre, disponibilidad);
+        public DataTable buscarDatosConductor (string cedula_nombre, string disponibilidad) {
+           return Datos_Conductor.buscarDatosConductor (cedula_nombre, disponibilidad);
         }
 
         #endregion

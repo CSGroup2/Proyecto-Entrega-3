@@ -16,6 +16,7 @@ namespace Visual {
     public partial class Frm_Ambulancia_Consultar : Form {
 
         Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
+        Adm_PDF admPDF = Adm_PDF.GetAdm();
         public int buscarOb, buscarOp;
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
 
@@ -105,7 +106,9 @@ namespace Visual {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                admA.CrearPdf(dt, file);
+                string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
+                float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+                admPDF.CrearPdf(dt, file, columnas, tamanios);
                 if (File.Exists(file))
                 {
                     Process.Start(file);

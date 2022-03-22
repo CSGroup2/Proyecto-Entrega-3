@@ -104,7 +104,7 @@ namespace Datos {
             return dataTable_resultado;
         }
 
-        public object buscarDatosConductor (string cedula, string nombre, string disponibilidad) {
+        public DataTable buscarDatosConductor (string cedula_nombre, string disponibilidad) {
             // Extract all "conductor" data from database
             DataTable dataTable_resultado = null;
             Conexion conexion = null;
@@ -120,29 +120,27 @@ namespace Datos {
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 sql_adaptador = new SqlDataAdapter (sql_comando);
                 dataTable_resultado = new DataTable ();
+                
                 using (sql_comando) {
                     // Adding values to paramerters for SqlCommand below
                     // Use DBNull.Value make stored procedure parameters have defaults of NULL
-                    if (cedula == null) {
-                        sql_comando.Parameters.AddWithValue ("@cedula", DBNull.Value);
-                    } else {
-                        sql_comando.Parameters.AddWithValue ("@cedula", cedula);
+                    if (cedula_nombre != null) {
+                        sql_comando.Parameters.Add (new SqlParameter ("@cedula_nombre", cedula_nombre));
+                    }else {
+                        sql_comando.Parameters.Add (new SqlParameter ("@cedula_nombre", DBNull.Value));
                     }
-                    if (nombre == null) {
-                        sql_comando.Parameters.AddWithValue ("@nombre", DBNull.Value);
+                    
+                    if (disponibilidad != null) {
+                        sql_comando.Parameters.Add (new SqlParameter ("@disponibilidad", disponibilidad));
                     } else {
-                        sql_comando.Parameters.AddWithValue ("@nombre", nombre);
+                        sql_comando.Parameters.Add (new SqlParameter ("@disponibilidad", DBNull.Value));
                     }
-                    if (disponibilidad == null) {
-                        sql_comando.Parameters.AddWithValue ("@disponibilidad", DBNull.Value);
-                    } else {
-                        sql_comando.Parameters.AddWithValue ("@disponibilidad", disponibilidad);
-                    }
+                    
                     sql_adaptador.Fill (dataTable_resultado);
                 }
             } catch (Exception ex) {
                 dataTable_resultado = null;
-                Console.WriteLine ("Error al listar los datos de los conductores " + ex.Message);
+                Console.WriteLine ("¡ERROR! al listar los datos de los conductores " + ex.Message);
             } finally {
                 conexion.cerrar_conexion (sql_conexion);
             }

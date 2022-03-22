@@ -17,10 +17,43 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
         Adm_General admGeneral = Adm_General.GetAdm ();
+        Frm_Menu frmMenu;
 
         public Frm_Conductor_Consultar () {
             InitializeComponent ();
         }
+
+        public Frm_Conductor_Consultar (Frm_Menu Menu) {
+            // Constructor overcharge
+            InitializeComponent ();
+            this.frmMenu = Menu;
+        }
+
+        private void Frm_Conductor_Consultar_Load (object sender, EventArgs e) {
+            // Load changes
+            this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
+            load_listarDisponibilidad ();
+            load_listarDatosConductor ();
+        }
+
+        #region Frm load at begining
+
+        public void load_listarDisponibilidad () {
+            cmb_Disponibilidad.DataSource = admGeneral.listarDisponibilidad ();
+            cmb_Disponibilidad.ValueMember = "ID_DISPONIBILIDAD";
+            cmb_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
+            cmb_Disponibilidad.Enabled = false;
+        }
+
+        public void load_listarDatosConductor () {
+            admConductor.listarDatosConductor (dgv_Conductor);
+        }
+
+        #endregion
+
+        #region Frm behavior
+
+        #region Efectos botones
 
         #region Efecto boton consultar
         private void btnconsultar_MouseLeave (object sender, EventArgs e) {
@@ -62,15 +95,7 @@ namespace Visual {
         }
         #endregion
 
-        private void Frm_Conductor_Consultar_Load (object sender, EventArgs e) {
-            // Load changes
-            this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
-            cmb_Disponibilidad.DataSource = admGeneral.listarDisponibilidad ();
-            cmb_Disponibilidad.ValueMember = "ID_DISPONIBILIDAD";
-            cmb_Disponibilidad.DisplayMember = "NOMBRE_DISPONIBILIDAD";
-            admConductor.listarDatosConductor (dgv_Conductor);
-            cmb_Disponibilidad.Enabled = false;
-        }
+        #endregion
 
         private void chb_Disponibilidad_CheckedChanged (object sender, EventArgs e) {
             if (chb_Disponibilidad.Checked) {
@@ -96,33 +121,39 @@ namespace Visual {
             txt_CedulaNombre.Clear ();
         }
 
+        #endregion
+
         private void btn_MostrarTodos_Click (object sender, EventArgs e) {
             admConductor.listarDatosConductor (dgv_Conductor);
         }
 
         private void btn_Consultar_Click (object sender, EventArgs e) {
-            string cedula = null;
-            string nombre = null;
+            // Search for "conductor" data
+            string cedula_nombre = null;
             string disponibilidad = null;
             errorProvider.Clear ();
             if (txt_CedulaNombre.Text.Trim () == "" && chb_Disponibilidad.Checked == false) {
                 errorProvider.SetError (txt_CedulaNombre, "Opcional 1");
                 errorProvider.SetError (chb_Disponibilidad, "Opcional 2");
             } else {
-                if (rdb_Cedula.Checked) {
-                    cedula = txt_CedulaNombre.Text.Trim ();
-                } else {
-                    nombre = txt_CedulaNombre.Text.Trim ();
+                if (!String.IsNullOrWhiteSpace (txt_CedulaNombre.Text)) {
+                    cedula_nombre = txt_CedulaNombre.Text.Trim ().Replace (" ", String.Empty);
                 }
                 if (chb_Disponibilidad.Checked) {
                     disponibilidad = cmb_Disponibilidad.SelectedValue.ToString ();
                 }
-                admConductor.buscarDatosConductor (dgv_Conductor, cedula, nombre, disponibilidad);
+                dgv_Conductor.Refresh ();
+                dgv_Conductor.DataSource = admConductor.buscarDatosConductor (cedula_nombre, disponibilidad);
             }
         }
 
         private void btn_Modificar_Click (object sender, EventArgs e) {
-
+            int posicion = dgv_Conductor.CurrentRow.Index;
+            if (posicion >= 0) {
+                frmMenu.abrirhijoform (new Frm_Conductor_Editar (dgv_Conductor));
+            } else {
+                MessageBox.Show ("Seleccione un conductor.");
+            }
         }
 
         private void btn_Imprimir_Click (object sender, EventArgs e) {
