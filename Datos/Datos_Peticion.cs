@@ -31,6 +31,10 @@ namespace Datos
             {
                 con.cerrar_conexion(conexion);
             }
+            finally
+            {
+                con.cerrar_conexion(conexion);
+            }
             return ced;
         }
 

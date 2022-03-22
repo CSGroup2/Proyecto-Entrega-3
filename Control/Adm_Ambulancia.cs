@@ -286,42 +286,5 @@ namespace Control
             msj = dAmbulancia.EliminarAmbulancia(placa);
             return msj;
         }
-
-        public void CrearPdf (DataTable dt, string file) {
-            PdfWriter pdfWriter = new PdfWriter (file);
-            PdfDocument pdf = new PdfDocument (pdfWriter);
-            Document documento = new Document (pdf, PageSize.LETTER);
-
-            documento.SetMargins (60, 20, 55, 20);
-            PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
-            PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
-
-            string [] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
-            float [] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
-
-            Table tabla = new Table (UnitValue.CreatePercentArray (tamanios));
-            tabla.SetWidth (UnitValue.CreatePercentValue (100));
-
-            foreach (string columna in columnas) {
-                tabla.AddHeaderCell (new Cell ().Add (new Paragraph (columna).SetFont (fontColumnas)));
-            }
-
-            int f = 1;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-            
-                tabla.AddCell (new Cell ().Add (new Paragraph (f + "").SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["id"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["disponibilidad"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["placa"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["modelo"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (dt.Rows[i]["tipo_ambulancia"].ToString()).SetFont (fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(dt.Rows[i]["capacidad"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell (new Cell().Add(new Paragraph(dt.Rows[i]["observacion"].ToString()).SetFont(fontContenido)));
-                f++;
-            }
-            documento.Add (tabla);
-            documento.Close ();
-        }
     }
 }
