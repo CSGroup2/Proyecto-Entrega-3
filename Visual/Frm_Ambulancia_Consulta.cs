@@ -108,7 +108,7 @@ namespace Visual {
                 string file = saveFileDialog1.FileName;
                 string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
                 float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
-                admPDF.CrearPdf(dt, file, columnas, tamanios);
+                admPDF.CrearPdf(dt, file, columnas, tamanios, 1);
                 if (File.Exists(file))
                 {
                     Process.Start(file);

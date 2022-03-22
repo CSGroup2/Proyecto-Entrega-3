@@ -24,7 +24,7 @@ namespace Visual {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnmodificar = new FontAwesome.Sharp.IconButton();
@@ -53,6 +53,7 @@ namespace Visual {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -64,6 +65,7 @@ namespace Visual {
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.BackgroundImage = global::Visual.Properties.Resources._9;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Controls.Add(this.btnImprimir);
             this.panel2.Controls.Add(this.btnmodificar);
             this.panel2.Controls.Add(this.pncontenido);
@@ -82,7 +84,7 @@ namespace Visual {
             this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.btnImprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.Location = new System.Drawing.Point(356, 346);
+            this.btnImprimir.Location = new System.Drawing.Point(434, 346);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnImprimir.Size = new System.Drawing.Size(183, 52);
@@ -96,14 +98,14 @@ namespace Visual {
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnmodificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnmodificar.FlatAppearance.BorderSize = 0;
             this.btnmodificar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnmodificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnmodificar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnmodificar.Location = new System.Drawing.Point(148, 346);
+            this.btnmodificar.Location = new System.Drawing.Point(225, 346);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnmodificar.Size = new System.Drawing.Size(183, 52);
@@ -166,8 +168,8 @@ namespace Visual {
             // ID_CLIENTE
             // 
             this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ID_CLIENTE.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ID_CLIENTE.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID_CLIENTE.HeaderText = "Codigo";
             this.ID_CLIENTE.Name = "ID_CLIENTE";
             this.ID_CLIENTE.ReadOnly = true;
@@ -347,6 +349,7 @@ namespace Visual {
             this.opcedula.TabStop = true;
             this.opcedula.Text = "Cédula";
             this.opcedula.UseVisualStyleBackColor = false;
+            this.opcedula.CheckedChanged += new System.EventHandler(this.opcedula_CheckedChanged);
             // 
             // txtCriterio
             // 
@@ -354,6 +357,7 @@ namespace Visual {
             this.txtCriterio.Name = "txtCriterio";
             this.txtCriterio.Size = new System.Drawing.Size(133, 20);
             this.txtCriterio.TabIndex = 50;
+            this.txtCriterio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCriterio_KeyPress);
             // 
             // label14
             // 
@@ -389,6 +393,26 @@ namespace Visual {
             this.label2.Size = new System.Drawing.Size(389, 44);
             this.label2.TabIndex = 1;
             this.label2.Text = "Consulta de Clientes";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 35;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(20, 346);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEliminar.Size = new System.Drawing.Size(183, 52);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // Frm_Cliente_Consultar
             // 
@@ -441,5 +465,6 @@ namespace Visual {
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Nac;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private FontAwesome.Sharp.IconButton btnEliminar;
     }
 }

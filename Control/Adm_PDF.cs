@@ -39,11 +39,22 @@ namespace Control
             return adm_pdf;
         }
 
-        public void CrearPdf(DataTable dt, string file, string[] columnas, float[] tamanios)
+        public void CrearPdf(DataTable dt, string file, string[] columnas, float[] tamanios, int orientacion)
         {
+            PageSize orientacionpagina;
+            if (orientacion == 1)
+            {
+                orientacionpagina = PageSize.LETTER;
+            }
+            else
+            {
+                orientacionpagina = PageSize.LETTER.Rotate();
+            }
+
             PdfWriter pdfWriter = new PdfWriter(file);
             PdfDocument pdf = new PdfDocument(pdfWriter);
-            Document documento = new Document(pdf, PageSize.LETTER);            
+            Document documento = new Document(pdf, orientacionpagina);      
+         
             
             iText.IO.Image.ImageData imageData = iText.IO.Image.ImageDataFactory.Create("..\\..\\Resources\\LosRapidos.png");
             Image image = new Image(imageData);
