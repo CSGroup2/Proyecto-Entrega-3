@@ -79,6 +79,7 @@ namespace Datos {
             return dataTable_resultado;
         }
 
+
         public object listarDatosDisponibilidad () {
             // Extract all "disponibilidad" data from database
             Conexion conexion = null;
@@ -145,6 +146,29 @@ namespace Datos {
                 conexion.cerrar_conexion (sql_conexion);
             }
             return dataTable_resultado;
+        }
+
+        /*----------------------Frm_Conductor_Editar-------------------------------------*/
+
+        public Conductor buscarDatosConductorEditar (int idConductor) {
+            Conductor Conductor = null;
+
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+
+            try {
+                conexion = new Conexion ();
+                Conductor = new Conductor ();
+
+            } catch (Exception ex) {
+                Conductor = null;
+                Console.WriteLine ("¡ERROR! al listar los datos de los conductores " + ex.Message);
+            } finally {
+                conexion.cerrar_conexion (sql_conexion);
+            }
+
+
+            return Conductor;
         }
 
 

@@ -17,6 +17,7 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
         Adm_General admGeneral = Adm_General.GetAdm ();
+        Validacion validacion = new Validacion ();
         Frm_Menu frmMenu;
 
         public Frm_Conductor_Consultar () {
@@ -148,9 +149,12 @@ namespace Visual {
         }
 
         private void btn_Modificar_Click (object sender, EventArgs e) {
-            int posicion = dgv_Conductor.CurrentRow.Index;
+            int posicion = 0;
+            int idConductor = 0;
+            posicion = dgv_Conductor.CurrentRow.Index;
             if (posicion >= 0) {
-                frmMenu.abrirhijoform (new Frm_Conductor_Editar (dgv_Conductor));
+                idConductor = validacion.AEntero (dgv_Conductor.Rows[posicion].Cells["ID"].Value.ToString ());
+                frmMenu.abrirhijoform (new Frm_Conductor_Editar (posicion, idConductor));
             } else {
                 MessageBox.Show ("Seleccione un conductor.");
             }
