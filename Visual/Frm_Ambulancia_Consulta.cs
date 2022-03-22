@@ -103,18 +103,22 @@ namespace Visual {
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
             saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dt.Rows.Count > 0)
             {
-                string file = saveFileDialog1.FileName;
-                string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
-                float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
-                admPDF.CrearPdf(dt, file, columnas, tamanios, 1);
-                if (File.Exists(file))
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    Process.Start(file);
+                    string file = saveFileDialog1.FileName;
+                    string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
+                    float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+                    admPDF.CrearPdf(dt, file, columnas, tamanios, 1);
+                    if (File.Exists(file))
+                    {
+                        Process.Start(file);
+                    }
                 }
+            }else{
+                MessageBox.Show("No hay datos para imprimir");
             }
-                
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

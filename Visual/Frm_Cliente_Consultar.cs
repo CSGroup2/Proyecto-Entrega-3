@@ -141,14 +141,21 @@ namespace Visual {
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
             saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dt.Rows.Count > 0)
             {
-                string file = saveFileDialog1.FileName;
-                admpdf.CrearPdf(dt, file, columnas, tamanios, 0);
-                if (File.Exists(file))
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    Process.Start(file);
+                    string file = saveFileDialog1.FileName;
+                    admpdf.CrearPdf(dt, file, columnas, tamanios, 0);
+                    if (File.Exists(file))
+                    {
+                        Process.Start(file);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para imprimir");
             }
         }
 

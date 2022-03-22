@@ -16,6 +16,7 @@ namespace Visual {
 
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
+        Adm_PDF admPDF = Adm_PDF.GetAdm();
         Adm_General admGeneral = Adm_General.GetAdm ();
         Validacion validacion = new Validacion ();
         Frm_Menu frmMenu;
@@ -170,16 +171,28 @@ namespace Visual {
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             // Defines a title to saveFileDialog
             saveFileDialog1.Title = "SGAR: Conductores - Guardar";
-            if (saveFileDialog1.ShowDialog () == DialogResult.OK) {
-                // Captures file's path
-                string file = saveFileDialog1.FileName;
-                // Creates PDF file
-                admConductor.CrearPdf (dataTable_resultado, file);
-                //
-                if (File.Exists (file)) {
-                    // Opens PDF file
-                    Process.Start (file);
+            if (dataTable_resultado.Rows.Count > 0)
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+                    // Captures file's path
+                    string file = saveFileDialog1.FileName;
+                    
+                    /*EL SIGUIENTE ARRAY ES PARA DETALLAR LOS NOMBRES DE LAS COLUMNAS EN LA TABLA DEL PDF
+                    MODIFICALO EN EL MISMO ORDEN QUE UBICASTE LAS COLUMNAS DE TU DATAGRIDVIEW*/
+                    string[] columnas = { "Nº", "id", "disponibilidad", "placa", "modelo", "tipo", "capacidad", "observación" };
+                    float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+
+                    // Creates PDF file
+                    admPDF.CrearPdf(dataTable_resultado, file, columnas, tamanios, 1);
+                    //
+                    if (File.Exists(file)) {
+                        // Opens PDF file
+                        Process.Start(file);
+                    }
                 }
+            } else
+            {
+                MessageBox.Show("No hay datos para imprimir");
             }
         }
 

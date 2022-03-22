@@ -54,6 +54,7 @@ namespace Visual
             this.Fechcontra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSecretaria)).BeginInit();
@@ -91,6 +92,7 @@ namespace Visual
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnmodificar
             // 
@@ -383,5 +385,6 @@ namespace Visual
         private System.Windows.Forms.DataGridViewTextBoxColumn Fechcontra;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
