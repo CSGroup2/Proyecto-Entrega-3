@@ -24,6 +24,7 @@ namespace Visual {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Guardar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
@@ -57,11 +58,13 @@ namespace Visual {
             this.btn_Cancelar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gboxnombres.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -197,6 +200,7 @@ namespace Visual {
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(222, 26);
             this.txt_Correo.TabIndex = 19;
+            this.txt_Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Correo_KeyPress);
             // 
             // label10
             // 
@@ -219,6 +223,7 @@ namespace Visual {
             this.txt_Telefono.Name = "txt_Telefono";
             this.txt_Telefono.Size = new System.Drawing.Size(197, 26);
             this.txt_Telefono.TabIndex = 17;
+            this.txt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cedula_KeyPress);
             // 
             // label9
             // 
@@ -313,6 +318,7 @@ namespace Visual {
             this.txt_Apellido2.Name = "txt_Apellido2";
             this.txt_Apellido2.Size = new System.Drawing.Size(137, 26);
             this.txt_Apellido2.TabIndex = 4;
+            this.txt_Apellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre1_KeyPress);
             // 
             // label1
             // 
@@ -334,6 +340,7 @@ namespace Visual {
             this.txt_Apellido1.Name = "txt_Apellido1";
             this.txt_Apellido1.Size = new System.Drawing.Size(137, 26);
             this.txt_Apellido1.TabIndex = 0;
+            this.txt_Apellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre1_KeyPress);
             // 
             // label6
             // 
@@ -356,6 +363,7 @@ namespace Visual {
             this.txt_Cedula.Name = "txt_Cedula";
             this.txt_Cedula.Size = new System.Drawing.Size(169, 26);
             this.txt_Cedula.TabIndex = 6;
+            this.txt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cedula_KeyPress);
             // 
             // label5
             // 
@@ -392,6 +400,7 @@ namespace Visual {
             this.txt_Nombre2.Name = "txt_Nombre2";
             this.txt_Nombre2.Size = new System.Drawing.Size(149, 26);
             this.txt_Nombre2.TabIndex = 4;
+            this.txt_Nombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre1_KeyPress);
             // 
             // label3
             // 
@@ -413,6 +422,7 @@ namespace Visual {
             this.txt_Nombre1.Name = "txt_Nombre1";
             this.txt_Nombre1.Size = new System.Drawing.Size(149, 26);
             this.txt_Nombre1.TabIndex = 0;
+            this.txt_Nombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre1_KeyPress);
             // 
             // label4
             // 
@@ -470,6 +480,11 @@ namespace Visual {
             this.label2.TabIndex = 1;
             this.label2.Text = "Actualizar Conductor";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // Frm_Conductor_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,7 +495,6 @@ namespace Visual {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Conductor_Editar";
             this.Text = "FrmConductorModifi";
-            this.Load += new System.EventHandler(this.Frm_Conductor_Editar_Load);
             this.panel2.ResumeLayout(false);
             this.pncontenido.ResumeLayout(false);
             this.pncontenido.PerformLayout();
@@ -490,6 +504,7 @@ namespace Visual {
             this.gboxnombres.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,5 +544,6 @@ namespace Visual {
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbl_IdConductor;
         private System.Windows.Forms.ComboBox cmb_Estado;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

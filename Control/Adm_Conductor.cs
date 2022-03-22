@@ -30,6 +30,7 @@ namespace Control {
         Conductor Conductor = null;
         Datos_Conductor Datos_Conductor = null;
         Validacion Validacion = null;
+
         //Persona Persona = null;
 
         //public Usuario_Cache UsuarioCache { get => usuarioCache; set => usuarioCache = value; }
@@ -74,6 +75,27 @@ namespace Control {
         /*---------------------Frm_Conductor_Editar---------------------------------*/
 
         #region Frm_Conductor_Editar
+
+        public void buscarDatosConductorEditar (int posicion, int idConductor, Label lbl_IdConductor, TextBox txt_Cedula, ComboBox cmb_Estado, TextBox txt_Nombre1, TextBox txt_Nombre2, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Correo, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNacimiento, DateTimePicker dtp_FechaContrato) {
+            Conductor = new Conductor ();
+            Conductor = Datos_Conductor.buscarDatosConductorEditar (idConductor);
+            lbl_IdConductor.Text = Conductor.Id_conductor.ToString ();
+            txt_Cedula.Text = Conductor.Cedula.ToString ();
+            //cmb_Estado.SelectedIndex = Conductor.Diponibilidad;
+            txt_Nombre1.Text = Conductor.Nombre_1.ToString ();
+            txt_Nombre2.Text = Conductor.Nombre_2.ToString ();
+            txt_Apellido1.Text = Conductor.Apellido_1.ToString ();
+            txt_Apellido2.Text = Conductor.Apellido_2.ToString ();
+            //txt_Correo.Text = Conductor.
+            txt_Telefono.Text = Conductor.Telefono.ToString ();
+            if (Conductor.Sexo.ToString() == "Femenino") {
+                rdb_Masculino.Checked = true;
+            } else {
+                rdb_Femenino.Checked = true;
+            }
+            dtp_FechaNacimiento.Text = Conductor.Fecha_nac.ToString ();
+            dtp_FechaContrato.Text = Conductor.Fecha_contrato.ToString ();
+        }
 
         #endregion
 
