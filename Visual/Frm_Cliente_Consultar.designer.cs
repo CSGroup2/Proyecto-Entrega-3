@@ -24,12 +24,22 @@ namespace Visual {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnmodificar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_HOSPITAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Nac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxhospital = new System.Windows.Forms.ComboBox();
             this.chxhospital = new System.Windows.Forms.CheckBox();
             this.btnmostrartodos = new FontAwesome.Sharp.IconButton();
@@ -43,16 +53,6 @@ namespace Visual {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.ID_CLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_HOSPITAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Nac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -141,7 +141,9 @@ namespace Visual {
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_CLIENTE,
@@ -161,8 +163,82 @@ namespace Visual {
             this.dgvClientes.Size = new System.Drawing.Size(572, 182);
             this.dgvClientes.TabIndex = 61;
             // 
+            // ID_CLIENTE
+            // 
+            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ID_CLIENTE.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ID_CLIENTE.HeaderText = "Codigo";
+            this.ID_CLIENTE.Name = "ID_CLIENTE";
+            this.ID_CLIENTE.ReadOnly = true;
+            // 
+            // NOMBRE_ESTADO
+            // 
+            this.NOMBRE_ESTADO.DataPropertyName = "NOMBRE_ESTADO";
+            this.NOMBRE_ESTADO.HeaderText = "Estado";
+            this.NOMBRE_ESTADO.Name = "NOMBRE_ESTADO";
+            this.NOMBRE_ESTADO.ReadOnly = true;
+            // 
+            // NOMBRE_HOSPITAL
+            // 
+            this.NOMBRE_HOSPITAL.DataPropertyName = "NOMBRE_HOSPITAL";
+            this.NOMBRE_HOSPITAL.HeaderText = "Hospital";
+            this.NOMBRE_HOSPITAL.Name = "NOMBRE_HOSPITAL";
+            this.NOMBRE_HOSPITAL.ReadOnly = true;
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "CEDULA";
+            this.Cedula.HeaderText = "Cédula";
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Sexo
+            // 
+            this.Sexo.DataPropertyName = "Sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            // 
+            // Fecha_Nac
+            // 
+            this.Fecha_Nac.DataPropertyName = "Fecha_Nac";
+            this.Fecha_Nac.HeaderText = "Fech. Nacimiento";
+            this.Fecha_Nac.Name = "Fecha_Nac";
+            this.Fecha_Nac.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.DataPropertyName = "correo";
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Width = 200;
+            // 
             // cbxhospital
             // 
+            this.cbxhospital.Enabled = false;
             this.cbxhospital.FormattingEnabled = true;
             this.cbxhospital.Location = new System.Drawing.Point(470, 20);
             this.cbxhospital.Name = "cbxhospital";
@@ -180,6 +256,7 @@ namespace Visual {
             this.chxhospital.TabIndex = 58;
             this.chxhospital.Text = "Hospital";
             this.chxhospital.UseVisualStyleBackColor = false;
+            this.chxhospital.CheckedChanged += new System.EventHandler(this.chxhospital_CheckedChanged);
             // 
             // btnmostrartodos
             // 
@@ -225,6 +302,7 @@ namespace Visual {
             // 
             // cbxestado
             // 
+            this.cbxestado.Enabled = false;
             this.cbxestado.FormattingEnabled = true;
             this.cbxestado.Location = new System.Drawing.Point(99, 62);
             this.cbxestado.Name = "cbxestado";
@@ -242,6 +320,7 @@ namespace Visual {
             this.chxestado.TabIndex = 55;
             this.chxestado.Text = "Estado";
             this.chxestado.UseVisualStyleBackColor = false;
+            this.chxestado.CheckedChanged += new System.EventHandler(this.chxestado_CheckedChanged);
             // 
             // opnombres
             // 
@@ -310,79 +389,6 @@ namespace Visual {
             this.label2.Size = new System.Drawing.Size(389, 44);
             this.label2.TabIndex = 1;
             this.label2.Text = "Consulta de Clientes";
-            // 
-            // ID_CLIENTE
-            // 
-            this.ID_CLIENTE.DataPropertyName = "ID_CLIENTE";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ID_CLIENTE.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ID_CLIENTE.HeaderText = "Codigo";
-            this.ID_CLIENTE.Name = "ID_CLIENTE";
-            this.ID_CLIENTE.ReadOnly = true;
-            // 
-            // NOMBRE_ESTADO
-            // 
-            this.NOMBRE_ESTADO.DataPropertyName = "NOMBRE_ESTADO";
-            this.NOMBRE_ESTADO.HeaderText = "Estado";
-            this.NOMBRE_ESTADO.Name = "NOMBRE_ESTADO";
-            this.NOMBRE_ESTADO.ReadOnly = true;
-            // 
-            // NOMBRE_HOSPITAL
-            // 
-            this.NOMBRE_HOSPITAL.DataPropertyName = "NOMBRE_HOSPITAL";
-            this.NOMBRE_HOSPITAL.HeaderText = "Hospital";
-            this.NOMBRE_HOSPITAL.Name = "NOMBRE_HOSPITAL";
-            this.NOMBRE_HOSPITAL.ReadOnly = true;
-            // 
-            // Cedula
-            // 
-            this.Cedula.DataPropertyName = "CEDULA";
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Sexo
-            // 
-            this.Sexo.DataPropertyName = "Sexo";
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            // 
-            // Fecha_Nac
-            // 
-            this.Fecha_Nac.DataPropertyName = "Fecha_Nac";
-            this.Fecha_Nac.HeaderText = "Fech. Nacimiento";
-            this.Fecha_Nac.Name = "Fecha_Nac";
-            this.Fecha_Nac.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // correo
-            // 
-            this.correo.DataPropertyName = "correo";
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 200;
             // 
             // Frm_Cliente_Consultar
             // 
