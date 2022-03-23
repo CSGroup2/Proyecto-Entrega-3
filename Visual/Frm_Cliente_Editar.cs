@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Visual {
     public partial class Frm_Cliente_Editar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         int idclientemodi;
+        Adm_General admgeneral = Adm_General.GetAdm();
 
         public Frm_Cliente_Editar () {
             InitializeComponent ();
@@ -25,11 +27,29 @@ namespace Visual {
 
         private void FrmClienteModifi_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
+            this.cargarhospitales();
+            this.cargarestados(); 
         }
 
         private void cargardatoscliente()
         {
 
+        }
+
+        private void cargarhospitales()
+        {
+            cbxestado.Items.Clear();
+            cbxestado.DataSource = admgeneral.LlenarComboHospitales();
+            cbxestado.ValueMember = "ID_HOSPITAL";
+            cbxestado.DisplayMember = "NOMBRE_HOSPITAL";
+        }
+
+        private void cargarestados()
+        {
+            cbxestado1.Items.Clear();
+            cbxestado1.DataSource = admgeneral.listerEstados();
+            cbxestado1.ValueMember = "ID_ESTADO";
+            cbxestado1.DisplayMember = "NOMBRE_ESTADO";
         }
 
         #region Efecto boton Guardar

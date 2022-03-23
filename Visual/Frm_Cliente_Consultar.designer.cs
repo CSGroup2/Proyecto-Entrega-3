@@ -134,6 +134,7 @@ namespace Visual {
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Visible = false;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             this.btnmodificar.MouseLeave += new System.EventHandler(this.btnguardar_MouseLeave);
             this.btnmodificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnguardar_MouseMove);

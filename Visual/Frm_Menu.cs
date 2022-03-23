@@ -138,6 +138,7 @@ namespace Visual {
         private void permisos () {
 
             //switch (Usuario_Cache.Tipo) {
+            btnclientemodi.Visible = false;
             switch (admLogin.TipoUsuario ()) {
                 case "Gerente":
                     btnpeticion.Visible = false;

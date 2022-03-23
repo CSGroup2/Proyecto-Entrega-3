@@ -30,7 +30,7 @@ namespace Visual {
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxestado = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@ namespace Visual {
             this.label12 = new System.Windows.Forms.Label();
             this.txtrcontra = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxestado1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -112,10 +112,10 @@ namespace Visual {
             this.pncontenido.Controls.Add(this.btnBuscar);
             this.pncontenido.Controls.Add(this.lblcodigo);
             this.pncontenido.Controls.Add(this.label15);
-            this.pncontenido.Controls.Add(this.comboBox2);
+            this.pncontenido.Controls.Add(this.cbxestado);
             this.pncontenido.Controls.Add(this.label14);
             this.pncontenido.Controls.Add(this.groupBox2);
-            this.pncontenido.Controls.Add(this.comboBox1);
+            this.pncontenido.Controls.Add(this.cbxestado1);
             this.pncontenido.Controls.Add(this.label13);
             this.pncontenido.Controls.Add(this.textBox7);
             this.pncontenido.Controls.Add(this.label10);
@@ -175,14 +175,14 @@ namespace Visual {
             this.label15.TabIndex = 31;
             this.label15.Text = "Código:";
             // 
-            // comboBox2
+            // cbxestado
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(420, 10);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 28);
-            this.comboBox2.TabIndex = 30;
+            this.cbxestado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxestado.FormattingEnabled = true;
+            this.cbxestado.Location = new System.Drawing.Point(420, 10);
+            this.cbxestado.Name = "cbxestado";
+            this.cbxestado.Size = new System.Drawing.Size(185, 28);
+            this.cbxestado.TabIndex = 30;
             // 
             // label14
             // 
@@ -273,14 +273,14 @@ namespace Visual {
             this.label11.TabIndex = 30;
             this.label11.Text = "Usuario:";
             // 
-            // comboBox1
+            // cbxestado1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(420, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 28);
-            this.comboBox1.TabIndex = 27;
+            this.cbxestado1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxestado1.FormattingEnabled = true;
+            this.cbxestado1.Location = new System.Drawing.Point(420, 47);
+            this.cbxestado1.Name = "cbxestado1";
+            this.cbxestado1.Size = new System.Drawing.Size(185, 28);
+            this.cbxestado1.TabIndex = 27;
             // 
             // label13
             // 
@@ -609,7 +609,7 @@ namespace Visual {
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtrcontra;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxestado1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
@@ -636,7 +636,7 @@ namespace Visual {
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnguardar;
         private FontAwesome.Sharp.IconButton btncancelar;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxestado;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.Label label15;
