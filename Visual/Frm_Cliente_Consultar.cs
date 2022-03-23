@@ -86,6 +86,16 @@ namespace Visual {
             }
             txtCriterio.Text = "";
         }
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SGAR LOS RAPIDOS S.A", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "SGAR LOS RAPIDOS S.A", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
 
         #endregion
 
@@ -234,6 +244,26 @@ namespace Visual {
             if (opcedula.Checked)
             {
                 admCliente.validarSoloNumerosKeyPress(sender, e);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro de Eliminar el registro?", "Warning",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int posicion = dgvClientes.CurrentRow.Index;
+            int idcliente = Int32.Parse(dgvClientes[posicion,0].Value.ToString());
+            string mensaje = admCliente.eliminarcliente(idcliente);
+            if (mensaje.Contains("¡Error "))
+            {
+                MensajeError(mensaje);
+            }
+            else
+            {
+                MensajeOk(mensaje);
+                this.cargarclientes();
+            }
             }
         }
     }

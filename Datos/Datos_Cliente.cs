@@ -128,5 +128,46 @@ namespace Datos
 
             return dt;
         }
+
+
+        public string eliminarcliente(int idcliente)
+        {
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+            SqlCommand sql_comando = null;
+            string mensaje = "";
+            string procedimeinto = "sp_eliminar_clientes";  // Stored Procedure name
+            try
+            {
+                conexion = new Conexion();
+                sql_conexion = conexion.abrir_conexion();              // Opens conexion to sql server
+                sql_comando = new SqlCommand(procedimeinto, sql_conexion);     // Creatin SqlCommand object
+                sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
+                    // Adding values to paramerters to SqlCommand below
+                sql_comando.Parameters.AddWithValue("@idcliente", idcliente);
+                   
+                    int cant = sql_comando.ExecuteNonQuery();
+                    if (cant != 0)
+                    {
+                        mensaje = "El cliente se ha eliminado con exito";
+                    }
+                    else
+                    {
+                        mensaje = "Error al eliminar, intentalo mas tarde";
+                    }
+                    conexion.cerrar_conexion(sql_conexion);
+            }
+            catch (Exception ex)
+            {
+                mensaje = "OCURRIO UN ERROR. \n" + ex.Message;
+                conexion.cerrar_conexion(sql_conexion);
+            }
+            finally
+            {
+                conexion.cerrar_conexion(sql_conexion);
+            }
+            return mensaje;
+        }
+
     }
 }
