@@ -19,6 +19,14 @@ namespace Control
 {
     public class Adm_Ambulancia
     {
+        /* conprobar nombre alexander castro mora 
+            Aplicar el patron de diseño Singleton:
+            1. Crear 1 atributo estático y privado de la misma clase.
+            2. Cambiar el constructor de public a private.
+            3.1. Crear un getter del atributo estático del tipo de la clase.
+            3.2.Verificar si atributo es null, si es así, crearlo.
+        */
+
         private static Adm_Ambulancia adm = new Adm_Ambulancia();
         Datos_Ambulancia dAmbulancia = new Datos_Ambulancia();
 
@@ -27,11 +35,13 @@ namespace Control
 
         public List<Ambulancia> Ambulancias { get => ambulancias; set => ambulancias = value; }
 
+        // Constructor: Adm_Ambulancia
         private Adm_Ambulancia()
         {
             ambulancias = new List<Ambulancia>();
         }
 
+        // Getter: GetAdm
         public static Adm_Ambulancia GetAdm()
         {
             if(adm == null)
@@ -248,6 +258,7 @@ namespace Control
             return msj;
         }
 
+        //método para limpiar los campos de la ventana editar
         public void LimpiarCamposE(TextBox txtPlaca, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
         {
             txtPlaca.Text = "";
@@ -258,6 +269,7 @@ namespace Control
             cmbDisp.SelectedIndex = 0;
         }
 
+        //método para bloquear los campos de la ventana editar cuando aún no se haya buscado la placa
         public void BloquearCampos(TextBox txtPlaca, Button btnBuscar,TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
         {
             txtPlaca.Enabled = true;
@@ -269,6 +281,7 @@ namespace Control
             cmbDisp.Enabled = false;
         }
 
+        //método para desbloquear los campos de la ventana editar cuando ya se haya buscado la placa
         public void DesbloquearCampos(TextBox txtPlaca, Button btnBuscar, TextBox txtModelo, ComboBox cmbTipo, TextBox txtCapacidad, TextBox txtObservacion, ComboBox cmbDisp)
         {
             txtPlaca.Enabled = false;
@@ -280,6 +293,7 @@ namespace Control
             cmbDisp.Enabled = true;
         }
 
+        //método para eliminar un registro de ambulancia
         public string EliminarDatosAmbulancia(string placa)
         {
             string msj = "";

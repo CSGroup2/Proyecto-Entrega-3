@@ -29,6 +29,14 @@ namespace Model {
             this.ambulancia = ambulancia;
         }
 
+        // Constructor: Parameterized Editar
+        public Asignacion_Detalle(Conductor conductor, Ambulancia ambulancia)
+        {
+            //this.id_asignacion_cabecera = id_asignacion_cabecera;
+            this.conductor = conductor;
+            this.ambulancia = ambulancia;
+        }
+
         // Getters & Setters
         public int Id_asignacion_detalle { get => id_asignacion_detalle; set => id_asignacion_detalle = value; }
         public Conductor Conductor { get => conductor; set => conductor = value; }

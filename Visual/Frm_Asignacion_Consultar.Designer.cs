@@ -42,6 +42,7 @@ namespace Visual
             this.rdbCumplida = new System.Windows.Forms.RadioButton();
             this.rdbProgreso = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaciones)).BeginInit();
             this.SuspendLayout();
@@ -184,6 +185,7 @@ namespace Visual
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnImprimir
             // 
@@ -203,6 +205,7 @@ namespace Visual
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // rdbCumplida
             // 
@@ -286,5 +289,6 @@ namespace Visual
         private System.Windows.Forms.RadioButton rdbCumplida;
         private System.Windows.Forms.RadioButton rdbProgreso;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

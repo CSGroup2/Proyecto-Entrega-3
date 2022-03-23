@@ -26,6 +26,7 @@ namespace Visual {
         private void InitializeComponent () {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnmodificar = new FontAwesome.Sharp.IconButton();
             this.pncontenido = new System.Windows.Forms.Panel();
@@ -53,7 +54,6 @@ namespace Visual {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -74,6 +74,26 @@ namespace Visual {
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(662, 419);
             this.panel2.TabIndex = 4;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 35;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(20, 346);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEliminar.Size = new System.Drawing.Size(183, 52);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnImprimir
             // 
@@ -393,26 +413,6 @@ namespace Visual {
             this.label2.Size = new System.Drawing.Size(389, 44);
             this.label2.TabIndex = 1;
             this.label2.Text = "Consulta de Clientes";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 35;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(20, 346);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEliminar.Size = new System.Drawing.Size(183, 52);
-            this.btnEliminar.TabIndex = 18;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // Frm_Cliente_Consultar
             // 

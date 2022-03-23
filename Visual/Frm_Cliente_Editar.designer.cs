@@ -65,14 +65,12 @@ namespace Visual {
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvAmbulancias = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gboxnombres.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbulancias)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -111,7 +109,6 @@ namespace Visual {
             // pncontenido
             // 
             this.pncontenido.BackColor = System.Drawing.Color.White;
-            this.pncontenido.Controls.Add(this.dgvAmbulancias);
             this.pncontenido.Controls.Add(this.btnBuscar);
             this.pncontenido.Controls.Add(this.lblcodigo);
             this.pncontenido.Controls.Add(this.label15);
@@ -578,20 +575,6 @@ namespace Visual {
             this.label2.TabIndex = 1;
             this.label2.Text = "Actualizar Cliente";
             // 
-            // dgvAmbulancias
-            // 
-            this.dgvAmbulancias.AllowUserToAddRows = false;
-            this.dgvAmbulancias.AllowUserToDeleteRows = false;
-            this.dgvAmbulancias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvAmbulancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAmbulancias.Location = new System.Drawing.Point(28, 148);
-            this.dgvAmbulancias.Name = "dgvAmbulancias";
-            this.dgvAmbulancias.ReadOnly = true;
-            this.dgvAmbulancias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAmbulancias.Size = new System.Drawing.Size(572, 182);
-            this.dgvAmbulancias.TabIndex = 61;
-            // 
             // Frm_Cliente_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,7 +597,6 @@ namespace Visual {
             this.gboxnombres.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbulancias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -662,6 +644,5 @@ namespace Visual {
         private System.Windows.Forms.CheckBox chxusuario;
         private System.Windows.Forms.TextBox textBox8;
         private FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.DataGridView dgvAmbulancias;
     }
 }

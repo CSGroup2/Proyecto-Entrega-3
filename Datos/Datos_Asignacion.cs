@@ -109,7 +109,7 @@ namespace Datos {
                 param_id_peticion.Value = id_peticion;
                 comando.Parameters.Add(param_id_peticion);
 
-                msj = comando.ExecuteNonQuery() == 1 ? "1" : "No se pudo actualizar el stock";
+                msj = comando.ExecuteNonQuery() == 1 ? "1" : "No se pudo actualizar peticion";
                 con.cerrar_conexion(conexion);
             }
             catch (Exception ex)
@@ -255,6 +255,64 @@ namespace Datos {
             return dt;
         }
 
+        public object LlenarComboConductores()
+        {
+            DataTable DtResultado = new DataTable("TIPO_AMBULANCIA");
+            SqlConnection c1 = con.abrir_conexion();
+            try
+            {
+                string sentencia = "SELECT C.ID_CONDUCTOR AS CODCONDUCTOR, CONCAT(P.NOMBRE_1,' ',P.APELLIDO_1) AS NOMBRE FROM CONDUCTOR C INNER JOIN PERSONA P ON C.ID_PERSONA=P.ID_PERSONA WHERE C.ID_ESTADO=1;";
+                SqlCommand comando = new SqlCommand(sentencia, c1);
+                SqlDataAdapter SqlDat = new SqlDataAdapter(comando);
+                SqlDat.Fill(DtResultado);
+                DataRow nuevaFila = DtResultado.NewRow();
+
+                nuevaFila["CODCONDUCTOR"] = 0;
+                nuevaFila["NOMBRE"] = "";
+
+                DtResultado.Rows.InsertAt(nuevaFila, 0);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+                Console.WriteLine("Error al consultar conductor " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
+            }
+            return DtResultado;
+        }
+
+        public object LlenarComboAmbulancia()
+        {
+            DataTable DtResultado = new DataTable("TIPO_AMBULANCIA");
+            SqlConnection c1 = con.abrir_conexion();
+            try
+            {
+                string sentencia = "SELECT A.ID_AMBULANCIA AS CODAMBULANCIA, CONCAT(A.PLACA,' ', A.MODELO) AS NOMBRE FROM AMBULANCIA A WHERE ID_ESTADO=1;";
+                SqlCommand comando = new SqlCommand(sentencia, c1);
+                SqlDataAdapter SqlDat = new SqlDataAdapter(comando);
+                SqlDat.Fill(DtResultado);
+                DataRow nuevaFila = DtResultado.NewRow();
+
+                nuevaFila["CODAMBULANCIA"] = 0;
+                nuevaFila["NOMBRE"] = "";
+
+                DtResultado.Rows.InsertAt(nuevaFila, 0);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+                Console.WriteLine("Error al consultar ambulancia " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
+            }
+            return DtResultado;
+        }
+
         public object FiltrarAsignaciones(int idSecretario, string ced, string condicion)
         {
             DataTable dt = new DataTable();
@@ -294,6 +352,122 @@ namespace Datos {
                 Console.WriteLine("Error al listar las peticiones " + ex.Message);
             }
             return dt;
+        }
+
+        public object consultarAsigDetallexIdAs(int idAs)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_consultar_asignacion_detalle_idAs", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param_idAC = new SqlParameter();
+                    param_idAC.ParameterName = "@idAs";
+                    param_idAC.SqlDbType = SqlDbType.Int;
+                    param_idAC.Value = idAs;
+                    comando.Parameters.Add(param_idAC);
+
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al listar los detalles " + ex.Message);
+            }
+            return dt;
+        }
+
+        public Asignacion_Cabecera ConsultarAsignacionXId(int idAs)
+        {
+            Asignacion_Cabecera ac = new Asignacion_Cabecera();
+            Peticion p = new Peticion();
+            Cliente c = new Cliente();
+            SqlConnection conexion = con.abrir_conexion();
+            try
+            {
+                //comando
+                SqlDataReader dr = null;
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = "sp_consultar_asignacion_x_id";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param_id = new SqlParameter();
+                param_id.ParameterName = "@idAs";
+                param_id.SqlDbType = SqlDbType.Int;
+                param_id.Value = idAs;
+                comando.Parameters.Add(param_id);
+
+                dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    c = new Cliente();
+                    c.Nombre_1 = dr["Nombre"].ToString();
+                    c.Apellido_1 = dr["Apellido"].ToString();
+
+                    p = new Peticion();
+                    p.Cliente = c;
+                    p.N_ambulancia = Convert.ToInt32(dr["Cantidad_Ambulancias"]);
+                    p.Punto_origen = dr["Origen"].ToString();
+                    p.Punto_destino = dr["Destino"].ToString();
+
+                    ac = new Asignacion_Cabecera();
+                    ac.Peticion = p;
+                    ac.Ambulancia = dr["Tipo_Ambulancia"].ToString();
+                    ac.Id_asignacion_cabecera = Convert.ToInt32(dr["Código_Asignación"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(conexion);
+                Console.WriteLine("Error al consultar en la placa " + ex.Message);
+            }
+            return ac;
+        }
+
+        public string editarAsignacion(int id_detalle, int id_conductor, int id_ambulancia)
+        {
+            string msj = "";
+            SqlConnection conexion = con.abrir_conexion();
+
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.CommandText = "sp_update_asignacion";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param_id_det = new SqlParameter();
+                param_id_det.ParameterName = "@id_detalle";
+                param_id_det.SqlDbType = SqlDbType.Int;
+                param_id_det.Value = id_detalle;
+                comando.Parameters.Add(param_id_det);
+
+                SqlParameter param_id_conductor = new SqlParameter();
+                param_id_conductor.ParameterName = "@id_conductor";
+                param_id_conductor.SqlDbType = SqlDbType.Int;
+                param_id_conductor.Value = id_conductor;
+                comando.Parameters.Add(param_id_conductor);
+
+                SqlParameter param_id_ambulancia = new SqlParameter();
+                param_id_ambulancia.ParameterName = "@id_ambulancia";
+                param_id_ambulancia.SqlDbType = SqlDbType.Int;
+                param_id_ambulancia.Value = id_ambulancia;
+                comando.Parameters.Add(param_id_ambulancia);
+
+                comando.ExecuteNonQuery();
+                msj = "1";
+            }
+            catch (Exception ex)
+            {
+                con.cerrar_conexion(conexion);
+                msj = "en cabecera error " + ex.Message;
+            }
+            return msj;
         }
     }
 }

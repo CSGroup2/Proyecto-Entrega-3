@@ -134,21 +134,28 @@ namespace Visual {
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dgvClientes.DataSource;
-            string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
-            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+            string[] columnas = {"N." ,"Código", "Estado", "Hospital", "Cédula", "Nombres", "Apellidos", "Sexo", "Fecha Nacimiento", "Telefono" , "Correo" };
+            float[] tamanios = { 2, 2, 2, 4, 4, 4, 4, 2, 3, 3, 4 };
             
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.Filter = "Pdf File |*.pdf";
             //saveFileDialog1.FileName = "lista_ambulancia.pdf";
             saveFileDialog1.Title = "SGAR: Ambulancias - Guardar";
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dt.Rows.Count > 0)
             {
-                string file = saveFileDialog1.FileName;
-                admpdf.CrearPdf(dt, file, columnas, tamanios, 0);
-                if (File.Exists(file))
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    Process.Start(file);
+                    string file = saveFileDialog1.FileName;
+                    admpdf.CrearPdf(dt, file, columnas, tamanios, 0);
+                    if (File.Exists(file))
+                    {
+                        Process.Start(file);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para imprimir");
             }
         }
 
@@ -188,7 +195,7 @@ namespace Visual {
 
             string dato = txtCriterio.Text.Replace(" ", String.Empty);
             //dgvClientes.Refresh();
-            MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
+            //MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
             dgvClientes.DataSource = admCliente.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
         }
 
