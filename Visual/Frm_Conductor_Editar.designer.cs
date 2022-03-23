@@ -34,7 +34,6 @@ namespace Visual {
             this.label12 = new System.Windows.Forms.Label();
             this.dtp_FechaContrato = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_Correo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@ namespace Visual {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmb_Disponibilidad = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.pncontenido.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -104,13 +104,13 @@ namespace Visual {
             // pncontenido
             // 
             this.pncontenido.BackColor = System.Drawing.Color.White;
+            this.pncontenido.Controls.Add(this.cmb_Disponibilidad);
             this.pncontenido.Controls.Add(this.lbl_IdConductor);
             this.pncontenido.Controls.Add(this.cmb_Estado);
             this.pncontenido.Controls.Add(this.label13);
             this.pncontenido.Controls.Add(this.label12);
             this.pncontenido.Controls.Add(this.dtp_FechaContrato);
             this.pncontenido.Controls.Add(this.label11);
-            this.pncontenido.Controls.Add(this.txt_Correo);
             this.pncontenido.Controls.Add(this.label10);
             this.pncontenido.Controls.Add(this.txt_Telefono);
             this.pncontenido.Controls.Add(this.label9);
@@ -140,6 +140,7 @@ namespace Visual {
             // 
             // cmb_Estado
             // 
+            this.cmb_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Estado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Estado.FormattingEnabled = true;
             this.cmb_Estado.Location = new System.Drawing.Point(427, 39);
@@ -191,17 +192,6 @@ namespace Visual {
             this.label11.TabIndex = 21;
             this.label11.Text = "Fech. Contrato:";
             // 
-            // txt_Correo
-            // 
-            this.txt_Correo.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_Correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Correo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Correo.Location = new System.Drawing.Point(85, 159);
-            this.txt_Correo.Name = "txt_Correo";
-            this.txt_Correo.Size = new System.Drawing.Size(222, 26);
-            this.txt_Correo.TabIndex = 19;
-            this.txt_Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Correo_KeyPress);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -210,9 +200,9 @@ namespace Visual {
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label10.Location = new System.Drawing.Point(15, 162);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 18);
+            this.label10.Size = new System.Drawing.Size(118, 18);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Correo:";
+            this.label10.Text = "Disponibilidad:";
             // 
             // txt_Telefono
             // 
@@ -358,6 +348,7 @@ namespace Visual {
             // 
             this.txt_Cedula.BackColor = System.Drawing.SystemColors.Window;
             this.txt_Cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Cedula.Enabled = false;
             this.txt_Cedula.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Cedula.Location = new System.Drawing.Point(138, 41);
             this.txt_Cedula.Name = "txt_Cedula";
@@ -485,6 +476,16 @@ namespace Visual {
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // cmb_Disponibilidad
+            // 
+            this.cmb_Disponibilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Disponibilidad.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Disponibilidad.FormattingEnabled = true;
+            this.cmb_Disponibilidad.Location = new System.Drawing.Point(135, 161);
+            this.cmb_Disponibilidad.Name = "cmb_Disponibilidad";
+            this.cmb_Disponibilidad.Size = new System.Drawing.Size(178, 28);
+            this.cmb_Disponibilidad.TabIndex = 27;
+            // 
             // Frm_Conductor_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,7 +517,6 @@ namespace Visual {
         private System.Windows.Forms.Panel pncontenido;
         private System.Windows.Forms.DateTimePicker dtp_FechaContrato;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_Correo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.Label label9;
@@ -545,5 +545,6 @@ namespace Visual {
         private System.Windows.Forms.Label lbl_IdConductor;
         private System.Windows.Forms.ComboBox cmb_Estado;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ComboBox cmb_Disponibilidad;
     }
 }

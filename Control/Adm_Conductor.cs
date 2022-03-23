@@ -76,19 +76,19 @@ namespace Control {
 
         #region Frm_Conductor_Editar
 
-        public void buscarDatosConductorEditar (int posicion, int idConductor, Label lbl_IdConductor, TextBox txt_Cedula, ComboBox cmb_Estado, TextBox txt_Nombre1, TextBox txt_Nombre2, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Correo, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNacimiento, DateTimePicker dtp_FechaContrato) {
+        public void buscarDatosConductorEditar (int posicion, int idConductor, Label lbl_IdConductor, TextBox txt_Cedula, ComboBox cmb_Estado, TextBox txt_Nombre1, TextBox txt_Nombre2, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNacimiento, DateTimePicker dtp_FechaContrato) {
             Conductor = new Conductor ();
             Conductor = Datos_Conductor.buscarDatosConductorEditar (idConductor);
             lbl_IdConductor.Text = Conductor.Id_conductor.ToString ();
             txt_Cedula.Text = Conductor.Cedula.ToString ();
-            cmb_Estado.SelectedValue = Conductor.Estado;
+            cmb_Estado.SelectedItem = Conductor.Estado;
             txt_Nombre1.Text = Conductor.Nombre_1.ToString ();
             txt_Nombre2.Text = Conductor.Nombre_2.ToString ();
             txt_Apellido1.Text = Conductor.Apellido_1.ToString ();
             txt_Apellido2.Text = Conductor.Apellido_2.ToString ();
             //txt_Correo.Text = Conductor.
             txt_Telefono.Text = Conductor.Telefono.ToString ();
-            if (Conductor.Sexo.ToString() == "Femenino") {
+            if (Conductor.Sexo.ToString() == "Masculino") {
                 rdb_Masculino.Checked = true;
             } else {
                 rdb_Femenino.Checked = true;
@@ -97,12 +97,28 @@ namespace Control {
             dtp_FechaContrato.Text = Conductor.Fecha_contrato.ToString ();
         }
 
+        
+
         public string actualizarDatosConductor (int id, string cedula, string estado, string nombre1, string nombre2, string apellido1, string apellido2, string telefono, string sexo, DateTime fecha_nac, DateTime fecha_contrato) {
             string mensaje = "¡"; // '¡' in case of incorrec data on fields   
             Conductor = new Conductor (id, fecha_contrato, "", 0, cedula, nombre1, nombre2, apellido1, apellido2, sexo, fecha_nac, telefono, estado);
             mensaje = Datos_Conductor.actualizarDatosConductor (Conductor);
             MessageBox.Show (mensaje, "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return mensaje;
+        }
+
+        public void limpiarCamposGuardarConductorEditar (TextBox txt_Cedula, TextBox txt_Nombre1, TextBox txt_Nombre2, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNacimiento, DateTimePicker dtp_FechaContrato, ErrorProvider errorProvider) {
+            errorProvider.Clear ();
+            txt_Cedula.Clear ();
+            txt_Nombre1.Clear ();
+            txt_Nombre2.Clear ();
+            txt_Apellido1.Clear ();
+            txt_Apellido2.Clear ();
+            txt_Telefono.Clear ();
+            rdb_Masculino.Checked = false;
+            rdb_Femenino.Checked = false;
+            dtp_FechaNacimiento.Value = DateTime.Today;
+            dtp_FechaContrato.Value = DateTime.Today;
         }
 
         #endregion
@@ -162,6 +178,9 @@ namespace Control {
             return Validacion.esCorrectoDatosConductor (txt_Cedula, txt_Nombre1, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNac, dtp_FechaContrato, errorProvider1);
         }
 
+        public bool esCorrectoDatosConductorValidacionEditar (TextBox txt_Cedula, TextBox txt_Nombre1, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNacimiento, DateTimePicker dtp_FechaContrato, ErrorProvider errorProvider) {
+          return Validacion.esCorrectoDatosConductorEditar (txt_Cedula, txt_Nombre1, txt_Apellido1 ,txt_Apellido2, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider);
+        }
 
         #endregion
 

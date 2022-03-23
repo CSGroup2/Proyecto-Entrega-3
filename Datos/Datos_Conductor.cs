@@ -19,7 +19,7 @@ namespace Datos {
             try {
                 conexion = new Conexion ();
                 sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
-                query = "sp_insertar_conductor";                        // Stored Procedure name
+                query = "sp_conductor_insertarDatos";                        // Stored Procedure name
                 sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 if (conductor != null) {
@@ -61,7 +61,7 @@ namespace Datos {
             try {
                 conexion = new Conexion ();
                 sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
-                query = "sp_listar_conductores";                        // Stored Procedure name
+                query = "sp_conductor_listarDatos";                        // Stored Procedure name
                 sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
                 sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
                 sql_adaptador = new SqlDataAdapter (sql_comando);

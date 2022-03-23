@@ -177,11 +177,11 @@ namespace Visual {
                     // Captures file's path
                     string file = saveFileDialog1.FileName;
                     
-                    string[] columnas = { "Nº", "ID", "Cédula", "Nombres", "Apellidos", "Disponibilidad", "Fecha de contrato"};
-                    float[] tamanios = { 2, 2, 3, 4, 4, 3, 3 };
+                    string[] columnas = { "Nº", "ID", "Cédula", "Estado", "Nombres", "Apellidos", "Disponibilidad", "Telefono", "Sexo", "Fecha_Nac", "Fecha_Contrato"};
+                    float[] tamanios = { 1, float.Parse("1.5"), 1, 1, 3, 3, 3, 1, 2, 3, 3 };
 
                     // Creates PDF file
-                    admPDF.CrearPdf(dataTable_resultado, file, columnas, tamanios, 1);
+                    admPDF.CrearPdf(dataTable_resultado, file, columnas, tamanios, 2);
                     //
                     if (File.Exists(file)) {
                         // Opens PDF file

@@ -14,17 +14,19 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
         Adm_General admGeneral = Adm_General.GetAdm ();
-
+        Adm_Ambulancia admAmbulancia = Adm_Ambulancia.GetAdm ();
 
         public Frm_Conductor_Editar () {
             InitializeComponent ();
-            cargarestados ();
+            cargarEstados ();
+            cargarDisponibilidad ();
         }
 
         public Frm_Conductor_Editar (int posicion, int idConductor) {
             // Constructor overcharge
             InitializeComponent ();
-            cargarestados ();
+            cargarEstados ();
+            cargarDisponibilidad ();
             llenarCamposEditar (posicion, idConductor);
         }
 
@@ -34,10 +36,15 @@ namespace Visual {
 
         private void Frm_Conductor_Editar_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
-            cargarestados ();
+            cargarEstados ();
+            cargarDisponibilidad ();
         }
 
-        private void cargarestados () {
+        private void cargarDisponibilidad () {
+            admAmbulancia.LlenarComboDisponibilidad (cmb_Disponibilidad);
+        }
+
+        private void cargarEstados () {
             cmb_Estado.Items.Clear ();
             cmb_Estado.DataSource = admGeneral.listerEstados ();
             cmb_Estado.ValueMember = "ID_ESTADO";
@@ -45,7 +52,7 @@ namespace Visual {
         }
 
         private void llenarCamposEditar (int posicion, int idConductor) {
-            admConductor.buscarDatosConductorEditar (posicion, idConductor, lbl_IdConductor, txt_Cedula, cmb_Estado, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato);
+            admConductor.buscarDatosConductorEditar (posicion, idConductor, lbl_IdConductor, txt_Cedula, cmb_Estado, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato);
         }
 
         #endregion <<Load components at start----------------------------------------------
@@ -92,7 +99,7 @@ namespace Visual {
 
         private void btn_Guardar_Click (object sender, EventArgs e) {
             errorProvider.Clear ();
-            if (admConductor.esCorrectoDatosConductorValidacion (txt_Cedula, txt_Nombre1, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider)) {
+            if (admConductor.esCorrectoDatosConductorValidacionEditar (txt_Cedula, txt_Nombre1, txt_Apellido1, txt_Apellido2, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider)) {
                 int id = Convert.ToInt32(lbl_IdConductor.Text);
                 string
                    cedula = txt_Cedula.Text.Trim (),
@@ -101,6 +108,7 @@ namespace Visual {
                    nombre2 = txt_Nombre2.Text.Trim (),
                    apellido1 = txt_Apellido1.Text.Trim (),
                    apellido2 = txt_Apellido2.Text.Trim (),
+                   disponibilidad = cmb_Estado.Text,
                    telefono = txt_Telefono.Text.Trim (),
                    sexo = admConductor.esSexoValidacion (rdb_Masculino, rdb_Femenino);
                 DateTime
@@ -108,7 +116,7 @@ namespace Visual {
                     fecha_contrato = dtp_FechaContrato.Value.Date;
                 string mensaje = admConductor.actualizarDatosConductor (id, cedula, estado, nombre1, nombre2, apellido1, apellido2, telefono, sexo, fecha_nac, fecha_contrato);
                 if (mensaje[0] != '¡') {
-                    admConductor.limpiarCamposGuardarConductor (txt_Cedula, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider);
+                    admConductor.limpiarCamposGuardarConductorEditar (txt_Cedula, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider);
                 }
             }
         }
