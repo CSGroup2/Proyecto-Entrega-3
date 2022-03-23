@@ -156,7 +156,6 @@ namespace Visual {
                     btnsecretaria.Visible = false;
                     btncliente.Visible = false;
                     btnambulancia.Visible = false;
-                    btnconductor.Visible = false;
                     btnregistrar.Visible = false;
                     break;
                 default:
@@ -287,12 +286,44 @@ namespace Visual {
 
         private void btnopciones1_Click(object sender, EventArgs e)
         {
-            abrirhijoform(new Frm_Ayuda());
+            //abrirhijoform(new Frm_Ayuda());
+            switch (admLogin.TipoUsuario())
+            {
+                case "Gerente":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1YmntOa3Mv9RV3bnK8hE__sFXmEZqa2OU/view?usp=sharing");
+                    break;
+                case "Cliente":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1FF6lhN99wniCTWkbw7NSg6-Dmeqr5UuE/view?usp=sharing");
+                    break;
+                case "Secretaria":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1-wcRskIl-cNZ_AXVlEmTcQfIJ47anXX5/view?usp=sharing");
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void btnConsultarAsig_Click(object sender, EventArgs e)
         {
             abrirhijoform(new Frm_Asignacion_Consultar());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            switch (admLogin.TipoUsuario())
+            {
+                case "Gerente":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1YmntOa3Mv9RV3bnK8hE__sFXmEZqa2OU/view?usp=sharing");
+                    break;
+                case "Cliente":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1FF6lhN99wniCTWkbw7NSg6-Dmeqr5UuE/view?usp=sharing");
+                    break;
+                case "Secretaria":
+                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1-wcRskIl-cNZ_AXVlEmTcQfIJ47anXX5/view?usp=sharing");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -57,11 +57,10 @@ namespace Visual {
             this.btnregsecretaria = new FontAwesome.Sharp.IconButton();
             this.btnsecretaria = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnopciones3 = new FontAwesome.Sharp.IconButton();
-            this.lbltipo = new System.Windows.Forms.Label();
-            this.btnopciones2 = new FontAwesome.Sharp.IconButton();
-            this.lblapellido = new System.Windows.Forms.Label();
             this.btnopciones1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbltipo = new System.Windows.Forms.Label();
+            this.lblapellido = new System.Windows.Forms.Label();
             this.lblnombres = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -666,11 +665,10 @@ namespace Visual {
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnopciones3);
-            this.panel2.Controls.Add(this.lbltipo);
-            this.panel2.Controls.Add(this.btnopciones2);
-            this.panel2.Controls.Add(this.lblapellido);
             this.panel2.Controls.Add(this.btnopciones1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbltipo);
+            this.panel2.Controls.Add(this.lblapellido);
             this.panel2.Controls.Add(this.lblnombres);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -679,19 +677,32 @@ namespace Visual {
             this.panel2.Size = new System.Drawing.Size(242, 140);
             this.panel2.TabIndex = 0;
             // 
-            // btnopciones3
+            // btnopciones1
             // 
-            this.btnopciones3.FlatAppearance.BorderSize = 0;
-            this.btnopciones3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones3.IconChar = FontAwesome.Sharp.IconChar.SlidersH;
-            this.btnopciones3.IconColor = System.Drawing.Color.White;
-            this.btnopciones3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones3.IconSize = 28;
-            this.btnopciones3.Location = new System.Drawing.Point(88, 11);
-            this.btnopciones3.Name = "btnopciones3";
-            this.btnopciones3.Size = new System.Drawing.Size(35, 23);
-            this.btnopciones3.TabIndex = 13;
-            this.btnopciones3.UseVisualStyleBackColor = true;
+            this.btnopciones1.FlatAppearance.BorderSize = 0;
+            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.btnopciones1.IconColor = System.Drawing.Color.White;
+            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnopciones1.IconSize = 28;
+            this.btnopciones1.Location = new System.Drawing.Point(12, 7);
+            this.btnopciones1.Name = "btnopciones1";
+            this.btnopciones1.Size = new System.Drawing.Size(35, 32);
+            this.btnopciones1.TabIndex = 11;
+            this.btnopciones1.UseVisualStyleBackColor = true;
+            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(42, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ayuda";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbltipo
             // 
@@ -704,20 +715,6 @@ namespace Visual {
             this.lbltipo.TabIndex = 10;
             this.lbltipo.Text = "Tipo";
             // 
-            // btnopciones2
-            // 
-            this.btnopciones2.FlatAppearance.BorderSize = 0;
-            this.btnopciones2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones2.IconChar = FontAwesome.Sharp.IconChar.EllipsisV;
-            this.btnopciones2.IconColor = System.Drawing.Color.White;
-            this.btnopciones2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones2.IconSize = 28;
-            this.btnopciones2.Location = new System.Drawing.Point(53, 5);
-            this.btnopciones2.Name = "btnopciones2";
-            this.btnopciones2.Size = new System.Drawing.Size(20, 37);
-            this.btnopciones2.TabIndex = 12;
-            this.btnopciones2.UseVisualStyleBackColor = true;
-            // 
             // lblapellido
             // 
             this.lblapellido.AutoSize = true;
@@ -728,21 +725,6 @@ namespace Visual {
             this.lblapellido.Size = new System.Drawing.Size(79, 24);
             this.lblapellido.TabIndex = 9;
             this.lblapellido.Text = "Apellido";
-            // 
-            // btnopciones1
-            // 
-            this.btnopciones1.FlatAppearance.BorderSize = 0;
-            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.btnopciones1.IconColor = System.Drawing.Color.White;
-            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnopciones1.IconSize = 28;
-            this.btnopciones1.Location = new System.Drawing.Point(12, 12);
-            this.btnopciones1.Name = "btnopciones1";
-            this.btnopciones1.Size = new System.Drawing.Size(35, 23);
-            this.btnopciones1.TabIndex = 11;
-            this.btnopciones1.UseVisualStyleBackColor = true;
-            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
             // 
             // lblnombres
             // 
@@ -917,8 +899,7 @@ namespace Visual {
         private System.Windows.Forms.Panel pnsubmenuasignacion;
         private FontAwesome.Sharp.IconButton btnConsultarAsig;
         private FontAwesome.Sharp.IconButton btnasignacion;
-        private FontAwesome.Sharp.IconButton btnopciones2;
         private FontAwesome.Sharp.IconButton btnopciones1;
-        private FontAwesome.Sharp.IconButton btnopciones3;
+        private System.Windows.Forms.Label label1;
     }
 }

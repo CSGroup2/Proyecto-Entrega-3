@@ -16,8 +16,7 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Cliente admCliente = Adm_Cliente.GetAdm ();
         Adm_General admgeneral = Adm_General.GetAdm();
-
-
+        
         Adm_PDF admpdf = Adm_PDF.GetAdm(); 
         Frm_Menu menu;
 
@@ -202,10 +201,7 @@ namespace Visual {
             {
                 buscarOp = 0;
             } 
-
             string dato = txtCriterio.Text.Replace(" ", String.Empty);
-            //dgvClientes.Refresh();
-            //MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
             dgvClientes.DataSource = admCliente.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
         }
 
@@ -216,11 +212,16 @@ namespace Visual {
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            //string criterio = Regex.Replace(txtCriterio.Text, @"\s", "");
+            
+            if (MessageBox.Show("¿Desea actualizar el registro seleccionado?", "Warning",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int posicion = dgvClientes.CurrentRow.Index;
+                int idcliente = Int32.Parse(dgvClientes[posicion, 0].Value.ToString());
+                string mensaje = admCliente.eliminarcliente(idcliente);
+                menu.abrirhijoform(new Frm_Conductor_Editar(posicion, idConductor));
+            }
 
-            /*string criterio = txtCriterio.Text.Replace(" ", String.Empty);
-            MessageBox.Show(criterio); */
-           
         }
 
         private void chxestado_CheckedChanged(object sender, EventArgs e)
