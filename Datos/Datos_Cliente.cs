@@ -169,5 +169,32 @@ namespace Datos
             return mensaje;
         }
 
+        // metodo de busca de cliente por ID 
+        public DataTable buscarClienteID(int idcliente)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection c1 = con.abrir_conexion();
+            try
+            {
+                using (SqlCommand comando = new SqlCommand("sp_cliente_buscarDatosPorId", c1))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add(new SqlParameter("@idcliente", idcliente));
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                Console.WriteLine("Error al consultar el Clientes " + ex.Message);
+            }
+            finally
+            {
+                con.cerrar_conexion(c1);
+            }
+            return dt;
+        }
+
     }
 }
