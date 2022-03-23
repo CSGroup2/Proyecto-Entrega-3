@@ -65,7 +65,7 @@ namespace Control {
         public string guardarDatosSecretaria (string cedula, string nombre1, string nombre2, string apellido1, string apellido2, string correo, string telefono, string sexo, DateTime fecha_nac, DateTime fecha_contrato, string nombre_usuario, string contrasenia1) {
             string mensaje = "¡";
             Usuario = new Usuario (0, correo, nombre_usuario, contrasenia1);
-            Secretaria = new Secretaria (0, Usuario, fecha_contrato, 0, cedula, nombre1, nombre2, apellido1, apellido2, sexo, fecha_nac, telefono);
+            Secretaria = new Secretaria (0, Usuario, fecha_contrato, 0, cedula, nombre1, nombre2, apellido1, apellido2, sexo, fecha_nac, telefono, "");
             mensaje = Datos_Secretaria.insertarDatosSecretaria (Secretaria);
             MessageBox.Show (mensaje, "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return mensaje;

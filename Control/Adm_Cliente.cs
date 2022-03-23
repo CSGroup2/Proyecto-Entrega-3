@@ -90,7 +90,7 @@ namespace Control
         {
             string mensaje = "";
             usuario = new Usuario(0, Correo, NombreUsuario, Contrasenia1);
-            client = new Cliente(id_hospital, usuario, 0,  Cedula, Nombre1, Nombre2, Apellido1, Apellido2, sexo, dtp_FechaNac, Telefono);
+            client = new Cliente(id_hospital, usuario, 0,  Cedula, Nombre1, Nombre2, Apellido1, Apellido2, sexo, dtp_FechaNac, Telefono, "");
             mensaje = Datos_client.insertarDatosCliente(client);
 
             return mensaje;

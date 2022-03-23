@@ -19,7 +19,7 @@ namespace Model {
         }
 
         // Constructor: Parameterized
-        public Conductor (int id_conductor, DateTime fecha_contrato, string diponibilidad, int id_persona, string cedula, string nombre_1, string nombre_2, string apellido_1, string apellido_2, string sexo, DateTime fecha_nac, string telefono) : base (id_persona, cedula, nombre_1, nombre_2, apellido_1, apellido_2, sexo, fecha_nac, telefono) {
+        public Conductor (int id_conductor, DateTime fecha_contrato, string diponibilidad, int id_persona, string cedula, string nombre_1, string nombre_2, string apellido_1, string apellido_2, string sexo, DateTime fecha_nac, string telefono, string estado) : base (id_persona, cedula, nombre_1, nombre_2, apellido_1, apellido_2, sexo, fecha_nac, telefono, estado) {
             this.id_conductor = id_conductor;
             this.fecha_contrato = fecha_contrato;
             this.diponibilidad = diponibilidad;
