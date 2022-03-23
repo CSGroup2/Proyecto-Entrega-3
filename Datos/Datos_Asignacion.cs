@@ -376,7 +376,7 @@ namespace Datos {
             catch (Exception ex)
             {
                 dt = null;
-                Console.WriteLine("Error al listar las peticiones " + ex.Message);
+                Console.WriteLine("Error al listar los detalles " + ex.Message);
             }
             return dt;
         }
