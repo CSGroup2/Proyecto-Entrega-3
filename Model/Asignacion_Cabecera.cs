@@ -10,6 +10,7 @@ namespace Model {
         private int id_asignacion_cabecera;
         private Peticion peticion;
         private Secretaria secretaria;
+        private string ambulancia;
         private string condicion;
         private List<Asignacion_Detalle> asignacion_detalle;
 
@@ -20,6 +21,7 @@ namespace Model {
             this.secretaria = null;
             this.condicion = "";
             this.asignacion_detalle = null;
+            this.Ambulancia = "";
         }
 
         // Constructor: Parameterized
@@ -36,6 +38,7 @@ namespace Model {
         public Secretaria Secretaria { get => secretaria; set => secretaria = value; }
         public string Condicion { get => condicion; set => condicion = value; }
         public List<Asignacion_Detalle> Asignacion_detalle { get => asignacion_detalle; set => asignacion_detalle = value; }
+        public string Ambulancia { get => ambulancia; set => ambulancia = value; }
 
         public override string ToString () {
             return

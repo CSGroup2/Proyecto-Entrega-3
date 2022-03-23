@@ -152,6 +152,7 @@ namespace Visual {
                     btnasignacion.Visible = false;
                     break;
                 case "Secretaria":
+                    btnconsultarpet.Visible = false;
                     btnsecretaria.Visible = false;
                     btncliente.Visible = false;
                     btnambulancia.Visible = false;

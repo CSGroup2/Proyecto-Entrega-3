@@ -67,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Btn_Comportamiento.cs" />
+    <Compile Include="Frm_Asignacion_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Asignacion_Editar.Designer.cs">
+      <DependentUpon>Frm_Asignacion_Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Alternativa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_Asignacion_Editar.resx">
+      <DependentUpon>Frm_Asignacion_Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Alternativa.resx">
       <DependentUpon>Frm_Alternativa.cs</DependentUpon>
     </EmbeddedResource>
