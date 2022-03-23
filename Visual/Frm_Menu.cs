@@ -286,12 +286,44 @@ namespace Visual {
 
         private void btnopciones1_Click(object sender, EventArgs e)
         {
-            abrirhijoform(new Frm_Ayuda());
+            //abrirhijoform(new Frm_Ayuda());
+            switch (admLogin.TipoUsuario())
+            {
+                case "Gerente":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EZU9wnjXjslLjaCfF0gictcBfgBJfktRyzHQZDpaRdodjA?e=Cin1EO");
+                    break;
+                case "Cliente":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EfEa3IfbVMNBrug1WztCO94Bn-BUA-fAJT9D3kyRkB0Tgw?e=vJSZ11");
+                    break;
+                case "Secretaria":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EQfDkf-Ba21JsCVZfalRYSABdGTOwlJZnLwrSAKcxFRDIg?e=fq5k4y");
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void btnConsultarAsig_Click(object sender, EventArgs e)
         {
             abrirhijoform(new Frm_Asignacion_Consultar());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            switch (admLogin.TipoUsuario())
+            {
+                case "Gerente":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EZU9wnjXjslLjaCfF0gictcBfgBJfktRyzHQZDpaRdodjA?e=Cin1EO");
+                    break;
+                case "Cliente":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EfEa3IfbVMNBrug1WztCO94Bn-BUA-fAJT9D3kyRkB0Tgw?e=vJSZ11");
+                    break;
+                case "Secretaria":
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EQfDkf-Ba21JsCVZfalRYSABdGTOwlJZnLwrSAKcxFRDIg?e=fq5k4y");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

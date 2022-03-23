@@ -57,9 +57,10 @@ namespace Visual {
             this.btnregsecretaria = new FontAwesome.Sharp.IconButton();
             this.btnsecretaria = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnopciones1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbltipo = new System.Windows.Forms.Label();
             this.lblapellido = new System.Windows.Forms.Label();
-            this.btnopciones1 = new FontAwesome.Sharp.IconButton();
             this.lblnombres = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +70,6 @@ namespace Visual {
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timerhorafecha = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlateral.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnsubmenuasignacion.SuspendLayout();
@@ -677,6 +677,33 @@ namespace Visual {
             this.panel2.Size = new System.Drawing.Size(242, 140);
             this.panel2.TabIndex = 0;
             // 
+            // btnopciones1
+            // 
+            this.btnopciones1.FlatAppearance.BorderSize = 0;
+            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.btnopciones1.IconColor = System.Drawing.Color.White;
+            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnopciones1.IconSize = 28;
+            this.btnopciones1.Location = new System.Drawing.Point(12, 7);
+            this.btnopciones1.Name = "btnopciones1";
+            this.btnopciones1.Size = new System.Drawing.Size(35, 32);
+            this.btnopciones1.TabIndex = 11;
+            this.btnopciones1.UseVisualStyleBackColor = true;
+            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(42, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ayuda";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // lbltipo
             // 
             this.lbltipo.AutoSize = true;
@@ -698,21 +725,6 @@ namespace Visual {
             this.lblapellido.Size = new System.Drawing.Size(79, 24);
             this.lblapellido.TabIndex = 9;
             this.lblapellido.Text = "Apellido";
-            // 
-            // btnopciones1
-            // 
-            this.btnopciones1.FlatAppearance.BorderSize = 0;
-            this.btnopciones1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnopciones1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.btnopciones1.IconColor = System.Drawing.Color.White;
-            this.btnopciones1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnopciones1.IconSize = 28;
-            this.btnopciones1.Location = new System.Drawing.Point(12, 7);
-            this.btnopciones1.Name = "btnopciones1";
-            this.btnopciones1.Size = new System.Drawing.Size(35, 32);
-            this.btnopciones1.TabIndex = 11;
-            this.btnopciones1.UseVisualStyleBackColor = true;
-            this.btnopciones1.Click += new System.EventHandler(this.btnopciones1_Click);
             // 
             // lblnombres
             // 
@@ -808,17 +820,6 @@ namespace Visual {
             // 
             this.timerhorafecha.Enabled = true;
             this.timerhorafecha.Tick += new System.EventHandler(this.timerhorafecha_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(42, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Ayuda";
             // 
             // Frm_Menu
             // 
