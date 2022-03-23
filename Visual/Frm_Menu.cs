@@ -290,13 +290,13 @@ namespace Visual {
             switch (admLogin.TipoUsuario())
             {
                 case "Gerente":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1YmntOa3Mv9RV3bnK8hE__sFXmEZqa2OU/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EZU9wnjXjslLjaCfF0gictcBfgBJfktRyzHQZDpaRdodjA?e=Cin1EO");
                     break;
                 case "Cliente":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1FF6lhN99wniCTWkbw7NSg6-Dmeqr5UuE/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EfEa3IfbVMNBrug1WztCO94Bn-BUA-fAJT9D3kyRkB0Tgw?e=vJSZ11");
                     break;
                 case "Secretaria":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1-wcRskIl-cNZ_AXVlEmTcQfIJ47anXX5/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EQfDkf-Ba21JsCVZfalRYSABdGTOwlJZnLwrSAKcxFRDIg?e=fq5k4y");
                     break;
                 default:
                     break;
@@ -313,13 +313,13 @@ namespace Visual {
             switch (admLogin.TipoUsuario())
             {
                 case "Gerente":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1YmntOa3Mv9RV3bnK8hE__sFXmEZqa2OU/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EZU9wnjXjslLjaCfF0gictcBfgBJfktRyzHQZDpaRdodjA?e=Cin1EO");
                     break;
                 case "Cliente":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1FF6lhN99wniCTWkbw7NSg6-Dmeqr5UuE/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EfEa3IfbVMNBrug1WztCO94Bn-BUA-fAJT9D3kyRkB0Tgw?e=vJSZ11");
                     break;
                 case "Secretaria":
-                    System.Diagnostics.Process.Start("https://drive.google.com/file/d/1-wcRskIl-cNZ_AXVlEmTcQfIJ47anXX5/view?usp=sharing");
+                    System.Diagnostics.Process.Start("https://ugye-my.sharepoint.com/:b:/g/personal/rehan_perezb_ug_edu_ec/EQfDkf-Ba21JsCVZfalRYSABdGTOwlJZnLwrSAKcxFRDIg?e=fq5k4y");
                     break;
                 default:
                     break;
