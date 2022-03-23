@@ -23,7 +23,7 @@ namespace Model
         }
 
         //constructor parametrizado
-        public Cliente(int id_hospital, Usuario usuario, int id_persona, string cedula, string nombre_1, string nombre_2, string apellido_1, string apellido_2, string sexo, DateTime fecha_nac, string telefono) : base(id_persona, cedula, nombre_1, nombre_2, apellido_1, apellido_2, sexo, fecha_nac, telefono)
+        public Cliente(int id_hospital, Usuario usuario, int id_persona, string cedula, string nombre_1, string nombre_2, string apellido_1, string apellido_2, string sexo, DateTime fecha_nac, string telefono, string estado) : base (id_persona, cedula, nombre_1, nombre_2, apellido_1, apellido_2, sexo, fecha_nac, telefono, estado)
         {
             this.id_hospital = id_hospital;
             this.usuario = usuario;

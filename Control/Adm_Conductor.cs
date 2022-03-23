@@ -81,7 +81,7 @@ namespace Control {
             Conductor = Datos_Conductor.buscarDatosConductorEditar (idConductor);
             lbl_IdConductor.Text = Conductor.Id_conductor.ToString ();
             txt_Cedula.Text = Conductor.Cedula.ToString ();
-            //cmb_Estado.SelectedIndex = Conductor.Diponibilidad;
+            //cmb_Estado.SelectedValue = Conductor.Diponibilidad;
             txt_Nombre1.Text = Conductor.Nombre_1.ToString ();
             txt_Nombre2.Text = Conductor.Nombre_2.ToString ();
             txt_Apellido1.Text = Conductor.Apellido_1.ToString ();
@@ -122,7 +122,7 @@ namespace Control {
         // Methods for Buttons
         public string guardarDatosConductor (string cedula, string nombre1, string nombre2, string apellido1, string apellido2, string telefono, string sexo, DateTime fecha_nac, DateTime fecha_contrato) {
             string mensaje = "¡"; // '¡' in case of incorrec data on fields   
-            Conductor = new Conductor (0, fecha_contrato, "", 0, cedula, nombre1, nombre2, apellido1, apellido2, sexo, fecha_nac, telefono);
+            Conductor = new Conductor (0, fecha_contrato, "", 0, cedula, nombre1, nombre2, apellido1, apellido2, sexo, fecha_nac, telefono, "");
             mensaje = Datos_Conductor.insertarDatosConductor (Conductor);
             MessageBox.Show (mensaje, "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return mensaje;

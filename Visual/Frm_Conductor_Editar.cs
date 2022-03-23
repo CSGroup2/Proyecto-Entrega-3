@@ -14,23 +14,23 @@ namespace Visual {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
         Adm_Conductor admConductor = Adm_Conductor.GetAdm ();
         Adm_General admGeneral = Adm_General.GetAdm ();
-        
+
 
         public Frm_Conductor_Editar () {
             InitializeComponent ();
+            cargarestados ();
         }
 
         public Frm_Conductor_Editar (int posicion, int idConductor) {
             // Constructor overcharge
             InitializeComponent ();
+            cargarestados ();
             llenarCamposEditar (posicion, idConductor);
         }
 
-        private void llenarCamposEditar (int posicion, int idConductor) {
-            admConductor.buscarDatosConductorEditar (posicion, idConductor, lbl_IdConductor, txt_Cedula, cmb_Estado, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato);
-        }
 
-        #region Load components at start----------------------------------------------
+
+        #region <<Load components at start----------------------------------------------
 
         private void Frm_Conductor_Editar_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
@@ -44,7 +44,11 @@ namespace Visual {
             cmb_Estado.DisplayMember = "NOMBRE_ESTADO";
         }
 
-        #endregion
+        private void llenarCamposEditar (int posicion, int idConductor) {
+            admConductor.buscarDatosConductorEditar (posicion, idConductor, lbl_IdConductor, txt_Cedula, cmb_Estado, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato);
+        }
+
+        #endregion <<Load components at start----------------------------------------------
 
 
         #region KeyPress Events------------------------------------------------
