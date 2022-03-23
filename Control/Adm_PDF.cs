@@ -39,6 +39,7 @@ namespace Control
             return adm_pdf;
         }
 
+        //método para crear pdf con los datos del datagridview
         public void CrearPdf(DataTable dt, string file, string[] columnas, float[] tamanios, int orientacion)
         {
             PageSize orientacionpagina;
@@ -72,7 +73,7 @@ namespace Control
             {
                 tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas)));
             }
-
+            //RECORRE EL DATATABLE PARA AGREGAR ESOS DATOS A LA PDF
             int fila = 1;
             for (int i = 0; i < dt.Rows.Count; i++)
             {

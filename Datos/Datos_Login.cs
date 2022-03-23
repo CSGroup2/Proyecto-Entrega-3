@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,46 +13,45 @@ namespace Datos {
 
         public Usuario_Cache LoginUser (String usuario, String contraseña) {
             bool var = false;
-            SqlConnection c1 = conn.abrir_conexion ();
-            //List<Object> lstClien = new List<Object> ();
+            SqlConnection sql_conexion = conn.abrir_conexion ();
             Usuario_Cache usuarioCache = new Usuario_Cache ();
-            string sentencia = "select * from (select 'Gerente' as tipo, ge.ID_GERENTE as id_tipo, pers.NOMBRE_1 as nombre, pers.APELLIDO_1 as apellido, " +
-                "us.NOMBRE_USUARIO, us.CORREO, us.CONTRASENIA " +
-                "from GERENTE as ge inner join PERSONA as pers " +
-                "on pers.ID_PERSONA = ge.ID_PERSONA " +
-                "inner join USUARIO as us " +
-                "on us.ID_USUARIO = ge.ID_USUARIO " +
-                "UNION " +
-                "select 'Cliente', cl.ID_CLIENTE,  pers.NOMBRE_1, pers.APELLIDO_1, us.NOMBRE_USUARIO, us.CORREO, us.CONTRASENIA from CLIENTE as cl " +
-                "inner join PERSONA as pers " +
-                "on pers.ID_PERSONA = cl.ID_PERSONA " +
-                "inner join USUARIO as us " +
-                "on us.ID_USUARIO = cl.ID_USUARIO " +
-                "UNION " +
-                "select 'Secretaria', sctria.ID_SECRETARIA,  pers.NOMBRE_1, pers.APELLIDO_1, us.NOMBRE_USUARIO, us.CORREO, us.CONTRASENIA " +
-                "from SECRETARIA as sctria " +
-                "inner join PERSONA as pers on pers.ID_PERSONA = sctria.ID_PERSONA " +
-                "inner join USUARIO as us on us.ID_USUARIO = sctria.ID_USUARIO ) as resul " +
-                "where resul.NOMBRE_USUARIO = @nombre_usuario and resul.CONTRASENIA = @contrasenia ";
 
-            SqlCommand comando = new SqlCommand (sentencia, c1); //Para ejecutar 
-            comando.Parameters.AddWithValue ("@nombre_usuario", usuario);
-            comando.Parameters.AddWithValue ("@contrasenia", contraseña);
-            SqlDataReader registros = comando.ExecuteReader ();
-            if (registros.HasRows) {
-                while (registros.Read ()) {
-                    
-                    usuarioCache.Id_tipo = Int16.Parse (registros["id_tipo"].ToString ());
-                    usuarioCache.Tipo = registros["tipo"].ToString ();
-                    usuarioCache.Nombres = registros["nombre"].ToString ();
-                    usuarioCache.Apellidos = registros["apellido"].ToString ();
+            string procedimeinto = "sp_login";
+            try
+            {
+                SqlCommand sql_comando = new SqlCommand(procedimeinto, sql_conexion);     // Creatin SqlCommand object
+                sql_comando.CommandType = CommandType.StoredProcedure;
+                sql_comando.Parameters.AddWithValue("@nombre_usuario", usuario);
+                sql_comando.Parameters.AddWithValue("@contrasenia", contraseña);
+                SqlDataReader registros = sql_comando.ExecuteReader();
+                if (registros.HasRows)
+                {
+                    while (registros.Read())
+                    {
+
+                        usuarioCache.Id_tipo = Int16.Parse(registros["id_tipo"].ToString());
+                        usuarioCache.Tipo = registros["tipo"].ToString();
+                        usuarioCache.Nombres = registros["nombre"].ToString();
+                        usuarioCache.Apellidos = registros["apellido"].ToString();
+                    }
+                    //var = true;
                 }
-                //var = true;
-            } else {
-                //var = false;
+                else
+                {
+                    //var = false;
+                    usuarioCache = null;
+                }
+                conn.cerrar_conexion(sql_conexion);
+            }
+            catch
+            {
+                conn.cerrar_conexion(sql_conexion);
                 usuarioCache = null;
             }
-            conn.cerrar_conexion (c1);
+            finally
+            {
+                conn.cerrar_conexion(sql_conexion);
+            }
             return usuarioCache;
         }
 

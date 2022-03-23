@@ -7,12 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace Visual
 {
     public partial class Frm_Peticion_Consultar : Form
     {
         Adm_Peticion adm = Adm_Peticion.GetAdm();
+        Adm_PDF admPDF = Adm_PDF.GetAdm();
         public Frm_Peticion_Consultar()
         {
             InitializeComponent();
@@ -43,7 +46,7 @@ namespace Visual
             adm.filtrarXDestino(txt_Destino, dgvPeticion);
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        /*private void btnModificar_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(GetValorCelda(dgvPeticion, 0));
             string estado = GetValorCelda(dgvPeticion, 6);
@@ -68,11 +71,39 @@ namespace Visual
             {
                 MessageBox.Show("Seleccione una petición a eliminar.");
             }
-        }
+        }*/
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)dgvPeticion.DataSource;
+            saveFileDialog1.DefaultExt = "pdf";
+            saveFileDialog1.Filter = "Pdf File |*.pdf";
+            saveFileDialog1.Title = "SGAR: Peticiones - Guardar";
+            if (dt.Rows.Count > 0)
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string file = saveFileDialog1.FileName;
+                    string[] columnas = { "Nº", "ID", "Cliente", "Tipo Ambulancia", "# Ambulancias", "Origen", "Destino", "Estado" };
+                    float[] tamanios = { 2, 2, 3, 4, 4, 4, 4, 3 };
+                    admPDF.CrearPdf(dt, file, columnas, tamanios, 2);
+                    if (File.Exists(file))
+                    {
+                        Process.Start(file);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay datos para imprimir");
+            }
+        }
+           
     }
 }

@@ -37,8 +37,8 @@ namespace Visual
             this.txt_Destino = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeticion)).BeginInit();
             this.SuspendLayout();
@@ -156,36 +156,15 @@ namespace Visual
             this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 30;
-            this.btnCancelar.Location = new System.Drawing.Point(33, 523);
+            this.btnCancelar.Location = new System.Drawing.Point(100, 514);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCancelar.Size = new System.Drawing.Size(189, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(189, 51);
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnModificar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 30;
-            this.btnModificar.Location = new System.Drawing.Point(244, 523);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnModificar.Size = new System.Drawing.Size(189, 32);
-            this.btnModificar.TabIndex = 19;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Visible = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnImprimir
             // 
@@ -197,14 +176,15 @@ namespace Visual
             this.btnImprimir.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(42)))), ((int)(((byte)(94)))));
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 30;
-            this.btnImprimir.Location = new System.Drawing.Point(450, 523);
+            this.btnImprimir.Location = new System.Drawing.Point(351, 514);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnImprimir.Size = new System.Drawing.Size(189, 32);
+            this.btnImprimir.Size = new System.Drawing.Size(189, 51);
             this.btnImprimir.TabIndex = 26;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // Frm_Peticion_Consultar
             // 
@@ -220,7 +200,6 @@ namespace Visual
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvPeticion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -246,7 +225,7 @@ namespace Visual
         private System.Windows.Forms.TextBox txt_Destino;
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton btnCancelar;
-        private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
