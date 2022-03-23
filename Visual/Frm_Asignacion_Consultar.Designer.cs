@@ -184,6 +184,7 @@ namespace Visual
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnImprimir
             // 

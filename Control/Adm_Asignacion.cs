@@ -24,6 +24,7 @@ namespace Control {
         Validacion v = null;
         Peticion p = null;
         Cliente cl = null;
+
         Conductor co = null;
         Ambulancia a = null;
         Asignacion_Detalle ad = null;
@@ -34,6 +35,7 @@ namespace Control {
         List<Asignacion_Detalle> listaD = null;
 
         Adm_Login admL = Adm_Login.GetAdm();
+
         Adm_Peticion admP = Adm_Peticion.GetAdm();
         Adm_Ambulancia admA = Adm_Ambulancia.GetAdm();
         Adm_Conductor admCo = Adm_Conductor.GetAdm();
@@ -236,8 +238,56 @@ namespace Control {
         {
             string ced = txt_Cedula.Text,
                 condicion = v.VerificarCondicion(rdbProgreso, rdbCumplida);
-            dgvAsignaciones.Refresh();
+            dgvAsignaciones.DataSource=null;
             dgvAsignaciones.DataSource = datosAsignacion.FiltrarAsignaciones(admL.IdUsuario(), ced, condicion);
+        }
+
+        /*--------------------------Frm_Asignacion_Editar-------------------------------*/
+        public void LlenarCamposAsignacionEditar(int idAs, Label lblCliente, Label lbl_TipoAmbulancia, Label lbl_cantAmbulancia, Label lblOrigen, Label lblDestino)
+        {
+            ac = datosAsignacion.ConsultarAsignacionXId(idAs);
+            lblCliente.Text = ac.Peticion.Cliente.Nombre_1 + " " + ac.Peticion.Cliente.Apellido_1;
+            lbl_TipoAmbulancia.Text = ac.Ambulancia;
+            lbl_cantAmbulancia.Text = ac.Peticion.N_ambulancia.ToString();
+            lblOrigen.Text = ac.Peticion.Punto_origen.ToString();
+            lblDestino.Text = ac.Peticion.Punto_destino.ToString();
+        }
+
+        public void LlenarCombos(ComboBox cmbConductores, ComboBox cmbAmbulancias)
+        {
+            cmbAmbulancias.DataSource = null;
+            cmbAmbulancias.DataSource = datosAsignacion.LlenarComboAmbulancia();
+            cmbAmbulancias.ValueMember = "CODAMBULANCIA";
+            cmbAmbulancias.DisplayMember = "NOMBRE";
+
+            cmbConductores.DataSource = null;
+            cmbConductores.DataSource = datosAsignacion.LlenarComboConductores();
+            cmbConductores.ValueMember = "CODCONDUCTOR";
+            cmbConductores.DisplayMember = "NOMBRE";
+        }
+
+        public void LimpiarCmbs(ComboBox cmbAmbulancias, ComboBox cmbConductores)
+        {
+            LlenarCombos(cmbConductores, cmbAmbulancias);
+        }
+
+        public string EditarAsignacionDetalle(int id_detalle, int id_conductor, int id_ambulancia)
+        {
+            string mensaje = "", msj = "";
+            mensaje = datosAsignacion.editarAsignacion(id_detalle, id_conductor, id_ambulancia);  //editar la asignacion en la base de datos
+
+            if (mensaje[0] == '1')
+                msj = "1";
+            else
+                msj = "Error: " + mensaje;
+            //msj = "Error no se pudo ingresar la petición."; //solo para el TEST
+            return msj;
+        }
+
+        public void LlenarDgvEditar(int idAs, DataGridView dgvAmb_Cond)
+        {
+            dgvAmb_Cond.DataSource = null;
+            dgvAmb_Cond.DataSource = datosAsignacion.consultarAsigDetallexIdAs(idAs);
         }
     }
 }
