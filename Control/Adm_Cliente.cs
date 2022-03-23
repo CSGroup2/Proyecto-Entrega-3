@@ -110,6 +110,11 @@ namespace Control
             return dtresult;
         }
 
+        public string eliminarcliente(int idcliente)
+        {
+            return Datos_client.eliminarcliente(idcliente); 
+        }
+
 
         #endregion
 
