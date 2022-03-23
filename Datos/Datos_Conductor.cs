@@ -104,6 +104,45 @@ namespace Datos {
             return dataTable_resultado;
         }
 
+        public string actualizarDatosConductor (Conductor conductor) {
+            // insert new "condutor" data into the database
+            Conexion conexion = null;
+            SqlConnection sql_conexion = null;
+            SqlCommand sql_comando = null;
+            string mensaje = "";
+            string query = null;
+            try {
+                conexion = new Conexion ();
+                sql_conexion = conexion.abrir_conexion ();              // Opens conexion to sql server
+                query = "sp_conductor_actualizarDatos";                        // Stored Procedure name
+                sql_comando = new SqlCommand (query, sql_conexion);     // Creatin SqlCommand object
+                sql_comando.CommandType = CommandType.StoredProcedure;  // Declaring command type as stored Procedure
+                if (conductor != null) {
+                    // Adding values to paramerters to SqlCommand below
+                    sql_comando.Parameters.AddWithValue ("@cedula", conductor.Cedula);
+                    sql_comando.Parameters.AddWithValue ("@nombre_1", conductor.Nombre_1);
+                    sql_comando.Parameters.AddWithValue ("@nombre_2", conductor.Nombre_2);
+                    sql_comando.Parameters.AddWithValue ("@apellido_1", conductor.Apellido_1);
+                    sql_comando.Parameters.AddWithValue ("@apellido_2", conductor.Apellido_2);
+                    sql_comando.Parameters.AddWithValue ("@sexo", conductor.Sexo);
+                    sql_comando.Parameters.AddWithValue ("@fecha_nac", conductor.Fecha_nac);
+                    sql_comando.Parameters.AddWithValue ("@telefono", conductor.Telefono);
+                    sql_comando.Parameters.AddWithValue ("@fecha_contrato", conductor.Fecha_contrato);
+                    mensaje = Convert.ToString (sql_comando.ExecuteNonQuery ());
+                    if (mensaje == "-1") {
+                        mensaje = "¡CÉDULA YA EXISTE!";
+                    } else {
+                        mensaje = "DATOS GUARDADOS CORRECTAMENTE.";
+                    }
+                }
+            } catch (Exception ex) {
+                mensaje = "OCURRIO UN ERROR. \n" + ex.Message;
+            } finally {
+                conexion.cerrar_conexion (sql_conexion);
+            }
+            return mensaje;
+        }
+
         public DataTable buscarDatosConductor (string cedula_nombre, string disponibilidad) {
             // Extract all "conductor" data from database
             DataTable dataTable_resultado = null;

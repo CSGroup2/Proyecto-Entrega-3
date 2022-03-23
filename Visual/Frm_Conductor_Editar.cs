@@ -93,8 +93,10 @@ namespace Visual {
         private void btn_Guardar_Click (object sender, EventArgs e) {
             errorProvider.Clear ();
             if (admConductor.esCorrectoDatosConductorValidacion (txt_Cedula, txt_Nombre1, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider)) {
+                int id = Convert.ToInt32(lbl_IdConductor.Text);
                 string
                    cedula = txt_Cedula.Text.Trim (),
+                   estado = cmb_Estado.Text,
                    nombre1 = txt_Nombre1.Text.Trim (),
                    nombre2 = txt_Nombre2.Text.Trim (),
                    apellido1 = txt_Apellido1.Text.Trim (),
@@ -104,7 +106,7 @@ namespace Visual {
                 DateTime
                     fecha_nac = dtp_FechaNacimiento.Value.Date,
                     fecha_contrato = dtp_FechaContrato.Value.Date;
-                string mensaje = admConductor.guardarDatosConductor (cedula, nombre1, nombre2, apellido1, apellido2, telefono, sexo, fecha_nac, fecha_contrato);
+                string mensaje = admConductor.actualizarDatosConductor (id, cedula, estado, nombre1, nombre2, apellido1, apellido2, telefono, sexo, fecha_nac, fecha_contrato);
                 if (mensaje[0] != '¡') {
                     admConductor.limpiarCamposGuardarConductor (txt_Cedula, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider);
                 }
