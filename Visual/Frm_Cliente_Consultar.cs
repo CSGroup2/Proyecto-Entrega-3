@@ -134,8 +134,8 @@ namespace Visual {
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dgvClientes.DataSource;
-            string[] columnas = { "Nº", "ID", "Disponibilidad", "Placa", "Modelo", "Tipo", "Capacidad", "Observación" };
-            float[] tamanios = { 2, 2, 3, 4, 4, 3, 2, 5 };
+            string[] columnas = {"N." ,"Código", "Estado", "Hospital", "Cédula", "Nombres", "Apellidos", "Sexo", "Fecha Nacimiento", "Telefono" , "Correo" };
+            float[] tamanios = { 2, 2, 2, 4, 4, 4, 4, 2, 3, 3, 4 };
             
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.Filter = "Pdf File |*.pdf";
@@ -195,7 +195,7 @@ namespace Visual {
 
             string dato = txtCriterio.Text.Replace(" ", String.Empty);
             //dgvClientes.Refresh();
-            MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
+            //MessageBox.Show("OPCION A: " + buscarOb + " OPCION B: " + buscarOp+"DATO:" +dato + " HOSPITAL: " + hospital + " ESTADO: " +estado);
             dgvClientes.DataSource = admCliente.ConsultarClientes(dato, estado, hospital, buscarOb, buscarOp);
         }
 
