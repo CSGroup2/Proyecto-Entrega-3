@@ -32,6 +32,7 @@ namespace Visual {
 
         private void FrmClienteConsul_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (140, 255, 255, 255);
+            if (dgvClientes.Rows.Count==0) { btnmodificar.Enabled = false; }
             this.cargarhospitales();
             this.cargarclientes();
             this.cargarestados();
@@ -212,16 +213,17 @@ namespace Visual {
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("¿Desea actualizar el registro seleccionado?", "Warning",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            int posicion = dgvClientes.CurrentRow.Index;
+            if (posicion>=0)
             {
-                int posicion = dgvClientes.CurrentRow.Index;
-                int idcliente = Int32.Parse(dgvClientes[posicion, 0].Value.ToString());
-                string mensaje = admCliente.eliminarcliente(idcliente);
-                menu.abrirhijoform(new Frm_Conductor_Editar(posicion, idConductor));
-            }
+                if (MessageBox.Show("¿Desea actualizar el registro seleccionado?", "Warning",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int idcliente = Int32.Parse(dgvClientes[posicion, 0].Value.ToString());
+                    menu.abrirhijoform(new Frm_Cliente_Editar(idcliente));
 
+                }
+            }
         }
 
         private void chxestado_CheckedChanged(object sender, EventArgs e)

@@ -115,6 +115,13 @@ namespace Control
             return Datos_client.eliminarcliente(idcliente); 
         }
 
+        public DataTable BuscarClienteID(int idclient)
+        {
+            DataTable dtresult = new DataTable();
+            dtresult = Datos_client.buscarClienteID(idclient);
+            return dtresult;
+        }
+
 
         #endregion
 

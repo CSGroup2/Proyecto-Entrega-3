@@ -11,13 +11,25 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Cliente_Editar : Form {
         Btn_Comportamiento cbtn = new Btn_Comportamiento ();
+        int idclientemodi;
 
         public Frm_Cliente_Editar () {
             InitializeComponent ();
         }
 
+        public Frm_Cliente_Editar(int idcliente)
+        {
+            InitializeComponent();
+            this.idclientemodi = idcliente;
+        }
+
         private void FrmClienteModifi_Load (object sender, EventArgs e) {
             this.pncontenido.BackColor = Color.FromArgb (200, 255, 255, 255);
+        }
+
+        private void cargardatoscliente()
+        {
+
         }
 
         #region Efecto boton Guardar
