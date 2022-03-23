@@ -156,7 +156,6 @@ namespace Visual {
                     btnsecretaria.Visible = false;
                     btncliente.Visible = false;
                     btnambulancia.Visible = false;
-                    btnconductor.Visible = false;
                     btnregistrar.Visible = false;
                     break;
                 default:
