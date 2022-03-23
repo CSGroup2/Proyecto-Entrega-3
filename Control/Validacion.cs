@@ -61,7 +61,7 @@ namespace Control {
         /*-----------------------Frm_Conductor_Registrar-------------------------------*/
 
         #region Validation: Frm_Conductor_Registrar - errorprovider emtpy fields & incorrect email
-        internal bool esCorrectoDatosConductor (TextBox txt_Cedula, TextBox txt_Nombre1, TextBox txt_Nombre2, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Correo, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNac, DateTimePicker dtp_FechaContrato, ErrorProvider errorProvider1) {
+        internal bool esCorrectoDatosConductor (TextBox txt_Cedula, TextBox txt_Nombre1, TextBox txt_Apellido1, TextBox txt_Apellido2, TextBox txt_Correo, TextBox txt_Telefono, RadioButton rdb_Masculino, RadioButton rdb_Femenino, DateTimePicker dtp_FechaNac, DateTimePicker dtp_FechaContrato, ErrorProvider errorProvider1) {
             bool salida = true;
             string mensaje = "Campo obligatorio.";
             string correo = txt_Correo.Text.Trim ();
@@ -71,10 +71,6 @@ namespace Control {
             }
             if (txt_Nombre1.Text.Trim () == "") {
                 errorProvider1.SetError (txt_Nombre1, mensaje);
-                salida = false;
-            }
-            if (txt_Nombre2.Text.Trim () == "") {
-                errorProvider1.SetError (txt_Nombre2, mensaje);
                 salida = false;
             }
             if (txt_Apellido1.Text.Trim () == "") {

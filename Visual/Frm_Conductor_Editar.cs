@@ -92,7 +92,7 @@ namespace Visual {
 
         private void btn_Guardar_Click (object sender, EventArgs e) {
             errorProvider.Clear ();
-            if (admConductor.esCorrectoDatosConductorValidacion (txt_Cedula, txt_Nombre1, txt_Nombre2, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider)) {
+            if (admConductor.esCorrectoDatosConductorValidacion (txt_Cedula, txt_Nombre1, txt_Apellido1, txt_Apellido2, txt_Correo, txt_Telefono, rdb_Masculino, rdb_Femenino, dtp_FechaNacimiento, dtp_FechaContrato, errorProvider)) {
                 string
                    cedula = txt_Cedula.Text.Trim (),
                    nombre1 = txt_Nombre1.Text.Trim (),
